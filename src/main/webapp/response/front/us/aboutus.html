@@ -1,0 +1,81 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.slider1').cycle({
+            fx: 'scrollHorz',
+            timeout: 1000,
+            cleartype: false, // disable cleartype corrections
+            next: '.rightArrow4',
+            prev: '.arrowLeft4',
+            pager: '.pager'
+        });
+        $('.small_PicBox').hover(function () {
+            $(this).find('.boxHover').fadeIn();
+            $(this).find('.boxHover span').animate({
+                bottom: '0px'
+            }, {
+                queue: false
+            });
+        }, function () {
+            $(this).find('.boxHover').fadeOut();
+            $(this).find('.boxHover span').animate({
+                bottom: '-36px'
+            }, {
+                queue: false
+            });
+        });
+
+    });
+</script>
+<section class="content_left0 fltleft">
+    <!--content_left Start-->
+    <div class="contentBlockabout">
+        <!--contentBlock1 Start-->
+        <div class="bannerBox">
+            <!--bannerBox Start-->
+            <div class="banner">
+                <!--banner Start-->
+                <div class="slider1" style="width:967px; height:242px;">
+                    <% for(entity in aboutUsTop){%>
+                    <img src="${contextPath}${entity.logo}" alt="${entity.name}"/>
+                    <%}%>
+                </div>
+                <div class="pager"></div>
+                <div class="arrowLeft4">
+                    <a href="#"></a>
+                </div>
+                <div class="rightArrow4">
+                    <a href="#"></a>
+                </div>
+            </div>
+            <!--banner End-->
+            <div class="clrflt"></div>
+            <div class="bannerBox">
+
+                ${aboutUs.content}
+
+            </div>
+            <!--bannerBox End-->
+            <div class="clear"></div>
+        </div>
+        <div class="bannerBox">
+            <iframe width="604" height="678" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                    src="http://j.map.baidu.com/5AoW3"></iframe>
+            <aside class="content_right fltright">
+                <div>正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</div>
+            </aside>
+        </div>
+        <!--bannerBox End-->
+        <div class="clear"></div>
+    </div>
+    <!--contentBlock1 End-->
+    <!--content_box1 End-->
+    <div class="clear"></div>
+    </div>
+    <!--contentBlock1 End-->
+
+
+    <div class="clear"></div>
+</section>
+<!--content_left End-->
+
+<div class="clrflt"></div>

@@ -1,0 +1,250 @@
+<div class=" row">
+    <div class="box col-md-12">
+        <div class="box-inner ">
+            <div class="box-header well">
+                <h2>
+                    <i class="glyphicon glyphicon-info-sign"></i> 欢迎登录系统后台服务
+                </h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-setting btn-round btn-default"><i
+                            class="glyphicon glyphicon-cog"></i></a> <a href="#"
+                                                                        class="btn btn-minimize btn-round btn-default"><i
+                        class="glyphicon glyphicon-chevron-up"></i></a> <a href="#"
+                                                                           class="btn btn-close btn-round btn-default"><i
+                        class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <ul class="nav nav-tabs" id="myTab">
+                    <li class="active"><a href="#info">用户资料</a></li>
+                    <li><a href="#password">密码修改</a></li>
+                    <li><a href="#picture">头像修改</a></li>
+                </ul>
+
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active" id="info">
+                        <div class="box-content">
+                            <ul class="dashboard-list">
+                                <li><a href="#"> <img class="dashboard-avatar"
+                                                      alt="${session.theUserInfo.nickname}"
+                                                      src="${contextPath}${session.theUserInfo.picture}_3.jpg"></a>
+                                    <strong>用户:</strong> <a href="#">${session.theUserInfo.nickname}
+                                    </a><br> <strong>登录时间:</strong>${date(),"yyyy年MM月dd日 HH:mm:ss"}<br>
+                                    <strong>状态:</strong> <span
+                                            class="label-success label label-default">Approved</span></li>
+
+                                <div class="alert alert-success">
+                                    <button class="close" data-dismiss="alert" type="button">×</button>
+                                    <strong>Well done!</strong> You successfully read this
+                                    important alert message.
+                                </div>
+                                <div class="alert alert-info">
+                                    <button class="close" data-dismiss="alert" type="button">×</button>
+                                    <strong>Heads up!</strong> This alert needs your attention, but
+                                    it's not super important.
+                                </div>
+
+                                <div class="alert alert-success">
+                                    <button class="close" data-dismiss="alert" type="button">×</button>
+                                    <strong>Well done!</strong> You successfully read this
+                                    important alert message.
+                                </div>
+                                <div class="alert alert-info">
+                                    <button class="close" data-dismiss="alert" type="button">×</button>
+                                    <strong>Heads up!</strong> This alert needs your attention, but
+                                    it's not super important.
+                                </div>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="password">
+
+                        <div class="box-content">
+                            <form id="forms" name="form" method="post"
+                                  action="${contextPath}/user/password/modify">
+                                <div class="input-group col-md-4">
+									<span class="input-group-addon"><i
+                                            class=" glyphicon glyphicon-lock blue"></i></span> <input id="pwd"
+                                                                                                      class="form-control validate[required,ajax[ajaxPassword]] "
+                                                                                                      data-prompt-position="centerRight"
+                                                                                                      type="password"
+                                                                                                      placeholder="请输入原密码">
+                                </div>
+                                <br/> <br/>
+                                <div class="input-group col-md-4">
+									<span class="input-group-addon"><i
+                                            class=" glyphicon glyphicon-eye-open blue"></i></span> <input
+                                        id="password" class="form-control validate[required]"
+                                        data-prompt-position="centerRight" type="password"
+                                        placeholder="请输入新密码">
+                                </div>
+                                <br/> <br/>
+                                <div class="input-group col-md-4">
+									<span class="input-group-addon"><i
+                                            class="glyphicon glyphicon-eye-open blue"></i></span> <input
+                                        id="re-password" name="repassword"
+                                        class="form-control re-password validate[required,equals[password]]"
+                                        data-prompt-position="centerRight" type="password"
+                                        placeholder="请再次输入新密码">
+                                </div>
+                                <br/> <br/>
+
+                                <button type="submit" class="btn btn-default">提交</button>
+                            </form>
+                            <br>
+
+                        </div>
+
+                        <link href='${contextPath}/css/validationEngine.jquery.css'
+                              rel='stylesheet'/>
+                        <script type="text/javascript"
+                                src="${contextPath}/js/jquery.validationEngine.js"></script>
+
+                        <script type="text/javascript"
+                                src="${contextPath}/js/jquery.validationEngine-zh_CN.js"></script>
+                        <script type="text/javascript">
+                            $("#forms").validationEngine({
+                                autoHidePrompt: true,
+                                autoHideDelay: 3126
+                            });
+                            docReady();
+                        </script>
+
+                    </div>
+
+                    <div class="tab-pane" id="picture">
+                        <p></p>
+                        <div>
+                            <p id="swfContainer">
+                                本组件需要安装Flash Player后才可使用，请从<a
+                                    href="http://www.adobe.com/go/getflashplayer">这里</a>下载安装。
+                            </p>
+                        </div>
+
+                        <script type="text/javascript"
+                                src="${contextPath}/js/swfobject.js"></script>
+
+                        <script type="text/javascript">
+                            swfobject
+                                    .addDomLoadEvent(function () {
+                                        var swf = new fullAvatarEditor(
+                                                "swfContainer",
+                                                {
+                                                    id: 'swf',
+                                                    upload_url: '${contextPath}/user/picture/upload',
+                                                    src_upload: 1,
+                                                    method: 'post',
+
+                                                    tab_upload_text: '本地上传',
+                                                    avatar_scale: 4
+                                                },
+                                                function (msg) {
+                                                    switch (msg.code) {
+                                                        case 1:
+                                                            break;
+                                                        case 2:
+                                                            break;
+                                                        case 3:
+                                                            if (msg.type == 0) {
+                                                                alert("摄像头已准备就绪且用户已允许使用。");
+                                                            } else if (msg.type == 1) {
+                                                                alert("摄像头已准备就绪但用户未允许使用！");
+                                                            } else {
+                                                                alert("摄像头被占用！");
+                                                            }
+                                                            break;
+                                                        case 5:
+                                                            if (msg.type == 0) {
+                                                                if (msg.content.sourceUrl) {
+
+                                                                }
+                                                                alert("头像已成功保存");
+                                                            }
+                                                            else {
+                                                                alert("服务器忙碌中，请稍后再试！");
+                                                            }
+                                                            break;
+                                                    }
+                                                });
+                                        //document.getElementById("upload").onclick=function(){
+                                        //		swf.call("upload");
+
+                                    });
+                            function fullAvatarEditor() {
+                                var id = 'fullAvatarEditor' //flash文件的ID
+                                var file = '${contextPath}/swf/fullAvatarEditor.swf'; //flash文件的路径
+                                var version = "10.1.0"; //播放该flash所需的最低版本
+                                var expressInstall = '${contextPath}/swf/expressInstall.swf'; //expressInstall.swf的路径
+                                var width = 750; //flash文件的宽度
+                                var height = 550; //flash文件的高度
+                                var container = id; //装载flash文件的容器(如div)的id
+                                var flashvars = {};
+                                var callback = function () {
+                                };
+                                var heightChanged = false;
+                                //智能获取参数，字符类型为装载flash文件的容器(如div)的id，第一个数字类型的为高度，第二个为宽度，第一个object类型的为参数对象，如此4个参数的顺序可随意。
+                                for (var i = 0; i < arguments.length; i++) {
+                                    if (typeof arguments[i] == 'string') {
+                                        container = arguments[i];
+                                    } else if (typeof arguments[i] == 'number') {
+                                        if (heightChanged) {
+                                            width = arguments[i];
+                                        } else {
+                                            height = arguments[i];
+                                            heightChanged = true;
+                                        }
+                                    } else if (typeof arguments[i] == 'function') {
+                                        callback = arguments[i];
+                                    } else {
+                                        flashvars = arguments[i];
+                                    }
+                                }
+                                var vars = {
+                                    id: id
+                                };
+                                //合并参数
+                                for (var name in flashvars) {
+                                    if (flashvars[name] != null) {
+                                        if (name == 'upload_url'
+                                                || name == 'src_url') {
+                                            vars[name] = encodeURIComponent(flashvars[name]);
+                                        } else {
+                                            vars[name] = flashvars[name];
+                                        }
+                                    }
+                                }
+                                var params = {
+                                    menu: 'true',
+                                    scale: 'noScale',
+                                    allowFullscreen: 'true',
+                                    allowScriptAccess: 'always',
+                                    wmode: 'transparent'
+                                };
+                                var attributes = {
+                                    id: vars.id,
+                                    name: vars.id
+                                };
+                                var swf = null;
+                                var callbackFn = function (e) {
+                                    swf = e.ref;
+                                    swf.eventHandler = function (json) {
+                                        callback.call(swf, json);
+                                    };
+                                };
+                                swfobject.embedSWF(file, container, width,
+                                        height, version, expressInstall, vars,
+                                        params, attributes, callbackFn);
+                                return swf;
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!--/span-->
+</div>

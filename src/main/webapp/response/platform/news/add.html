@@ -1,0 +1,126 @@
+<div>
+    <ul class="breadcrumb">
+        <li><a href="#">新闻添加</a></li>
+    </ul>
+</div>
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div data-original-title="" class="box-header well">
+                <h2>
+                    <i class="glyphicon glyphicon-edit"></i>新闻发布
+                </h2>
+
+                <div class="box-icon">
+                    <a class="btn btn-setting btn-round btn-default" href="#"><i
+                            class="glyphicon glyphicon-cog"></i></a> <a
+                        class="btn btn-minimize btn-round btn-default" href="#"><i
+                        class="glyphicon glyphicon-chevron-up"></i></a> <a
+                        class="btn btn-close btn-round btn-default" href="#"><i
+                        class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+
+                <form id="form" name="form" method="post" enctype="multipart/form-data"
+                      action="${contextPath}/news/articleAdd">
+                    <div class="input-group col-md-4">
+						<span class="input-group-addon"><i
+                                class="glyphicon glyphicon-bookmark blue"></i></span> <input id="name"
+                                                                                             name="name" type="text"
+                                                                                             placeholder="请输入文章标题名"
+                                                                                             class="form-control validate[required]"
+                                                                                             data-prompt-position="centerRight">
+                    </div>
+                    <br/>
+                    <div class="input-group col-md-4">
+						<span class="input-group-addon"><i
+                                class="glyphicon glyphicon-bookmark blue"></i></span> <textarea id="outline"
+                                                                                                name="outline"
+                                                                                                style="width: 501px; height: 234px;"
+                                                                                                class="validate[required] text-input"
+                                                                                                placeholder="请输入概要内容"
+                                                                                                data-prompt-position="centerRight"></textarea>
+                    </div>
+                    <br/>
+                    <div class="input-group col-md-4">
+						<span class="input-group-addon"><i
+                                class="glyphicon glyphicon-bookmark blue"></i></span> <input id="linkId"
+                                                                                             name="linkId" type="text"
+                                                                                             placeholder="可不填，也可更改归属日期"
+                                                                                             class="form-control validate[custom[date],[custom[date],past[${date(),"
+                                                                                             yyyyMMdd"}]]"
+                        data-prompt-position="centerRight">
+                    </div>
+                    <br/>
+                    <input id="logo" name="logo" readonly="readonly" type="hidden" type="text" class="form-control"/>
+                    <input id="creatorId" name="creatorId" type="hidden" value="${session.theUserInfo.id}" type="text"
+                           class="form-control" readonly="readonly"/>
+                    <input id="creatorName" name="creatorName" type="hidden" value="${session.theUserInfo.nickname}"
+                           type="text" class="form-control" readonly="readonly"/>
+                    <input id="creatDate" name="creatDate" type="hidden" value='${date(),"yyyy-MM-dd"}'
+                           readonly="readonly" type="text" class="form-control"/>
+
+                    <br/>
+
+                    <div class="input-group col-md-4">
+						<span class="input-group-addon"><i
+                                class="glyphicon glyphicon-comment blue"></i></span> <input id="description"
+                                                                                            name="description"
+                                                                                            data-prompt-position="centerRight"
+                                                                                            class="form-control validate[required]"
+                                                                                            type="text"
+                                                                                            placeholder="请输入备注信息，含有#1024#即受到保护">
+                    </div>
+                    <br/>
+                    <link href='${contextPath}/css/form.css' rel='stylesheet'/>
+
+                    <div class="input-group col-md-4">
+                        <a href="javascript:;" class="me-upload">
+                            <input type="file" name="file" id="file"><i class="glyphicon glyphicon-picture blue"></i>：请点击上传Logo图片&nbsp;<i
+                                class="glyphicon glyphicon-hand-left blue"></i>
+                        </a>
+                    </div>
+                    <br/>
+
+                    <!-- 加载编辑器的容器 -->
+                    <script id="container" name="content" type="text/plain">
+        ${news.content!}
+
+                    </script>
+                    <!-- 配置文件 -->
+                    <script type="text/javascript" src="${contextPath}/js/ueditor.config.js"></script>
+                    <!-- 编辑器源码文件 -->
+                    <script type="text/javascript" src="${contextPath}/js/ueditor.all.min.js"></script>
+                    <!-- 实例化编辑器 -->
+                    <script type="text/javascript">
+                        var ue = UE.getEditor('container');
+                    </script>
+
+
+                    <br/><br>
+                    <button type="submit" class="btn btn-default">提交</button>
+                </form>
+                <br>
+
+            </div>
+        </div>
+    </div>
+    <!--/span-->
+</div>
+
+<link href='${contextPath}/css/validationEngine.jquery.css' rel='stylesheet'/>
+<script type="text/javascript"
+        src="${contextPath}/js/jquery.validationEngine.js"></script>
+
+<script type="text/javascript"
+        src="${contextPath}/js/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript">
+    $("#logo").val(Math.round(Math.random() * 100000));
+    $("#form").validationEngine({autoHidePrompt: true, autoHideDelay: 3126});
+    docReady();
+</script>
+
+
+
+

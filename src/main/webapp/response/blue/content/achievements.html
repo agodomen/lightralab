@@ -1,0 +1,28 @@
+<!--buildings-->
+<div class="buildings">
+    <div class="container">
+        <div class="buildings-top">
+            <% for(entity in list){%>
+            <% if(entityLP.index%5==0||entityLP.first){%>
+            <div class="building-one">
+                <%}%>
+                <div class="col-md-3 building-left">
+                    <a href="single.html"><img src='${contextPath}${entity.logo}' alt=""/></a>
+                    <a href='${contextPath}/index/type/article/${entity.linkId}-${entity.id}'><h4>${entity.name}</h4>
+                    </a>
+                    <p>${entity.outline}</p>
+                    <div class="build-btn">
+                        <a href='${contextPath}/index/type/article/${entity.linkId}-${entity.id}'
+                           class="hvr-shutter-out-horizontal">更多</a>
+                    </div>
+                </div>
+                <% if(entityLP.index%4==0||entityLP.last){ %>
+                <div class="clearfix"></div>
+            </div>
+            <%}%>
+            <%}%>
+        </div>
+
+    </div>
+</div>
+<!--buildings-->

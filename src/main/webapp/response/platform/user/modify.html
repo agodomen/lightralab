@@ -1,0 +1,159 @@
+<link rel="stylesheet" type="text/css"
+      href="${contextPath}/css/jquery-ui.min.css"/>
+<link rel="stylesheet" type="text/css"
+      href="${contextPath}/css/jquery-ui.structure.min.css"/>
+<link rel="stylesheet" type="text/css"
+      href="${contextPath}/css/jquery-ui.theme.min.css"/>
+<script type="text/javascript" src="${contextPath}/js/jquery-ui.min.js"></script>
+<div class="box-content">
+    <form id="form" name="form" method="post"
+          action="${contextPath}/user/modify">
+        <input id="id" name="id" value="${userInfo.id}" type="hidden"
+               readonly="readonly"> <input id="picture" name="picture"
+                                           value="${userInfo.picture}" type="hidden" readonly="readonly">
+
+        <div class="input-group col-md-4">
+			<span class="input-group-addon"><i
+                    class="glyphicon glyphicon-user blue"></i></span> <input id="name"
+                                                                             name="name" readonly="readonly"
+                                                                             value='${userInfo.name}' type="text"
+                                                                             placeholder="请输入用户名" class="form-control">
+        </div>
+        <br/> <br/>
+        <div class="input-group col-md-4">
+			<span class="input-group-addon"><i
+                    class=" glyphicon glyphicon-lock blue"></i></span> <input id="password"
+                                                                              class="form-control validate[required]"
+                                                                              name="password"
+                                                                              data-prompt-position="centerRight"
+                                                                              value='${userInfo.password}'
+                                                                              type="password" placeholder="请输入用户密码">
+        </div>
+        <br/> <br/>
+        <div class="input-group col-md-4">
+			<span class="input-group-addon"><i
+                    class="glyphicon glyphicon-eye-open blue"></i></span> <input
+                id="re-password" name="repassword" value="${userInfo.password}"
+                class="form-control re-password validate[required,equals[password]]"
+                data-prompt-position="centerRight" type="password"
+                placeholder="请确认用户密码">
+        </div>
+        <br/> <br/>
+        <div class="input-group col-md-4">
+			<span class="input-group-addon"><i
+                    class="glyphicon glyphicon-user blue"></i></span> <input id="nickname"
+                                                                             name="nickname"
+                                                                             value="${userInfo.nickname}"
+                                                                             data-prompt-position="centerRight"
+                                                                             class="form-control validate[required]"
+                                                                             type="text"
+                                                                             placeholder="请输入昵称">
+        </div>
+        <br/> <br/>
+        <div class="input-group col-md-4">
+			<span class="input-group-addon"><i
+                    class="glyphicon glyphicon-user blue"></i></span> <input id="power"
+                                                                             name="power" value="${userInfo.power}"
+                                                                             data-prompt-position="centerRight"
+                                                                             class="form-control validate[required]"
+                                                                             type="text"
+                                                                             placeholder="请输入权限值">
+        </div>
+        <br/> <br/>
+
+        <div class="control-group">
+            <div class="controls">
+                <label class="control-label" for="selectError">性别:</label> <select
+                    name="sex" id="selectError" data-rel="chosen">
+                <% if(userInfo.sex==0) {
+                print("
+                <option value='0' selected='selected'>男&nbsp;&nbsp;</option>
+                ");
+                print("
+                <option value='1'>女&nbsp;&nbsp;</option>
+                ");
+                } %>
+                <% else {
+                print("
+                <option value='0'>男&nbsp;&nbsp;</option>
+                ");
+                print("
+                <option value='1' selected='selected'>女&nbsp;&nbsp;</option>
+                ");
+                }
+                %>
+
+            </select>
+            </div>
+        </div>
+        <br/>
+        <div class="input-group col-md-4">
+			<span class="input-group-addon"><i
+                    class="glyphicon glyphicon-bookmark blue"></i></span> <input id="date"
+                                                                                 name="birthday"
+                                                                                 value="${userInfo.birthday}"
+                                                                                 data-prompt-position="centerRight"
+                                                                                 class='form-control validate[required,custom[date],[custom[date],past[${date(),"yyyy-MM-dd"}]]'
+                                                                                 type="text" placeholder="请输入出生日期">
+        </div>
+        <br/> <br/>
+        <div class="input-group col-md-4">
+			<span class="input-group-addon"><i
+                    class="glyphicon glyphicon-envelope blue"></i></span> <input id="email"
+                                                                                 name="email" value="${userInfo.email}"
+                                                                                 class="form-control validate[required,custom[email]]"
+                                                                                 data-prompt-position="centerRight"
+                                                                                 type="text" placeholder="请输入邮箱">
+        </div>
+        <br/> <br/>
+        <div class="input-group col-md-4">
+			<span class="input-group-addon"><i
+                    class="glyphicon glyphicon-briefcase blue"></i></span> <input id="mobile"
+                                                                                  name="mobile"
+                                                                                  value="${userInfo.mobile}"
+                                                                                  class="form-control validate[required,custom[onlyNumberSp]]"
+                                                                                  data-prompt-position="centerRight"
+                                                                                  type="text" placeholder="请输入手机号码">
+        </div>
+        <br/> <br/>
+        <div class="input-group col-md-4">
+			<span class="input-group-addon"><i
+                    class="glyphicon glyphicon-briefcase blue"></i></span> <input
+                id="telephone" name="telephone" value="${userInfo.telephone}"
+                data-prompt-position="centerRight"
+                class="form-control validate[required,custom[onlyNumberSp]]"
+                type="text" placeholder="请输入电话号码">
+        </div>
+        <br/> <br/>
+        <div class="input-group col-md-4">
+			<span class="input-group-addon"><i
+                    class="glyphicon glyphicon-briefcase blue"></i></span> <input id="qq"
+                                                                                  name="qq" value="${userInfo.qq}"
+                                                                                  data-prompt-position="centerRight"
+                                                                                  class="form-control validate[required,custom[onlyNumberSp]]"
+                                                                                  type="text" placeholder="请输入QQ号">
+        </div>
+
+        <br/> <br>
+
+        <button type="submit" class="btn btn-default">提交</button>
+    </form>
+    <br>
+
+</div>
+
+
+<link href='${contextPath}/css/validationEngine.jquery.css'
+      rel='stylesheet'/>
+<script type="text/javascript"
+        src="${contextPath}/js/jquery.validationEngine.js"></script>
+
+<script type="text/javascript"
+        src="${contextPath}/js/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript">
+    $("#form").validationEngine({
+        autoHidePrompt: true,
+        autoHideDelay: 3126
+    });
+    docReady();
+</script>

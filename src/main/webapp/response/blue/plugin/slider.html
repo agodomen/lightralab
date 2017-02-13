@@ -1,0 +1,66 @@
+<!--slide-->
+<div class="gallery-cursual">
+    <!-- requried-jsfiles-for owl -->
+    <link href="${contextPath}/css/owl.carousel.css" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                items: 5,
+                lazyLoad: true,
+                autoPlay: true,
+                pagination: false,
+            });
+        });
+    </script>
+    <!-- //requried-jsfiles-for owl -->
+    <!-- start content_slider -->
+    <div id="owl-demo" class="owl-carousel text-center">
+        <% for(entity in sliderNews) {%>
+        <div class="item g1 popup-with-zoom-anim" href="#small-dialog${entityLP.index}">
+            <img style="max-height:190px;" class="lazyOwl" data-src="${contextPath}${entity.logo}" alt="name">
+            <div class="caption">
+                <h3>${entity.name}</h3>
+                <div class="s-btn">
+                    <a href="#">更多</a>
+                </div>
+            </div>
+        </div>
+        <%}%>
+    </div>
+    <!--//sreen-gallery-cursual---->
+    <!-- caption-popup -->
+    <% for(entity in sliderNews){%>
+    <div class="caption-popup">
+        <div id="small-dialog${entityLP.index}" class="mfp-hide innercontent">
+            <h4>${entity.name}</h4>
+            <img class="img-responsive cap" src="${contextPath}${entity.logo}" title="postname"/>
+            <p>${entity.outline} </p>
+            <a class="morebtn" href="${contextPath}/index/type/article/sliderNews-${entity.id}">更多</a>
+        </div>
+    </div>
+    <%}%>
+    <!----//fea-video---->
+    <script>
+        $(document).ready(function () {
+            $('.popup-with-zoom-anim').magnificPopup({
+                type: 'inline',
+                fixedContentPos: false,
+                fixedBgPos: true,
+                overflowY: 'auto',
+                closeBtnInside: true,
+                preloader: false,
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+            });
+
+        });
+    </script>
+</div>
+<!-- /caption-popup -->
+<!---pop-up-box---->
+<link href="${contextPath}/css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="${contextPath}/js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script src="${contextPath}/js/owl.carousel.js"></script>
+<!---//pop-up-box---->
+<!--slide-->

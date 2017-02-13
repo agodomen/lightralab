@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <link href="${contextPath}/css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link href="${contextPath}/css/blue.css" rel='stylesheet' type='text/css'/>
+    <script src="${contextPath}/js/jquery-1.11.0.min.js"></script>
+    <style type='text/css'>
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Open Sans Light'), local('OpenSans-Light'), url(${contextPath}/fonts/DXI1ORHCpsQm3Vp6mXoaTYnF5uFdDttMLvmWuJdhhgs.ttf) format('truetype');
+        }
+    </style>
+    <!---- start-smoth-scrolling---->
+    <script type="text/javascript" src="${contextPath}/js/move-top.js"></script>
+    <script type="text/javascript" src="${contextPath}/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+    <!--start-smoth-scrolling-->
+</head>
+<body>
+<!-- header start-->
+<% include("/blue/header.html"){}%>
+<!--header end-->
+
+<!--search-scripts-->
+<script src="${contextPath}/js/classie.js"></script>
+<script src="${contextPath}/js/uisearch.js"></script>
+<script>
+    new UISearch(document.getElementById('sb-search'));
+</script>
+<!--//search-scripts-->
+<!--slide-->
+<% include("/blue/content/single.html"){}%>
+<!--slide-->
+<!--address-->
+
+<!--address-->
+
+<!--footer-->
+<% include("/blue/footer.html"){}%>
+<!--footer-->
+</body>
+</html>

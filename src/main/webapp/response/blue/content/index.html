@@ -1,0 +1,140 @@
+<!--search-scripts-->
+<script src="${contextPath}/js/classie.js"></script>
+<script src="${contextPath}/js/uisearch.js"></script>
+<script>
+    new UISearch(document.getElementById('sb-search'));
+</script>
+<!--//search-scripts-->
+<!--magazine-->
+<div class="magazine">
+    <div class="container">
+        <div class="magazine-top">
+            <div class="col-md-7 magazine-top-left">
+                <div id="top" class="callbacks_container">
+                    <ul class="rslides" id="slider4">
+                        <% for(var i=0;i<@ttxw.size()-3;i++){%>
+                        <li><a target="_blank" href='${contextPath}/index/type/article/ttxw-${ttxw[i].id}'>
+                            <img style="max-height:330px;" src='${contextPath}${ttxw[i].logo}' alt='${ttxw[i].name}'/>
+                        </a>
+                        </li>
+                        <% }%>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-5 magazine-top-right">
+                <% for(var i=@ttxw.size()-1;i>=@ttxw.size()-3;i--){%>
+
+                <div class="mag-top">
+                    <div class="col-md-4 mag-top-left">
+                        <a href='${contextPath}/index/type/article/ttxw-${ttxw[i].id}'><img
+                                src='${contextPath}${ttxw[i].logo}' alt=""/></a>
+                    </div>
+                    <div class="col-md-8 mag-top-left">
+                        <a href="single.html"><h4>${ttxw[i].name}</h4></a>
+                        <p>${ttxw[i].outline}</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <% }%>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="magazine-bottom">
+            <div class="col-md-7 magazine-bottom-left">
+                <h3>实验室动态</h3>
+
+                <% for(var i=0;i<5&&i<@dtxw.size();i++){%>
+                <div class="mag-btm">
+                    <div class="col-md-4 mag-btm-left">
+                        <a href='${contextPath}/index/type/article/dtxw-${dtxw[i].id}'><img
+                                src="${contextPath}${dtxw[i].logo}" alt=""/></a>
+                    </div>
+                    <div class="col-md-8 mag-btm-left">
+                        <a href='${contextPath}/index/type/article/dtxw-${dtxw[i].id}'><h4>${dtxw[i].name}</h4></a>
+                        <p>${dtxw[i].outline}</p>
+                        <div class="m-btn">
+                            <a href='${contextPath}/index/type/article/dtxw-${dtxw[i].id}'
+                               class="hvr-shutter-out-horizontal">更多</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <%}%>
+                <br/>
+                <div style="text-align:right;">
+                    <a class="more-loadingButton" href="${contextPath}/articleAllType?action=dtxw">加载更多</a></div>
+            </div>
+            <div class="col-md-5 magazine-bottom-left">
+                <h3>最新公告</h3>
+                <% for(var i=0;i<3&&i<@newNotice.size();i++){%>
+                <div class="latest">
+                    <div class="col-md-1 latest-left">
+                        <h4>${i+1}</h4>
+                    </div>
+                    <div class="col-md-11 latest-left">
+                        <a href='${contextPath}/index/type/article/newNotice-${newNotice[i].id}'><h5>
+                            ${newNotice[i].name}</h5></a>
+                        <div align="right">
+                            <p>${newNotice[i].creatDate,"yyyy-MM-dd"}</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <%}%>
+                <div class="m-btn" style="text-align:right;">
+                    <a href='${contextPath}/articleAllType?action=newNotice' class="hvr-shutter-out-horizontal">更多</a>
+                </div>
+                <br/>
+            </div>
+
+            <div class="col-md-5 magazine-bottom-left">
+                <h3>最新活动</h3>
+                <% for(var i=0;i<3&&i<@newActivity.size();i++){%>
+                <div class="latest">
+                    <div class="col-md-1 latest-left">
+                        <h4>${i}</h4>
+                    </div>
+                    <div class="col-md-11 latest-left">
+                        <a href='${contextPath}/index/type/article/newActivity-${newActivity[i].id}'>
+                            <h5>${newActivity[i].name}</h5></a>
+                        <div align="right">
+                            <p>${newActivity[i].creatDate,"yyyy-MM-dd"}</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <% }%>
+                <div class="m-btn" style="text-align:right;">
+                    <a href='${contextPath}/articleAllType?action=newActivity' class="hvr-shutter-out-horizontal">更多</a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--magazine-->
+<!--Slider-Starts-Here-->
+<script src="${contextPath}/js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider4").responsiveSlides({
+            auto: true,
+            pager: false,
+            nav: false,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+
+    });
+</script>
+<!--End-slider-script-->
+	

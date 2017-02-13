@@ -1,0 +1,205 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        // get the action filter option item on page load
+        var $filterType = $('#filterOptions li.active a').attr('class');
+
+        // get and assign the ourHolder element to the
+        // $holder varible for use later
+        var $holder = $('ul.ourHolder');
+
+        // clone all items within the pre-assigned $holder element
+        var $data = $holder.clone();
+
+        // attempt to call Quicksand when a filter option
+        // item is clicked
+        $('#filterOptions li a').click(function (e) {
+            // reset the active class on all the buttons
+            $('#filterOptions li').removeClass('active');
+
+            // assign the class of the clicked filter option
+            // element to our $filterType variable
+            var $filterType = $(this).attr('class');
+            $(this).parent().addClass('active');
+
+            if ($filterType == 'all') {
+                // assign all li items to the $filteredData var when
+                // the 'All' filter option is clicked
+                var $filteredData = $data.find('li');
+            }
+            else {
+                // find all li elements that have our required $filterType
+                // values for the data-type element
+                var $filteredData = $data.find('li[data-type=' + $filterType + ']');
+            }
+
+            // call quicksand and assign transition parameters
+            $holder.quicksand($filteredData, {
+                duration: 800,
+                easing: 'easeInOutQuad'
+            });
+
+            $('.ourHolder li.trigger').find('strong').trigger('mouseenter');
+
+            return false;
+        });
+
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.small_PicBox').hover(function () {
+            $(this).find('.boxHover').fadeIn();
+            $(this).find('.boxHover span').animate({
+                bottom: '0px'
+            }, {queue: false});
+        }, function () {
+            $(this).find('.boxHover').fadeOut();
+            $(this).find('.boxHover span').animate({
+                bottom: '-36px'
+            }, {queue: false});
+        });
+        $('#loopedSlider').loopedSlider({autoHeight: true, pagination: '.pagination'})
+    });
+</script>
+
+<!--[if IE 7]>
+<style type="text/css">
+    .container_bottom {
+        *padding: 12px 0 35px 0;
+    }
+
+    .contentBlock1 {
+        *padding: 0 0 15px 0;
+    }
+
+    .getPad1 {
+        *padding: 0px;
+    }
+
+    .full_width {
+        *padding: 40px 13px 0 28px;
+    }
+
+    .full_block_top {
+        *padding: 0 0 25px 0;
+    }
+
+    .content_main2 {
+        *padding: 12px 12px 0 12px;
+    }
+
+    .small_PicBox {
+        *margin: 0 8px -3px 0;
+    }
+
+    .getPad2 {
+        *padding: 12px 12px 0 12px;
+    }
+
+    .cont_bottom {
+        *padding: 12px 12px 0 12px;
+    }
+</style>
+<![endif]-->
+<section class="container_middle"> <!--container_top Start-->
+    <section class="container_top"> <!--container_bottom Start-->
+        <section class="container_bottom"> <!--container_middle Start-->
+            <section class="content_main3 getPad2"> <!--content_main3 Start-->
+                <section class="banner_area" id="loopedSlider"><!--banner_area-->
+                    <div class="bannerSlider">
+                        <div class="slider_area container">
+                            <ul class="slides">
+                                <li><img src="${contextPath!}/img/photo2.jpg" width="967" height="391" alt=""></li>
+                                <li><img src="${contextPath!}/img/photo1.jpg" width="967" height="391" alt=""></li>
+                                <li><img src="${contextPath!}/img/photo2.jpg" width="967" height="391" alt=""></li>
+                                <li><img src="${contextPath!}/img/photo1.jpg" width="967" height="391" alt=""></li>
+                            </ul>
+                        </div>
+                        <div class="slider_button_left"><a href="#" class="previous"></a></div>
+                        <div class="slider_button_right"><a href="#" class="next"></a></div>
+                        <ul class="pagination">
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                        </ul>
+                    </div>
+                    <!--banner_area-->
+
+                </section>
+                <!--banner3 End-->
+                <article class="infoBox1">
+                    <p><!--infoBox1 Start-->
+                        <span><strong>Client:</strong></span> Draw me Project </p>
+                    <p><span><strong> Launch Date:</strong></span> Jan 2012</p>
+                    <p><span><strong> Website:</strong></span><a href="#"> www.vimeo.com</a></p>
+                </article>
+                <!--infoBox1 End-->
+
+                <article class="infoBox2">
+                    <p>Voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex. </p>
+                </article>
+                <article class="infoBox2 nomar6">
+                    <p>Voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </article>
+                <div class="clear"></div>
+            </section>
+            <!--content_main3 End-->
+
+            <section class="cont_bottom clearfix"> <!--cont_bottom Start-->
+                <div class="titlehome2">RELATED PROJECTS</div>
+                <hr>
+                <div class="banner_smallBox"> <!--banner_smallBox Start-->
+
+                    <div class="small_PicBox get_mar2"> <!--small_box Start-->
+                        <a href="#"><img src="${contextPath!}/img/portfolio/portfolio_pic27.jpg" alt=""></a>
+                        <div class="boxHover"><a href="single_page_portfolio.html"><span>Tenue De N^imes (Photo)</span></a>
+                        </div>
+                    </div>
+                    <!--small_box End-->
+
+                    <div class="small_PicBox get_mar2"> <!--small_box Start-->
+                        <a href="#"><img src="${contextPath!}/img/portfolio/portfolio_pic34.jpg" alt=""></a>
+                        <div class="boxHover"><a href="single_page_portfolio.html"><span>Wired UK (Illustartion)</span></a>
+                        </div>
+                    </div>
+                    <!--small_box End-->
+
+                    <div class="small_PicBox get_mar2"> <!--small_box Start-->
+                        <a href="#"><img src="${contextPath!}/img/portfolio/portfolio_pic28.jpg" alt=""></a>
+                        <div class="boxHover"><a href="single_page_portfolio.html"><span>Lacosta Fashion (Photo)</span></a>
+                        </div>
+                    </div>
+                    <!--small_box End-->
+
+
+                    <div class="small_PicBox"> <!--small_box Start-->
+                        <a href="#"><img src="${contextPath!}/img/portfolio/portfolio_pic14.jpg" alt=""></a>
+                        <div class="boxHover"><a href="single_page_portfolio.html"><span>Build Conference (Logo)</span></a>
+                        </div>
+                    </div>
+                    <!--small_box End-->
+
+
+                    <div class="clear"></div>
+                </div>
+                <div class="clrflt"></div>
+            </section>
+            <!--cont_bottom End-->
+        </section>
+        <!--container_middle End-->
+    </section>
+    <!--container_bottom End-->
+</section>
+<!--container_top End-->

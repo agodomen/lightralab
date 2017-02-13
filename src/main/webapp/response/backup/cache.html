@@ -1,0 +1,51 @@
+"columns": [
+{ "data": "name" },
+{ "data": "position" },
+{ "data": "office" },
+{ "data": "extn" },
+{ "data": "start_date" },
+{ "data": "salary" }
+]
+
+
+$(document).ready(function() {
+$("#usersList").dataTable({
+"sAjaxDataProp" : "users",
+"sAjaxSource" : "${contextPath}/user/list",
+"bServerSide" : true,
+"bProcessing" : true,
+"bFilter" : true,// 搜索栏
+"bLengthChange" : true,// 每行显示记录数
+"iDisplayLength" : 10,// 每页显示行数
+"bAutoWidth" : true, //自适应宽度
+
+"sPaginationType" : "full_numbers",
+"aoColumns" : [ {
+"mDataProp" : "id",
+}, {
+"mDataProp" : "name",
+}, {
+"mDataProp" : "nickName",
+}, {
+"mDataProp" : "birthday",
+}, {
+"mDataProp" : "qq",
+}, ],
+"oLanguage" : {
+"sProcessing" : "正在加载中......",
+"sLengthMenu" : "每页显示 _MENU_ 条记录",
+"sZeroRecords" : "正在加载中......",
+"sEmptyTable" : "表中无数据存在！",
+"sInfo" : "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+"sInfoEmpty" : "显示0到0条记录",
+"sInfoFiltered" : "数据表中共为 _MAX_ 条记录",
+"sSearch" : "搜索",
+"oPaginate" : {
+"sFirst" : "首页",
+"sPrevious" : "上一页",
+"sNext" : "下一页",
+"sLast" : "末页"
+}
+}
+});
+});

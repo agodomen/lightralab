@@ -1,0 +1,109 @@
+<!--header-->
+<div class="header-top" id="home">
+    <div class="container">
+        <div class="header-logo">
+            <a href="index.html"><img src="${contextPath}/images/logo.png" alt=""/></a>
+        </div>
+        <div class="top-nav">
+            <span class="menu"><img src="${contextPath}/images/menu-icon.png" alt=""/></span>
+            <ul class="nav1">
+                <li><a href="${contextPath}/index/init">首页 </a></li>
+                <li><a href="${contextPath}/index/probe">科研发现</a></li>
+                <li><a href="${contextPath}/index/achievements">科研成果</a></li>
+                <li><a href="${contextPath}/index/workcenter">工作中心</a></li>
+                <li><a href="${contextPath}/index/cultrue">文化交流</a></li>
+                <li><a href="${contextPath}">关注更多</a></li>
+                <li><a href="${contextPath}/index/aboutUs">关于我们</a></li>
+            </ul>
+            <!-- script-for-menu -->
+            <script>
+                $("span.menu").click(function () {
+                    $("ul.nav1").slideToggle(300, function () {
+                        // Animation complete.
+                    });
+                });
+            </script>
+            <!-- /script-for-menu -->
+        </div>
+        <div class="social-icons">
+            <ul>
+                <li><a href="#"><span class="twit"> </span></a></li>
+                <li><a href="#"><span class="fb"> </span></a></li>
+                <li><a href="#"><span class="g"> </span></a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="search-box">
+        <div id="sb-search" class="sb-search">
+            <form action="http://www.baidu.com/baidu" target="_blank" method="post
+			
+					<input name=" tn
+            " type="hidden" value="bds">
+            <input name="cl" type="hidden" value="3">
+            <input name="ct" type="hidden" value="2097152">
+            <input name="si" type="hidden" value="*.muc.edu.cn">
+            <input class="sb-search-input" placeholder="请输入搜索内容" type="search" name="word" id="search">
+            <input class="sb-search-submit" type="submit">
+            <span class="sb-icon-search"> </span>
+            </form>
+        </div>
+    </div>
+    <div class="header-info-right">
+        <div class="header cbp-spmenu-push">
+            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+                <a href="${contextPath}/index/init">首页</a>
+                <a href="${contextPath}/index/probe">科研发现</a>
+                <a href="${contextPath}/index/achievements">科研成果</a>
+                <a href="${contextPath}/index/workcenter">工作中心</a>
+                <a href="${contextPath}/index/culture">文化交流</a>
+                <a href="${contextPath}">关注更多</a>
+                <a href="${contextPath}/index/aboutUs">关于我们</a>
+            </nav>
+            <!--script-nav -->
+            <script>
+                $("span.menu").click(function () {
+                    $("ul.navigatoin").slideToggle("300", function () {
+                    });
+                });
+            </script>
+            <script type="text/javascript">
+                jQuery(document).ready(function ($) {
+                    $(".scroll").click(function (event) {
+                        event.preventDefault();
+                        $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+                    });
+                });
+            </script>
+            <div class="clearfix"></div>
+            <!-- /script-nav -->
+            <div class="main">
+                <section class="buttonset">
+                    <button id="showLeftPush"><img src="${contextPath}/images/menu.png"/><span>菜单</span></button>
+                </section>
+            </div>
+            <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+            <script src="${contextPath}/js/classie.js"></script>
+            <script>
+                var menuLeft = document.getElementById('cbp-spmenu-s1'),
+                        showLeftPush = document.getElementById('showLeftPush'),
+                        body = document.body;
+
+                showLeftPush.onclick = function () {
+                    classie.toggle(this, 'active');
+                    classie.toggle(body, 'cbp-spmenu-push-toright');
+                    classie.toggle(menuLeft, 'cbp-spmenu-open');
+                    disableOther('showLeftPush');
+                };
+            </script>
+        </div>
+    </div>
+</div>
+<!--//header-->
+<!--search-scripts-->
+<script src="${contextPath}/js/classie.js"></script>
+<script src="${contextPath}/js/uisearch.js"></script>
+<script>
+    new UISearch(document.getElementById('sb-search'));
+</script>
+<!--//search-scripts-->

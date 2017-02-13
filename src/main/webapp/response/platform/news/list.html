@@ -1,0 +1,173 @@
+<div>
+    <ul class="breadcrumb">
+        <li><a href="#">新闻管理</a></li>
+        <li><a href="#">新闻查看</a></li>
+    </ul>
+</div>
+<div class=" row">
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title='当前有${session.nowCount!"0"}条文章' class="well top-block" href="#">
+            <i class="glyphicon glyphicon-envelope red "></i>
+
+            <div>当前显示月份</div>
+
+            <span class="notification">${session.nowCount!"0"}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6"
+         onclick="loadContentHtml('/news/viewNews?action=news-list&&month=${session.preMonth}')">
+        <a data-toggle="tooltip" title='${session.preCount!"0"}' class="well top-block" href="#">
+            <i class="glyphicon glyphicon-star green"></i>
+
+            <div>查看上一个月份</div>
+
+            <span class="notification green">${session.preCount!"0"}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6"
+         onclick="loadContentHtml('/news/viewNews?action=news-list&&month=${session.nextMonth}')">
+        <a data-toggle="tooltip" title='${session.nextCount!"0"}' class="well top-block" href="#">
+            <i class="glyphicon glyphicon-star yellow"></i>
+
+            <div>查看下一个月份</div>
+
+            <span class="notification yellow">${session.nextCount!"0"}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6" onclick="loadContentHtml('/news/viewNews?action=news-list')">
+        <a data-toggle="tooltip" title="0 new messages." class="well top-block" href="#">
+            <i class="glyphicon glyphicon-star blue"></i>
+
+            <div>返回本月</div>
+
+            <span class="notification red">0</span>
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div data-original-title="" class="box-header well">
+                <h2>
+                    <i class="glyphicon glyphicon-edit"></i>${session.nowMonth}月的新闻列表
+                </h2>
+
+                <div class="box-icon">
+                    <a class="btn btn-setting btn-round btn-default" href="#"><i
+                            class="glyphicon glyphicon-cog"></i></a> <a
+                        class="btn btn-minimize btn-round btn-default" href="#"><i
+                        class="glyphicon glyphicon-chevron-up"></i></a> <a
+                        class="btn btn-close btn-round btn-default" href="#"><i
+                        class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <table id="tableList"
+                       class="table table-striped table-bordered bootstrap-datatable datatable responsive center-text">
+                    <thead>
+                    <tr>
+                        <th class="center-text">id编号</th>
+                        <th class="center-text">标题名称</th>
+                        <th class="center-text">简要内容</th>
+                        <th class="center-text">作者</th>
+                        <th class="center-text">创建日期</th>
+                        <th class="center-text">点击数</th>
+                        <th class="center-text">备注</th>
+                        <th class="center-text">修改操作</th>
+                        <th class="center-text">删除操作</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document)
+            .ready(
+                    function () {
+                        $("#tableList")
+                                .dataTable(
+                                        {
+                                            "sDom": "<'row'<'col-md-6'f>r>t<'row'<'col-md-12'i><'col-md-12 center-block'p>>",
+                                            "sPaginationType": "bootstrap",
+                                            "bServerSide": false,
+                                            "bDestroy": true,
+                                            "bLengthChange": false,// 每行显示记录数
+                                            "iDisplayLength": 7,// 每页显示行数
+                                            "bFilter": true,// 搜索栏
+                                            /* 	"aLengthMenu" : [
+                                             [ 10, 25, 50, -1, -1 ],
+                                             [ 5, 7, 11, 13, 17 ] ], */
+                                            "bProcessing": true,
+                                            "sAjaxDataProp": "list",//对象
+                                            "sAjaxSource": "${contextPath}/news/listTitle/${session.nowMonth}",
+                                            "bAutoWidth": false, //自适应宽度
+                                            "aoColumns": [{
+                                                "mDataProp": "id",//0
+                                            }, {
+                                                "mDataProp": "name",//1
+                                            }, {
+                                                "mDataProp": "outline",//2
+                                            }, {
+                                                "mDataProp": "creatorName",//3
+                                            }, {
+                                                "mDataProp": "creatDate",//4
+                                            }, {
+                                                "mDataProp": "clickCount",//5
+                                            }, {
+                                                "mDataProp": "description",//6
+                                            }, {
+                                                "mDataProp": "id",//7
+                                            }, {
+                                                "mDataProp": "id",//8
+                                            },
+
+                                            ],
+                                            "aoColumnDefs": [
+
+                                                {
+                                                    "sClass": "center-text",
+                                                    "aTargets": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+                                                },
+
+                                                {
+                                                    "mRender": function (data, type,
+                                                                         full) {
+                                                        return "<a target='_blank' href='${contextPath}/news/modify/"
+                                                                + ${session.nowMonth} +"-" + data + "-" + "news-list"
+                                                                + "' class='btn btn-success'><i class=' glyphicon glyphicon-edit icon-white '></i>修改 </a>"
+
+                                                    },
+                                                    "aTargets": [7]
+                                                },
+                                                {
+                                                    "mRender": function (data, type,
+                                                                         full) {
+                                                        return "<a onclick=openNotify('notify','编号为"
+                                                                + data
+                                                                + "将被删除','/news/title/delete/"
+                                                                + ${session.nowMonth} +"-" + data
+                                                                + "')  class='btn btn-danger' href='#'><i class='glyphicon glyphicon-trash icon-white'></i>删除</a>"
+                                                    },
+                                                    "aTargets": [8]
+                                                },],
+                                            "oLanguage": {
+                                                "sProcessing": "正在加载中......",
+                                                "sSearch": "搜索",
+                                                "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+                                                "sInfoFiltered": "数据总共为 _MAX_ 条记录",
+                                                "sEmptyTable": "不好意思，没有数据存在！",
+                                                "sLengthMenu": "每页显示 _MENU_ 条记录"
+
+                                            }
+                                        });
+
+                    }
+            );
+    docReady();
+</script>

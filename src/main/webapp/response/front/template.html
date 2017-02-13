@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>实验室908</title>
+    <script type="text/javascript" src="${contextPath!}/js/main.js"></script>
+    <!-- this is the css start -->
+    <link href="${contextPath!}/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="${contextPath!}/css/superfish.css" rel="stylesheet" type="text/css"/>
+    <style>
+        <!--
+        [if IE
+
+        7
+        ]
+        >
+        <
+        style type
+
+        =
+        "text/css"
+        >
+        .container_bottom {
+            *padding: 12px 0 20px 0;
+        }
+
+        .contentBlock1 {
+            *padding: 0 0 15px 0;
+        }
+
+        .getPad1 {
+            *padding: 0px;
+        }
+
+        .full_width {
+            *padding: 40px 13px 0 28px;
+        }
+
+        .full_block_top {
+            *padding: 0 0 25px 0;
+        }
+
+        .content_main2 {
+            *padding: 12px 12px 0 12px;
+        }
+
+        .small_PicBox {
+            *margin: 0 8px -3px 0;
+        }
+
+        .getPad2 {
+            *padding: 12px 12px 0 12px;
+        }
+
+        .cont_bottom {
+            *padding: 12px 12px 0 12px;
+        }
+
+        .get_mar2 {
+            *margin: 0 8px 0 0 !important;
+        }
+    </style>
+    <!--[endif]-->
+
+    <!-- this is the script start -->
+    <script type="text/javascript" src="${contextPath!}/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="${contextPath!}/js/main.js"></script>
+    <script type="text/javascript" src="${contextPath!}/js/jquery.cycle.all.js"></script>
+    <script>
+        document.getElementsByTagName('html')[0].setAttribute('id', 'js-1')
+    </script>
+</head>
+<body class="bg7">
+<!--  /*${date(),'yyyy-MM-dd:hh:mm:ss'}*/-->
+<% include("/front/header.html"){} %>
+<!--header_wrapper End-->
+<div id="div_container">
+    <% #ajax indexContent:{ %>
+
+    <%
+    var goState;
+    if(has(urlState)){
+    goState=urlState;
+    urlState=0;
+    }
+    else{
+    goState=0;
+    }
+    switch(goState){
+    case 1:
+    include("/front/content.html"){};
+    break;
+    case 2:
+    include("/front/probe/index.html"){};
+    break;
+    case 3:
+    include("/front/fruit/index.html"){};
+    break;
+    case 31:
+    include("/front/fruit/sicence_index.html"){};
+    break;
+    case 32:
+    include("/front/fruit/patent_index.html"){};
+    break;
+    case 33:
+    include("/front/fruit/tech_index.html"){};
+    break;
+    case 4:
+    include("/front/work/index.html"){};
+    break;
+    case 5:
+    include("/front/resource/index.html"){};
+    break;
+    case 6:
+    include("/front/us/aboutus.html"){};
+    break;
+    case 7:
+    include("/platform/login.html"){};
+    break;
+    case 8:
+    include("/login.html"){};
+    break;
+    default:
+    include("/front/content.html"){};
+    }
+    %>
+
+    <!-- ICONS -->
+    <link rel="shortcut icon" href="${contextPath!}/img/favicon.png"/>
+    <%}%>
+</div>
+<!-- footer -->
+<% include("/front/footer.html"){} %>
+</body>
+</html>

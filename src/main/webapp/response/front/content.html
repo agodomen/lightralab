@@ -1,0 +1,121 @@
+<script type="text/javascript" src="${contextPath!}/media/scripts/gridslider/gridslider.1.0.min.js"></script>
+<script type="text/javascript" src="${contextPath!}/media/scripts/main.js"></script>
+<link rel="stylesheet" href="${contextPath!}/media/stylesheets/base.css"/>
+<link rel="stylesheet" media="only screen and (min-width: 768px)" href="${contextPath!}/assets/css/screen_768.css"/>
+<link rel="stylesheet" href="${contextPath!}/media/scripts/gridslider/gridslider.css"/>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.slider').cycle({
+            fx: 'scrollHorz',
+            timeout: 4000,
+            cleartype: false, // disable cleartype corrections
+            next: '.rightArrow2',
+            prev: '.arrowLeft2',
+            pager: '.pager2'
+        });
+        $('#slideText').cycle({
+            fx: 'fade',
+            timeout: 3999,
+            cleartype: false, // disable cleartype corrections
+            next: '.arrowLeft2',
+            prev: '.rightArrow2',
+            slideExpr: '.slide'
+        });
+        $('.small_PicBox').hover(function () {
+            $(this).find('.boxHover').fadeIn();
+            $(this).find('.boxHover span').animate({
+                bottom: '0px'
+            }, {
+                queue: false
+            });
+        }, function () {
+            $(this).find('.boxHover').fadeOut();
+            $(this).find('.boxHover span').animate({
+                bottom: '-36px'
+            }, {
+                queue: false
+            });
+        });
+    });
+</script>
+<section class="contMain_left fltleft">
+    <div class="bannerArea"> <!--bannerArea Start-->
+        <div class="banner2"> <!--banner2 Start-->
+            <div class="slider" style="width:967px; height:387px;">
+                <% for(entity in banner){%>
+                <a href="#"> <img src="${contextPath!}${entity.logo}"
+                                  onclick="loadHtml('/go/article/${entity.linkId}-${entity.id}','#div_container')"
+                                  alt="${entity.description}"/> </a>
+                <% }%>
+
+            </div>
+            <div class="arrowLeft2"> <!--arrowLeft Start--> <a href="#"></a></div>
+            <!--arrowLeft End-->
+            <div class="rightArrow2"> <!--arrowLeft Start--> <a href="#"></a></div>
+            <!--arrowLeft End-->
+            <div class="pager2"></div>
+        </div>
+        <div class="bannerBox">
+            <div class="titlehome">实验室介绍</div>
+            <hr>
+            ${libraryInfo.content!"请管理员后台完备信息!"}
+        </div>
+
+        <!--banner2 End-->
+        <div class="titlehome">最新消息</div>
+        <hr>
+        <div class="banner_smallBox"> <!--banner_smallBox Start-->
+
+            <% for(entity in newMessage){
+            if(entityLP.last) {%>
+            <div class="small_PicBox"> <!--small_box Start-->
+                <a href="#"><img src="${contextPath}${entity.logo}"></a>
+                <div class="boxHover"><a href="#"><a
+                        onclick="loadHtml('/go/article/${entity.linkId}-${entity.id}','#div_container')"><span>${entity.name}</span></a></a>
+                </div>
+            </div>
+            <hr>
+
+            <%} else if(entityLP.index%4!=0) {%>
+            <div class="small_PicBox get_mar2"> <!--small_box Start-->
+                <a href="#"><img src="${contextPath}${entity.logo}"></a>
+                <div class="boxHover"><a href="#"><a
+                        onclick="loadHtml('/go/article/${entity.linkId}-${entity.id}','#div_container')"><span>${entity.name}</span></a></a>
+                </div>
+            </div>
+            <% }else {%>
+            <div class="small_PicBox"> <!--small_box Start-->
+                <a href="#"><img src="${contextPath}${entity.logo}"></a>
+                <div class="boxHover"><a href="#"><a
+                        onclick="loadHtml('/go/article/${entity.linkId}-${entity.id}','#div_container')"><span>${entity.name}</span></a></a>
+                </div>
+            </div>
+            <hr>
+            <% } %>
+            <%}%>
+            <div class="clear"></div>
+        </div>
+        <!--banner_smallBox End-->
+    </div>
+    <!--bannerArea End-->
+</section>
+<!--contMain_left End-->
+
+
+<div class="clear"></div>
+
+<div class="titlehome1">最新公告</div>
+<hr>
+
+<div class="comp-services-1  icon-left services-1">
+    <% for(entity in newNotice){%>
+    <div class="comp-services-1-item">
+        <img src="${contextPath!}/img/it.png" width="50" height="50" alt=""/>
+        <h2 class="title"><a onclick="loadHtml('/go/article/${entity.linkId}-${entity.id}','#div_container')"><a
+                href="#">${entity.name}</a></a></h2>
+        <div class="content">
+            <p>${entity.outline!"暂无信息介绍，联系管理员补充"}</p>
+        </div>
+    </div>
+    <% }%>
+</div>

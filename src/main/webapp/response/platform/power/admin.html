@@ -1,0 +1,69 @@
+<div class="nav-sm nav nav-stacked"></div>
+<ul class="nav nav-pills nav-stacked main-menu">
+    <li class="nav-header">个人管理</li>
+    <li onclick="loadContentHtml('/user/index?action=user-default')"><a
+            class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span>返回首页</span></a>
+    </li>
+
+
+</ul>
+<ul class="nav nav-pills nav-stacked main-menu">
+    <li class="nav-header">组类管理</li>
+    <li class="accordion"><a href="#"><i
+            class="glyphicon glyphicon-map-marker"></i><span>用户管理</span></a>
+        <ul class="nav nav-pills nav-stacked">
+            <li onclick="loadContentHtml('/user/index?action=user-list')"><a
+                    class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span>管理用户</span></a>
+            </li>
+            <li onclick="loadContentHtml('/user/index?action=user-add')"><a
+                    class="ajax-link" href="#"><i class="glyphicon glyphicon-user"></i><span>添加用户</span></a>
+            </li>
+        </ul>
+    </li>
+    <li class="accordion"><a href="#"><i
+            class="glyphicon glyphicon-book"></i><span>分类管理</span></a>
+        <ul class="nav nav-pills nav-stacked">
+            <!-- type -->
+            <li onclick="loadContentHtml('/user/index?action=news-type-add')"><a
+                    class="ajax-link" href="#"><i class="glyphicon glyphicon-tag"></i><span>添加分类</span></a>
+            </li>
+
+            <li onclick="loadContentHtml('/user/index?action=news-type-list')"><a
+                    class="ajax-link" href="#"><i class="glyphicon glyphicon-send"></i><span>查看分类</span></a>
+            </li>
+        </ul>
+    </li>
+</ul>
+<ul class="nav nav-pills nav-stacked main-menu">
+    <li class="nav-header">新闻管理</li>
+    <li onclick="loadContentHtml('/user/index?action=news-add')"><a
+            class="ajax-link" href="#"><i class="glyphicon glyphicon-edit"></i><span>发布新闻</span></a>
+    </li>
+    <li onclick="loadContentHtml('/news/viewNews?action=news-list')"><a
+            class="ajax-link" href="#"><i class="glyphicon glyphicon-leaf"></i><span>新闻查看</span></a>
+    </li>
+    <li onclick="loadContentHtml('/news/viewNews?action=logo-config')"><a
+            class="ajax-link" href="#"><i class="glyphicon glyphicon-picture"></i><span>设置封面</span></a>
+    </li>
+    <li onclick="loadContentHtml('/news/viewNews?action=news-config')"><a
+            class="ajax-link" href="#"><i class="glyphicon glyphicon-cog"></i><span>新闻配置</span></a>
+    </li>
+
+</ul>
+<ul class="nav nav-pills nav-stacked main-menu">
+    <li class="nav-header">其他管理</li>
+    <li class="accordion"><a href="#"><i
+            class="glyphicon glyphicon-asterisk"></i><span>系统维护</span></a>
+        <ul class="nav nav-pills nav-stacked">
+            <li onclick="loadContentHtml('/user/index?action=user-index')"><a
+                    class="ajax-link" href="#"><i class="glyphicon glyphicon-user"></i><span>用户名修改</span></a>
+            </li>
+            <li onclick="loadContentHtml('/user/index?action=news-type-index')"><a
+                    class="ajax-link" href="#"><i class="glyphicon glyphicon-certificate"></i><span>分类名修改</span></a>
+            </li>
+            <li><a
+                    class="ajax-link" href="#"><i class="glyphicon glyphicon-cloud"></i><span>数据迁移</span></a>
+            </li>
+        </ul>
+    </li>
+</ul>

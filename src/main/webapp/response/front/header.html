@@ -1,0 +1,42 @@
+<header class="header_wrapper">
+    <!--header_wrapper Start-->
+    <div class="header">
+        <!--header Start-->
+        <div class="logo fltleft">
+            <a href="${contextPath}/go/index"><img src="${contextPath!}/img/logo.png" alt=""/></a>
+        </div>
+        <div class="navigation fltright">
+            <!--navigation Start-->
+            <ul class="sf-menu">
+                <li class="active" onclick="loadHtml('/go/home','#div_container')"><a
+                        href="#">首页</a></li>
+                <li onclick="loadHtml('/go/probe','#div_container')"><a
+                        href="#">科研发现</a></li>
+                <li onclick="loadHtml('/go/fruit','#div_container')"><a
+                        href="#">实验室成果</a>
+                    <ul>
+                        <li onclick="loadHtml('/go/fruit/science','#div_container')"><a
+                                href="#">学术成果</a></li>
+                        <li onclick="loadHtml('/go/fruit/tech','#div_container')"><a
+                                href="#">技术成果</a></li>
+                        <li onclick="loadHtml('/go/fruit/pantent','#div_container')"><a
+                                href="#">专利成果</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">工作中心</a>
+                    <ul>
+                        <li onclick="loadHtml('/user/login','#div_container')"><a href="#">管理登录</a></li>
+                        <li><a href="#">其它管理</a></li>
+                    </ul>
+                </li>
+                <li onclick="loadHtml('/go/resource','#div_container')"><a
+                        href="#">资源中心</a></li>
+                <li onclick="loadHtml('/go/aboutUs','#div_container')"><a
+                        href="#">关于我们</a></li>
+            </ul>
+        </div>
+        <!--navigation End-->
+    </div>
+    <!--header End-->
+</header>
+<!--header_wrapper End-->

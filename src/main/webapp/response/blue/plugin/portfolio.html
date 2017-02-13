@@ -1,0 +1,110 @@
+<!--address-->
+<div class="address">
+
+</div>
+<!--address-->
+<!--articles-->
+<div class="articles">
+    <div class="container">
+        <div class="articles-top">
+            <div class="col-md-4 articles-left">
+                <% for(var i=0;i<@probe.size()%3+parseInt(@probe.size()/3);i++){%>
+                <div class="art-one">
+                    <a href="single.html"><img src="${contextPath}${probe[i].logo}" alt=""/></a>
+                    <div class="art-btm">
+                        <a target="_blank" href='${contextPath}/index/type/article/probe-${probe[i].id}'><h3>
+                            ${probe[i].name}</h3></a>
+                        <p>${probe[i].outline}</p>
+                    </div>
+                </div>
+                <% }%>
+            </div>
+            <div class="col-md-4 articles-left">
+                <% for(var
+                i=@probe.size()%3+parseInt(@probe.size()/3);i<@probe.size()%3+parseInt(@probe.size()/3)*2;i++){%>
+                <div class="art-one">
+                    <a href="single.html"><img src="${contextPath}${probe[i].logo}" alt=""/></a>
+                    <div class="art-btm">
+                        <a target="_blank" href='${contextPath}/index/type/article/probe-${probe[i].id}'><h3>
+                            ${probe[i].name}</h3></a>
+                        <p>${probe[i].outline}</p>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+            <div class="col-md-4 articles-left">
+                <% for(var
+                i=@probe.size()%3+parseInt(@probe.size()/3)*2;i<@probe.size()%3+parseInt(@probe.size()/3)*3;i++){%>
+                <div class="art-one">
+                    <a href="single.html"><img src="${contextPath}${probe[i].logo}" alt=""/></a>
+                    <div class="art-btm">
+                        <a target="_blank" href='${contextPath}/index/type/article/probe-${probe[i].id}'><h3>
+                            ${probe[i].name}</h3></a>
+                        <p>${probe[i].outline}</p>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="load">
+        <a href="#" class="hvr-shutter-out-horizontal">Load More Articles</a>
+    </div>
+</div>
+</div>
+</div>
+<!--articles-->
+<link rel="stylesheet" href="${contextPath}/css/swipebox.css">
+<script src="${contextPath}/js/jquery.swipebox.min.js"></script>
+<script type="text/javascript">
+    jQuery(function ($) {
+        $(".swipebox").swipebox();
+    });
+</script>
+<!-- Portfolio Ends Here -->
+<script type="text/javascript" src="${contextPath}/js/jquery.mixitup.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        var filterList = {
+
+            init: function () {
+
+                // MixItUp plugin
+                // http://mixitup.io
+                $('#portfoliolist').mixitup({
+                    targetSelector: '.portfolio',
+                    filterSelector: '.filter',
+                    effects: ['fade'],
+                    easing: 'snap',
+                    // call the hover effect
+                    onMixEnd: filterList.hoverEffect()
+                });
+
+            },
+
+            hoverEffect: function () {
+
+                // Simple parallax effect
+                $('#portfoliolist .portfolio').hover(
+                        function () {
+                            $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                            $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');
+                        },
+                        function () {
+                            $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                            $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
+                        }
+                );
+
+            }
+
+        };
+
+// Run the show!
+        filterList.init();
+
+    });
+</script>

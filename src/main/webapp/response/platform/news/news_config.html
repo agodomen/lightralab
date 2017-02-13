@@ -1,0 +1,396 @@
+<div>
+    <ul class="breadcrumb">
+        <li><a href="#">新闻分类设置</a></li>
+    </ul>
+</div>
+<div class=" row">
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title='当前有${session.nowCount!"0"}条文章' class="well top-block" href="#">
+            <i class="glyphicon glyphicon-envelope red "></i>
+
+            <div>当前显示月份</div>
+
+            <span class="notification">${session.nowCount!"0"}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6"
+         onclick="loadContentHtml('/news/viewNews?action=news-config&&month=${session.preMonth}')">
+        <a data-toggle="tooltip" title='${session.preCount!"0"}' class="well top-block" href="#">
+            <i class="glyphicon glyphicon-star green"></i>
+
+            <div>查看上一个月份</div>
+
+            <span class="notification green">${session.preCount!"0"}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6"
+         onclick="loadContentHtml('/news/viewNews?action=news-config&&month=${session.nextMonth}')">
+        <a data-toggle="tooltip" title='${session.nextCount!"0"}' class="well top-block" href="#">
+            <i class="glyphicon glyphicon-star yellow"></i>
+
+            <div>查看下一个月份</div>
+
+            <span class="notification yellow">${session.nextCount!"0"}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6" onclick="loadContentHtml('/news/viewNews?action=news-config')">
+        <a data-toggle="tooltip" title="0 new messages." class="well top-block" href="#">
+            <i class="glyphicon glyphicon-star blue"></i>
+
+            <div>返回本月</div>
+
+            <span class="notification red">0</span>
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div data-original-title="" class="box-header well">
+                <h2>
+                    <i class="glyphicon glyphicon-edit"></i>${session.nowMonth}月的新闻列表
+                </h2>
+
+                <div class="box-icon">
+                    <a class="btn btn-setting btn-round btn-default" href="#"><i
+                            class="glyphicon glyphicon-cog"></i></a> <a
+                        class="btn btn-minimize btn-round btn-default" href="#"><i
+                        class="glyphicon glyphicon-chevron-up"></i></a> <a
+                        class="btn btn-close btn-round btn-default" href="#"><i
+                        class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <table id="tableList"
+                       class="table table-striped table-bordered bootstrap-datatable datatable responsive center-text">
+                    <thead>
+                    <tr>
+                        <th class="center-text">id编号</th>
+                        <th class="center-text">标题名称</th>
+                        <th class="center-text">作者</th>
+                        <th class="center-text">创建日期</th>
+                        <th class="center-text">点击数</th>
+                        <th class="center-text">备注</th>
+                        <th class="center-text">修改操作</th>
+                        <th class="center-text">删除操作</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="box col-md-6">
+        <div class="box-inner">
+            <div data-original-title="" class="box-header well">
+                <h2>
+                    <i class="glyphicon glyphicon-edit"></i>${session.nowMonth}月的新闻设置
+                </h2>
+
+                <div class="box-icon">
+                    <a class="btn btn-setting btn-round btn-default" href="#"><i
+                            class="glyphicon glyphicon-cog"></i></a> <a
+                        class="btn btn-minimize btn-round btn-default" href="#"><i
+                        class="glyphicon glyphicon-chevron-up"></i></a> <a
+                        class="btn btn-close btn-round btn-default" href="#"><i
+                        class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+
+                <form id="form" name="form" method="post"
+                      action="${contextPath}/news/config?action=${session.nowMonth}">
+                    <div class="input-group col-md-4">
+						<span class="input-group-addon"><i
+                                class="glyphicon glyphicon-book blue "></i></span> <input id="id"
+                                                                                          name="id" type="text"
+                                                                                          placeholder="请输入标题编号"
+                                                                                          data-prompt-position="centerRight"
+                                                                                          class="form-control  validate[required]]"
+                                                                                          class="form-control">
+                    </div>
+                    <br><br>
+
+                    <div class="input-group col-md-4">
+						<span class="input-group-addon"><i
+                                class="glyphicon glyphicon-book blue"></i></span>
+                        <select name="type" class="validate[required]" data-prompt-position="centerRight" id="type">
+                            <option value="">请选择分类</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <button type="submit" class="btn btn-default">提交</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="box col-md-6">
+        <div class="box-inner">
+            <div data-original-title="" class="box-header well">
+                <h2>
+                    <i class="glyphicon glyphicon-edit"></i> 当前类别配置
+                </h2>
+
+                <div class="box-icon">
+                    <a class="btn btn-setting btn-round btn-default" href="#"><i
+                            class="glyphicon glyphicon-cog"></i></a> <a
+                        class="btn btn-minimize btn-round btn-default" href="#"><i
+                        class="glyphicon glyphicon-chevron-up"></i></a> <a
+                        class="btn btn-close btn-round btn-default" href="#"><i
+                        class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <table id="typeList"
+                       class="table table-striped table-bordered bootstrap-datatable datatable responsive center-text">
+                    <thead>
+                    <tr>
+                        <th class="center-text">id编号</th>
+                        <th class="center-text">标题名称</th>
+                        <th class="center-text">类别</th>
+                        <th class="center-text">备注</th>
+                        <th class="center-text">修改操作</th>
+                        <th class="center-text">删除操作</th>
+                    </tr>
+                    </thead>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    $(document)
+            .ready(
+                    function () {
+                        $("#tableList")
+                                .dataTable(
+                                        {
+                                            "sDom": "<'row'<'col-md-6'f>r>t<'row'<'col-md-12'i><'col-md-12 center-block'p>>",
+                                            "sPaginationType": "bootstrap",
+                                            "bServerSide": false,
+                                            "bDestroy": true,
+                                            "bLengthChange": false,// 每行显示记录数
+                                            "iDisplayLength": 7,// 每页显示行数
+                                            "bFilter": true,// 搜索栏
+                                            /* 	"aLengthMenu" : [
+                                             [ 10, 25, 50, -1, -1 ],
+                                             [ 5, 7, 11, 13, 17 ] ], */
+                                            "bProcessing": true,
+                                            "sAjaxDataProp": "list",//对象
+                                            "sAjaxSource": "${contextPath}/news/listTitle/${session.nowMonth}",
+                                            "bAutoWidth": false, //自适应宽度
+                                            "aoColumns": [{
+                                                "mDataProp": "id",//0
+                                            }, {
+                                                "mDataProp": "name",//1
+                                            }, {
+                                                "mDataProp": "creatorName",//2
+                                            }, {
+                                                "mDataProp": "creatDate",//3
+                                            }, {
+                                                "mDataProp": "clickCount",//4
+                                            }, {
+                                                "mDataProp": "description",//5
+                                            }, {
+                                                "mDataProp": "id",//6
+                                            }, {
+                                                "mDataProp": "id",//7
+                                            },
+
+                                            ],
+                                            "aoColumnDefs": [
+
+                                                {
+                                                    "sClass": "center-text",
+                                                    "aTargets": [0, 1, 2, 3, 4, 5, 6, 7]
+                                                },
+
+                                                {
+                                                    "mRender": function (data, type,
+                                                                         full) {
+                                                        //return "<a class='' href='#'><i class='glyphicon glyphicon-trash icon-white'></i>修改 </a>"
+                                                        //	return "<a onclick=openNotify('setting','/news/type/modify/"
+                                                        //		+ data
+                                                        //	+ "','') class='btn btn-success'><i class=' glyphicon glyphicon-edit icon-white glyphicon-align-center'></i>修改 </a>"
+                                                        return "<a onclick=openNotify('setting','/news/title/modify/"
+                                                                + ${session.nowMonth} +"-" + data + "-" + "news-list"
+                                                                + "','') class='btn btn-success'><i class=' glyphicon glyphicon-edit icon-white '></i>修改 </a>"
+
+                                                    },
+                                                    "aTargets": [6]
+                                                },
+                                                {
+                                                    "mRender": function (data, type,
+                                                                         full) {
+                                                        return "<a onclick=openNotify('notify','编号为"
+                                                                + data
+                                                                + "将被删除','/news/title/delete/"
+                                                                + ${session.nowMonth} +"-" + data
+                                                                + "')  class='btn btn-danger' href='#'><i class='glyphicon glyphicon-trash icon-white'></i>删除</a>"
+                                                    },
+                                                    "aTargets": [7]
+                                                },],
+                                            "oLanguage": {
+                                                "sProcessing": "正在加载中......",
+                                                "sSearch": "搜索",
+                                                "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+                                                "sInfoFiltered": "数据总共为 _MAX_ 条记录",
+                                                "sEmptyTable": "不好意思，没有数据存在！",
+                                                "sLengthMenu": "每页显示 _MENU_ 条记录"
+
+                                            }
+                                        });
+
+                    }
+            );
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#type").focus(function () {
+            $.getJSON("${contextPath}/news/type/list", {}, function (type) {
+                $("#type").empty();
+                $.each(type.list, function (i, item) {
+                    $("#type").append('<option target="' + item.id + '" value="' + item.name + '" id="' + item.name + '" opt="' + item.value + '">' + item.value +
+                            '</option>');
+
+                })
+            });
+        });
+    });
+    $("#type").mouseleave(function () {
+        var dataTablePlugin;
+        if (typeof dataTablePlugin == 'undefined' && dataTablePlugin != null) {
+            dataTablePlugin.fnClearTable(0);
+            dataTablePlugin.finDraw();
+        } else {
+
+            dataTablePlugin = $("#typeList").dataTable(
+                    {
+                        "sDom": "<'row'<'col-md-6'f>r>t<'row'<'col-md-12'i><'col-md-12 center-block'p>>",
+                        "sPaginationType": "bootstrap",
+                        "bServerSide": true,
+                        "bDestroy": true,
+                        "bPaginage": true,
+                        "bLengthChange": true,// 每行显示记录数
+                        "iDisplayLength": 3,// 每页显示行数
+                        "iScrollLoadGap": 50,
+                        "bFilter": false,// 搜索栏
+                        /* 	"aLengthMenu" : [
+                         [ 10, 25, 50, -1, -1 ],
+                         [ 5, 7, 11, 13, 17 ] ], */
+                        "bProcessing": true,
+                        "sAjaxDataProp": "list",//对象
+                        "sAjaxSource": "${contextPath}/news/type/title",
+                        "fnServerParams": function (aoData) {
+                            var id = $("#type").val();
+                            aoData.push({"name": "target", 'value': id});
+                        },
+                        "bAutoWidth": false, //自适应宽度
+                        "aoColumns": [{
+                            "mDataProp": "id",//0
+                        }, {
+                            "mDataProp": "name",//1
+                        }, {
+                            "mDataProp": "id",//2
+                        }, {
+                            "mDataProp": "description",//4
+                        }, {
+                            "mDataProp": "id",//3
+                        }, {
+                            "mDataProp": "id",//4
+                        },
+
+                        ],
+                        "aoColumnDefs": [
+
+                            {
+                                "sClass": "center-text",
+                                "aTargets": [0, 1, 2, 3, 4]
+                            },
+                            {
+                                "mRender": function (data, type,
+                                                     full) {
+                                    var id = $("#type").val();
+                                    var value;
+                                    if (id == '') {
+                                        value = "默认";
+                                        id = "default";
+                                    }
+                                    else
+                                        value = $("#" + id).attr("opt");
+                                    return value;
+
+                                },
+                                "aTargets": [2]
+                            },
+                            {
+                                "mRender": function (data, type,
+                                                     full) {
+                                    var id = $("#type").val();
+                                    var value;
+                                    if (id == '') {
+                                        value = "默认";
+                                        id = "default";
+                                    }
+                                    else
+                                        value = $("#" + id).attr("value");
+                                    return "<a target='_blank'  href='${contextPath}/news/type/title/modify/"
+                                            + value + "-" + data + "-" + "news-list"
+                                            + "' class='btn btn-success'><i class=' glyphicon glyphicon-edit icon-white '></i>修改 </a>"
+
+                                },
+                                "aTargets": [4]
+                            },
+                            {
+                                "mRender": function (data, type,
+                                                     full) {
+                                    var id = $("#type").val();
+                                    var value;
+                                    if (id == '') {
+                                        value = "默认";
+                                        id = "default";
+                                    }
+                                    return "<a onclick=openNotify('notify','编号为"
+                                            + data
+                                            + "将被删除','/news/type/title/delete/"
+                                            + id + "-" + data
+                                            + "')  class='btn btn-danger' href='#'><i class='glyphicon glyphicon-trash icon-white'></i>删除</a>";
+                                },
+                                "aTargets": [5]
+                            },],
+                        "oLanguage": {
+                            "sProcessing": "正在加载中......",
+                            "sSearch": "搜索",
+                            "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+                            "sInfoFiltered": "数据总共为 _MAX_ 条记录",
+                            "sEmptyTable": "不好意思，没有数据存在！",
+                            "sLengthMenu": "每页显示 _MENU_ 条记录"
+
+                        }
+                    });
+        }
+    });
+
+</script>
+<link href='${contextPath}/css/validationEngine.jquery.css' rel='stylesheet'/>
+<script type="text/javascript"
+        src="${contextPath}/js/jquery.validationEngine.js"></script>
+
+<script type="text/javascript"
+        src="${contextPath}/js/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript">
+    $("#form").validationEngine({autoHidePrompt: true, autoHideDelay: 3126});
+    docReady();
+</script>

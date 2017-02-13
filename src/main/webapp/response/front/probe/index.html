@@ -1,0 +1,154 @@
+<link href="${contextPath!}/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="${contextPath!}/css/superfish.css" rel="stylesheet" type="text/css"/>
+<script type="${contextPath!}/text/javascript">
+$(document).ready(function() {
+	$('.small_PicBox').hover(function(){
+		$(this).find('.boxHover').fadeIn();
+		$(this).find('.boxHover span').animate({
+			bottom: '0px'
+		}, {queue:false});
+	}, function(){
+		$(this).find('.boxHover').fadeOut();
+		$(this).find('.boxHover span').animate({
+			bottom: '-36px'
+		}, {queue:false});
+	});
+});
+
+</script>
+<!--[if IE 7]>
+<style type="text/css">
+    .container_bottom {
+        *padding: 12px 0 35px 0;
+    }
+
+    .contentBlock1 {
+        *padding: 0 0 15px 0;
+    }
+
+    .getPad1 {
+        *padding: 0px;
+    }
+
+    .full_width {
+        *padding: 40px 13px 0 28px;
+    }
+
+    .full_block_top {
+        *padding: 0 0 25px 0;
+    }
+
+    .content_main2 {
+        *padding: 12px 12px 0 12px;
+    }
+
+    .small_PicBox {
+        *margin: 0 8px -3px 0;
+    }
+
+    .getPad2 {
+        *padding: 12px 12px 0 12px;
+    }
+
+    .cont_bottom {
+        *padding: 12px 12px 0 12px;
+    }
+</style>
+<![endif]-->
+<section class="content_left fltleft"> <!--content_left Start-->
+    <% for(entity in probe){%>
+    <div class="contentBlock2"> <!--contentBlock1 Start-->
+        <div class="dateShow"> <!--dateShow Start--> <strong>${entity.creatDate,"dd"}</strong>
+            <small>${entity.creatDate,"MM-yyyy"}</small>
+        </div> <!--dateShow Start-->
+        <div class="bannerBox2 fltright"> <!--bannerBox Start-->
+            <div class="clrflt"></div>
+            <h2><a onclick="loadHtml('/go/article/${entity.linkId}-${entity.id}','#div_container')"><a href="#">${entity.name}</a></a>
+            </h2>
+            <p>
+                ${entity.outline!"未填写简要信息"}
+
+            </p>
+
+            <div class="read_moreBox"> <!--read_moreBox Start-->
+                <div class="readMore_btn1 fltleft">
+                    <a onclick="loadHtml('/go/article/${entity.linkId}-${entity.id}','#div_container')">更多 &rarr;</a>
+                </div>
+
+                <div class="seecomment_menu fltright"> <!--seecomment_menu Start-->
+                    <ul>
+                        <li><a href="#">${entity.clickCount}点击</a></li>
+
+                        <li class="nobr1"><a href="#">创建者：${entity.creatorName}</a></li>
+                    </ul>
+                </div> <!--seecomment_menu End-->
+                <div class="clear"></div>
+            </div> <!--read_moreBox End-->
+        </div> <!--bannerBox End-->
+        <div class="clear"></div>
+    </div> <!--contentBlock1 End-->
+    <%}%>
+    <div class="clear"></div>
+    <div class="entryBox"> <!--entryBox Start-->
+        <ul>
+            <li><a href="#"></a></li>
+            <li class="nobr3"><a href="blog.html">下一页 &raquo;</a></li>
+        </ul>
+
+    </div> <!--entryBox End-->
+</section> <!--content_left End-->
+
+
+<aside class="content_right fltright"> <!--content_right Start-->
+    <form action="#" method="post">
+        <div class="search_box"> <!--search_box Start-->
+            <input name="" type="text" class="search_boxText" value="请查询..." onClick="this.value='';"
+                   onfocus="this.select()"
+                   onBlur="this.value=!this.value?'To search type and hit enter...':this.value;"/>
+        </div> <!--search_box End-->
+    </form>
+
+    <section class="catagories_box">
+        <h2>分类</h2>
+        <ul>
+            <% for(entity in types){%>
+            <% if(entityLP.odd) {%>
+            <li onclick="loadHtml('/go/article/${entity.id}','#div_container')"><a href="#"><span>公司新闻</span></a></li>
+            <% }else{ %>
+            <li onclick="loadHtml('/go/article/${entity.id}','#div_container')"><a href="#">物联网新闻</a></li>
+            <%}}%>
+        </ul>
+    </section>
+
+    <section class="catagories_box">
+        <h2>最新更新</h2>
+        <div class="small_PicBox get_mar2 rwork_Box"> <!--small_box Start-->
+            <a href="${contextPath!}/#"><img src="${contextPath!}/img/portfolio/portfolio_pic4.jpg" alt=""></a>
+            <div class="boxHover"><a
+                    href="${contextPath!}/single_page_portfolio.html"><span>Chief's Skincare (Logo)</span></a></div>
+        </div> <!--small_box End-->
+        <div class="clear"></div>
+        <div class="small_PicBox get_mar2 rwork_Box"> <!--small_box Start-->
+            <a href="${contextPath!}/#"><img src="${contextPath!}/img/portfolio/portfolio_pic5.jpg" alt=""></a>
+            <div class="boxHover"><a
+                    href="${contextPath!}/single_page_portfolio.html"><span>Wired UK (Illustartion)</span></a></div>
+        </div>
+        <div class="clear"></div>
+    </section>
+
+    <section class="catagories_box">
+        <h2>最近焦点</h2>
+        <ul>
+            <li><a href="${contextPath!}/#"><span>admin</span> - 环保物流</a></li>
+            <li><a href="${contextPath!}/#"><span>admin</span> - 产业生态位与绿色物流发展</a></li>
+            <li><a href="${contextPath!}/#"><span>admin</span> - 浅议绿色物流与生态环境保护的关系与策略</a></li>
+            <li><a href="${contextPath!}/#"><span>root</span> - 产业生态与绿色物流</a></li>
+            <li><a href="${contextPath!}/#"><span>sa</span> - 物流生态系统</a></li>
+        </ul>
+    </section>
+    <section class="catagories_box">
+        <h2>其它</h2>
+    </section>
+</aside> <!--content_right End-->
+<div class="clrflt"></div>
+

@@ -1,0 +1,91 @@
+<!--blog-->
+<div class="blog">
+    <div class="container">
+        <div class="blog-top">
+            <div class="col-md-9 blog-left">
+                <div class="blog-main">
+                    <a class="bg">${title.name!"标题空"}</a>
+                    <br>
+                    <p style="text-align: right;">发布者: <a href="#">${title.creatorName}</a></p>
+                </div>
+                <div class="blog-main-one">
+                    <div class="blog-one blog-sng">
+                        <img src="${contextPath}${title.logo}" alt=""/>
+                        ${article.content!"内容空"}
+                    </div>
+                    <div class="comments cmt">
+                        <ul>
+                            <li><span class="bookmark"> </span> <a href="#">点击量&nbsp;${title.clickCount}</a></li>
+                            <li><span class="clndr"> </span>
+                                <p>${title.creatDate,"yyyy-MM-dd"} </p></li>
+                            <li><span class="cmnt"> </span><a href="#">评论</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="related">
+                    <h3>推荐阅读</h3>
+                    <div class="related-bottom">
+                        <% for(var i=0;i<4;i++){ %>
+                        <div class="col-md-3 related-left">
+                            <img src='${contextPath}${@application.getAttribute("tjxw").get(i).getLogo()}' alt=""/>
+                            <a href='${contextPath}/index/type/article/tjxw-${@application.getAttribute("tjxw").get(i).getId()}'>
+                                <h4>${@application.getAttribute("tjxw").get(i).getName()}</h4></a>
+                        </div>
+                        <% }%>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>评论</h3>
+                    <div class="contact-form">
+                        <form>
+                            <input type="text" placeholder="姓名" required/>
+                            <input type="text" placeholder="邮箱" required/>
+                            <input type="text" placeholder="电话" required/>
+                            <input type="text" placeholder="QQ" required/>
+                            <textarea placeholder="评论内容"></textarea>
+                            <input type="submit" value="确定"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 blog-right">
+
+                <div class="categories">
+                    <h3>公告类别</h3>
+                    <ul>
+                        <% for(entity in @application.getAttribute("noticeTypeList")){%>
+                        <li>
+                            <a href="${contextPath}/articleAllType?action=${entity.id}">${entity.name}(${entity.value})</a>
+                        </li>
+                        <%}%>
+                    </ul>
+                </div>
+                <div class="categories">
+                    <h3>新闻类别</h3>
+                    <ul>
+                        <% for(entity in @application.getAttribute("newsTypeList")){%>
+                        <li>
+                            <a href="${contextPath}/articleAllType?action=${entity.id}">${entity.name}(${entity.value})</a>
+                        </li>
+                        <%}%>
+                    </ul>
+                </div>
+                <div class="categories">
+                    <h3>文章类别</h3>
+                    <ul>
+                        <% for(entity in @application.getAttribute("articleTypeList")){%>
+                        <li>
+                            <a href="${contextPath}/articleAllType?action=${entity.id}">${entity.name}(${entity.value})</a>
+                        </li>
+                        <%}%>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<br/>
+<!--blog-->

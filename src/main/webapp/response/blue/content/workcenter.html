@@ -1,0 +1,86 @@
+<!--blog-->
+<div class="blog">
+    <div class="container">
+        <div class="blog-top">
+            <% if(has(list)){%>
+            <div class="col-md-9 blog-left">
+                <% for(entity in list){ %>
+                <div class="blog-main">
+                    <a href='${contextPath}/index/type/article/${entity.linkId}-${entity.id}'
+                       class="bg">${entity.name}</a>
+                </div>
+                <div class="blog-main-one">
+                    <div class="blog-one">
+                        <div class="col-md-5 blog-one-left">
+                            <a href="${contextPath}/index/type/article/${entity.linkId}-${entity.id}"><img
+                                    src="${contextPath}${entity.logo}" alt=""/></a>
+                        </div>
+                        <div class="col-md-7 blog-one-left">
+                            <p>${entity.outline!"无介绍"}</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="comments">
+                        <ul>
+                            <li><span class="bookmark"> </span><a href="#">点击量&nbsp;${entity.clickCount}</a></li>
+                            <li><span class="clndr"> </span>
+                                <p>${entity.creatDate,"yyyy-MM-dd"} </p></li>
+                            <li><span class="cmnt"> </span><a href="#">评论</a></li>
+                        </ul>
+                        <div class="b-btn">
+                            <a href="${contextPath}/index/type/article/${entity.linkId}-${entity.id}"
+                               class="hvr-shutter-out-horizontal">更多</a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <%}%>
+            <div class="col-md-3 blog-right blog-main-avg">
+
+                <div class="categories">
+                    <h3>公告类别</h3>
+                    <ul>
+                        <% for(entity in @application.getAttribute("noticeTypeList")){%>
+                        <li>
+                            <a href="${contextPath}/articleAllType?action=${entity.id}">${entity.name}(${entity.value})</a>
+                        </li>
+                        <%}%>
+                    </ul>
+                </div>
+                <div class="categories">
+                    <h3>新闻类别</h3>
+                    <ul>
+                        <% for(entity in @application.getAttribute("newsTypeList")){%>
+                        <li>
+                            <a href="${contextPath}/articleAllType?action=${entity.id}">${entity.name}(${entity.value})</a>
+                        </li>
+                        <%}%>
+                    </ul>
+                </div>
+                <div class="categories">
+                    <h3>文章类别</h3>
+                    <ul>
+                        <% for(entity in @application.getAttribute("articleTypeList")){%>
+                        <li>
+                            <a href="${contextPath}/articleAllType?action=${entity.id}">${entity.name}(${entity.value})</a>
+                        </li>
+                        <%}%>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="pagination">
+            <nav>
+                <ul class="pager">
+                    <li><a href='${contextPath}/index/workcenter?page=${pre!"1"}'>上一页</a></li>
+                    <li><a href='${contextPath}/index/workcenter?page=${next!"1"}'>下一页</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<!--blog-->
+</html>

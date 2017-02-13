@@ -1,0 +1,79 @@
+<% if(has(article)){%>
+<form id="form" name="form" method="post" action="${contextPath}/modify/news">
+    <%}else{%>
+    <form id="form" name="form" method="post" action="${contextPath}/modify/news"> <%}%>
+        <div class="input-group col-md-4">
+						<span class="input-group-addon"><i
+                                class="glyphicon glyphicon-bookmark blue"></i></span> <input id="id"
+                                                                                             name="id"
+                                                                                             value="${title.id}"
+                                                                                             class="form-control"
+                                                                                             type="text"
+                                                                                             readonly="readonly">
+        </div>
+        <br/>
+        <div class="input-group col-md-4">
+						<span class="input-group-addon"><i
+                                class="glyphicon glyphicon-bookmark blue"></i></span> <input id="name"
+                                                                                             name="name" type="text"
+                                                                                             value="${title.name}"
+                                                                                             placeholder="请输入文章标题名"
+                                                                                             class="form-control validate[required]"
+                                                                                             data-prompt-position="centerRight">
+        </div>
+        <br/>
+        <div class="input-group col-md-4">
+						<span class="input-group-addon"><i
+                                class="glyphicon glyphicon-bookmark blue"></i></span> <textarea id="outline"
+                                                                                                name="outline"
+                                                                                                style="width: 501px; height: 234px;"
+                                                                                                class="form-control validate[required] text-input"
+                                                                                                placeholder="请输入概要内容"
+                                                                                                data-prompt-position="centerRight">
+							${title.outline}
+							</textarea>
+        </div>
+        <input id="linkId" name="linkId" type="hidden" value='${title.linkId}' readonly="readonly"/>
+        <input id="action" name="action" value="${action}" type="hidden" readonly="readonly">
+        <br/>
+        <div class="input-group col-md-4">
+						<span class="input-group-addon"><i
+                                class="glyphicon glyphicon-comment blue"></i></span>
+            <input id="description" placeholder="请输入备注信息，含有#1024#即受到保护"
+                   name="description" class="form-control" type="text">
+        </div>
+        <br/>
+        <%if(has(article)){%>
+        <!-- 加载编辑器的容器 -->
+        <script id="container" name="content" type="text/plain">
+        ${article.content!""}
+
+        </script>
+        <!-- 配置文件 -->
+        <script type="text/javascript" src="${contextPath}/js/ueditor.config.js"></script>
+        <!-- 编辑器源码文件 -->
+        <script type="text/javascript" src="${contextPath}/js/ueditor.all.min.js"></script>
+        <!-- 实例化编辑器 -->
+        <script type="text/javascript">
+            var ue = UE.getEditor('container');
+        </script>
+        <br/>
+        <%}%>
+        <button type="submit" class="btn btn-default">提交</button>
+    </form>
+    <br>
+
+
+    <link href='${contextPath}/css/validationEngine.jquery.css' rel='stylesheet'/>
+    <script type="text/javascript"
+            src="${contextPath}/js/jquery.validationEngine.js"></script>
+
+    <script type="text/javascript"
+            src="${contextPath}/js/jquery.validationEngine-zh_CN.js"></script>
+    <script type="text/javascript">
+        $("#logo").val(Math.round(Math.random() * 100000));
+        $("#form").validationEngine({autoHidePrompt: true, autoHideDelay: 3126});
+        docReady();
+    </script>
+
+
