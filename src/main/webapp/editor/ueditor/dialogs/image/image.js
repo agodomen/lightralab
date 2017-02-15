@@ -135,7 +135,6 @@
             }
         }
     }
-
     /* 获取对齐方式 */
     function getAlign() {
         var align = $G("align").value || 'none';
@@ -148,7 +147,6 @@
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();
     }
-
     RemoteImage.prototype = {
         init: function () {
             this.initContainer();
@@ -287,12 +285,12 @@
     };
 
 
+
     /* 上传图片 */
     function UploadImage(target) {
         this.$wrap = target.constructor == String ? $('#' + target) : $(target);
         this.init();
     }
-
     UploadImage.prototype = {
         init: function () {
             this.imageList = [];
@@ -796,7 +794,6 @@
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();
     }
-
     OnlineImage.prototype = {
         init: function () {
             this.reset();
@@ -975,7 +972,6 @@
     function SearchImage() {
         this.init();
     }
-
     SearchImage.prototype = {
         init: function () {
             this.initEvents();

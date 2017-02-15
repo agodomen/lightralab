@@ -167,13 +167,13 @@ function _fnBuildHead(oSettings) {
  * Draw the header (or footer) element based on the column visibility states. The
  * methodology here is to use the layout array from _fnDetectHeader, modified for
  * the instantaneous column visibility, to construct the new layout. The grid is
- * traversed over cell at a time in a rows x columns grid fashion, although each
+ * traversed over cell at a time in a rows x columns grid fashion, although each 
  * cell insert can cover multiple elements in the grid - which is tracks using the
  * aApplied array. Cell inserts in the grid will only occur where there isn't
  * already a cell in that position.
  *  @param {object} oSettings dataTables settings object
  *  @param array {objects} aoSource Layout array from _fnDetectHeader
- *  @param {boolean} [bIncludeHidden=false] If true then include the hidden columns in the calc,
+ *  @param {boolean} [bIncludeHidden=false] If true then include the hidden columns in the calc, 
  *  @memberof DataTable#oApi
  */
 function _fnDrawHead(oSettings, aoSource, bIncludeHidden) {

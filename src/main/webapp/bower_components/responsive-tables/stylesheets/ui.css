@@ -168,6 +168,8 @@ input[type=submit].button, button.button {
     cursor: default;
 }
 
+
+
 /*	--------------------------------------------------
 	Alerts
 	-------------------------------------------------- */
@@ -218,6 +220,7 @@ div.alert-box {
 .alert-box a.close:hover, .alert-box a.close:focus {
     opacity: 0.4;
 }
+
 
 /*    --------------------------------------------------
     Tabs
@@ -401,7 +404,7 @@ ul.contained.tabs-content > li {
 ul.nice.contained.tabs-content > li {
     border-color: #eee;
 }
-
+	
 /*  --------------------------------------------------
     Pagination
     -------------------------------------------------- */
@@ -439,7 +442,7 @@ ul.pagination li.unavailable a {
 ul.pagination li.unavailable:hover a, ul.pagination li.unavailable a:focus {
     border-bottom: none;
 }
-
+    
 /*  --------------------------------------------------
     Lists
     -------------------------------------------------- */
@@ -581,6 +584,7 @@ div.panel {
     display: block;
 }
 
+
 /*	--------------------------------------------------
    	Video
    	Mad props to http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
@@ -612,6 +616,8 @@ div.panel {
     width: 100%;
     height: 100%;
 }
+
+
 
 /*	--------------------------------------------------
    	Microformats

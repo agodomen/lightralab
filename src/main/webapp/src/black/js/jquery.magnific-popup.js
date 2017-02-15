@@ -309,8 +309,8 @@
                     var s = mfp._getScrollbarSize();
                     if (s) {
                         windowStyles.marginRight = s;
-                    }
                 }
+            }
             }
 
             if (mfp.fixedContentPos) {

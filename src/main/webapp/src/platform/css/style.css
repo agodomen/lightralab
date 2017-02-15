@@ -91,6 +91,7 @@ h2 {
     z-index: 2;
 }
 
+
 /*login*/
 .logintop {
     height: 47px;
@@ -230,6 +231,7 @@ h2 {
 .loginbm a:hover {
     color: #fff;
 }
+
 
 /*top.html*/
 .header {
@@ -486,6 +488,7 @@ h2 {
 .title {
     cursor: pointer;
 }
+
 
 /*right.html*/
 .place {
@@ -806,6 +809,7 @@ h2 {
     margin-right: 15px;
 }
 
+
 /*default*/
 .mainbox {
     padding: 8px;
@@ -925,6 +929,7 @@ h2 {
     text-align: center;
 }
 
+
 /*form*/
 .formbody {
     padding: 10px 18px;
@@ -1012,6 +1017,7 @@ h2 {
     color: #fff;
     cursor: pointer;
 }
+
 
 /*tip*/
 .tip {

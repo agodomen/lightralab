@@ -31,13 +31,13 @@ if (typeof jQuery === 'undefined') {
             MozTransition: 'transitionend',
             OTransition: 'oTransitionEnd otransitionend',
             transition: 'transitionend'
-        }
+    }
 
         for (var name in transEndEventNames) {
             if (el.style[name] !== undefined) {
                 return {end: transEndEventNames[name]}
             }
-        }
+    }
 
         return false // explicit for ie8 (  ._.)
     }
@@ -120,7 +120,7 @@ if (typeof jQuery === 'undefined') {
         function removeElement() {
             // detach from parent, fire event then clean up data
             $parent.detach().trigger('closed.bs.alert').remove()
-        }
+    }
 
         $.support.transition && $parent.hasClass('fade') ?
             $parent
@@ -227,7 +227,7 @@ if (typeof jQuery === 'undefined') {
                 else $parent.find('.active').removeClass('active')
             }
             if (changed) $input.prop('checked', !this.$element.hasClass('active')).trigger('change')
-        }
+    }
 
         if (changed) this.$element.toggleClass('active')
     }
@@ -324,7 +324,7 @@ if (typeof jQuery === 'undefined') {
                 break
             default:
                 return
-        }
+    }
 
         e.preventDefault()
     }
@@ -366,7 +366,7 @@ if (typeof jQuery === 'undefined') {
         if (this.$element.find('.next, .prev').length && $.support.transition) {
             this.$element.trigger($.support.transition.end)
             this.cycle(true)
-        }
+    }
 
         this.interval = clearInterval(this.interval)
 
@@ -394,7 +394,7 @@ if (typeof jQuery === 'undefined') {
         if (!$next.length) {
             if (!this.options.wrap) return
             $next = this.$element.find('.item')[fallback]()
-        }
+    }
 
         if ($next.hasClass('active')) return (this.sliding = false)
 
@@ -502,7 +502,7 @@ if (typeof jQuery === 'undefined') {
         $('[data-ride="carousel"]').each(function () {
             var $carousel = $(this)
             Plugin.call($carousel, $carousel.data())
-        })
+    })
     })
 
 }(jQuery);
@@ -727,7 +727,7 @@ if (typeof jQuery === 'undefined') {
             $parent
                 .toggleClass('open')
                 .trigger('shown.bs.dropdown', relatedTarget)
-        }
+    }
 
         return false
     }
@@ -783,7 +783,7 @@ if (typeof jQuery === 'undefined') {
         if (!selector) {
             selector = $this.attr('href')
             selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
-        }
+    }
 
         var $parent = selector && $(selector)
 
@@ -861,7 +861,7 @@ if (typeof jQuery === 'undefined') {
                 .load(this.options.remote, $.proxy(function () {
                     this.$element.trigger('loaded.bs.modal')
                 }, this))
-        }
+    }
     }
 
     Modal.VERSION = '3.2.0'
@@ -963,7 +963,7 @@ if (typeof jQuery === 'undefined') {
             .on('focusin.bs.modal', $.proxy(function (e) {
                 if (this.$element[0] !== e.target && !this.$element.has(e.target).length) {
                     this.$element.trigger('focus')
-                }
+        }
             }, this))
     }
 
@@ -974,7 +974,7 @@ if (typeof jQuery === 'undefined') {
             }, this))
         } else if (!this.isShown) {
             this.$element.off('keyup.dismiss.bs.modal')
-        }
+    }
     }
 
     Modal.prototype.hideModal = function () {
@@ -1034,7 +1034,7 @@ if (typeof jQuery === 'undefined') {
 
         } else if (callback) {
             callback()
-        }
+    }
     }
 
     Modal.prototype.checkScrollbar = function () {
@@ -1107,7 +1107,7 @@ if (typeof jQuery === 'undefined') {
             $target.one('hidden.bs.modal', function () {
                 $this.is(':visible') && $this.trigger('focus')
             })
-        })
+    })
         Plugin.call($target, option, this)
     })
 
@@ -1155,7 +1155,7 @@ if (typeof jQuery === 'undefined') {
         viewport: {
             selector: 'body',
             padding: 0
-        }
+    }
     }
 
     Tooltip.prototype.init = function (type, element, options) {
@@ -1179,7 +1179,7 @@ if (typeof jQuery === 'undefined') {
                 this.$element.on(eventIn + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
                 this.$element.on(eventOut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
             }
-        }
+    }
 
         this.options.selector ?
             (this._options = $.extend({}, this.options, {trigger: 'manual', selector: ''})) :
@@ -1198,7 +1198,7 @@ if (typeof jQuery === 'undefined') {
                 show: options.delay,
                 hide: options.delay
             }
-        }
+    }
 
         return options
     }
@@ -1221,7 +1221,7 @@ if (typeof jQuery === 'undefined') {
         if (!self) {
             self = new this.constructor(obj.currentTarget, this.getDelegateOptions())
             $(obj.currentTarget).data('bs.' + this.type, self)
-        }
+    }
 
         clearTimeout(self.timeout)
 
@@ -1241,7 +1241,7 @@ if (typeof jQuery === 'undefined') {
         if (!self) {
             self = new this.constructor(obj.currentTarget, this.getDelegateOptions())
             $(obj.currentTarget).data('bs.' + this.type, self)
-        }
+    }
 
         clearTimeout(self.timeout)
 
@@ -1362,7 +1362,7 @@ if (typeof jQuery === 'undefined') {
 
         if (placement == 'top' && actualHeight != height) {
             offset.top = offset.top + height - actualHeight
-        }
+    }
 
         var delta = this.getViewportAdjustedDelta(placement, offset, actualWidth, actualHeight)
 
@@ -1422,7 +1422,7 @@ if (typeof jQuery === 'undefined') {
         var $e = this.$element
         if ($e.attr('title') || typeof ($e.attr('data-original-title')) != 'string') {
             $e.attr('data-original-title', $e.attr('title') || '').attr('title', '')
-        }
+    }
     }
 
     Tooltip.prototype.hasContent = function () {
@@ -1474,7 +1474,7 @@ if (typeof jQuery === 'undefined') {
             } else if (rightEdgeOffset > viewportDimensions.width) { // right overflow
                 delta.left = viewportDimensions.left + viewportDimensions.width - rightEdgeOffset
             }
-        }
+    }
 
         return delta
     }
@@ -1509,7 +1509,7 @@ if (typeof jQuery === 'undefined') {
             this.hide()
             this.$element = null
             this.options = null
-        }
+    }
     }
 
     Tooltip.prototype.enable = function () {
@@ -1532,7 +1532,7 @@ if (typeof jQuery === 'undefined') {
                 self = new this.constructor(e.currentTarget, this.getDelegateOptions())
                 $(e.currentTarget).data('bs.' + this.type, self)
             }
-        }
+    }
 
         self.tip().hasClass('in') ? self.leave(self) : self.enter(self)
     }
@@ -1737,7 +1737,7 @@ if (typeof jQuery === 'undefined') {
         if (!$.isWindow(this.$scrollElement[0])) {
             offsetMethod = 'position'
             offsetBase = this.$scrollElement.scrollTop()
-        }
+    }
 
         this.offsets = []
         this.targets = []
@@ -1777,7 +1777,7 @@ if (typeof jQuery === 'undefined') {
 
         if (this.scrollHeight != scrollHeight) {
             this.refresh()
-        }
+    }
 
         if (scrollTop >= maxScroll) {
             return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
@@ -1792,7 +1792,7 @@ if (typeof jQuery === 'undefined') {
             && scrollTop >= offsets[i]
             && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
             && this.activate(targets[i])
-        }
+    }
     }
 
     ScrollSpy.prototype.activate = function (target) {
@@ -1814,7 +1814,7 @@ if (typeof jQuery === 'undefined') {
             active = active
                 .closest('li.dropdown')
                 .addClass('active')
-        }
+    }
 
         active.trigger('activate.bs.scrollspy')
     }
@@ -1856,7 +1856,7 @@ if (typeof jQuery === 'undefined') {
         $('[data-spy="scroll"]').each(function () {
             var $spy = $(this)
             Plugin.call($spy, $spy.data())
-        })
+    })
     })
 
 }(jQuery);
@@ -2081,7 +2081,7 @@ if (typeof jQuery === 'undefined') {
             this.$element.offset({
                 top: scrollHeight - this.$element.height() - offsetBottom
             })
-        }
+    }
     }
 
 
@@ -2128,7 +2128,7 @@ if (typeof jQuery === 'undefined') {
             if (data.offsetTop)    data.offset.top = data.offsetTop
 
             Plugin.call($spy, data)
-        })
+    })
     })
 
 }(jQuery);

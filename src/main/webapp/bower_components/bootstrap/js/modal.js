@@ -27,7 +27,7 @@
                 .load(this.options.remote, $.proxy(function () {
                     this.$element.trigger('loaded.bs.modal')
                 }, this))
-        }
+    }
     }
 
     Modal.VERSION = '3.2.0'
@@ -129,7 +129,7 @@
             .on('focusin.bs.modal', $.proxy(function (e) {
                 if (this.$element[0] !== e.target && !this.$element.has(e.target).length) {
                     this.$element.trigger('focus')
-                }
+        }
             }, this))
     }
 
@@ -140,7 +140,7 @@
             }, this))
         } else if (!this.isShown) {
             this.$element.off('keyup.dismiss.bs.modal')
-        }
+    }
     }
 
     Modal.prototype.hideModal = function () {
@@ -200,7 +200,7 @@
 
         } else if (callback) {
             callback()
-        }
+    }
     }
 
     Modal.prototype.checkScrollbar = function () {
@@ -273,7 +273,7 @@
             $target.one('hidden.bs.modal', function () {
                 $this.is(':visible') && $this.trigger('focus')
             })
-        })
+    })
         Plugin.call($target, option, this)
     })
 

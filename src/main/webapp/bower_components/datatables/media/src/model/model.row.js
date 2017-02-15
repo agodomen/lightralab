@@ -1,6 +1,6 @@
 /**
  * Template object for the way in which DataTables holds information about
- * each individual row. This is the object format used for the settings
+ * each individual row. This is the object format used for the settings 
  * aoData array.
  *  @namespace
  */

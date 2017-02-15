@@ -143,7 +143,6 @@ var CodeMirror = (function () {
         function isLine(l) {
             return l >= 0 && l < doc.size;
         }
-
         // The instance object that we'll return. Mostly calls out to
         // local functions in the CodeMirror function. Some do some extra
         // range checking and/or clipping. operation is used to wrap the
@@ -349,7 +348,6 @@ var CodeMirror = (function () {
         function getLine(n) {
             return getLineAt(doc, n);
         }
-
         function updateLineHeight(line, height) {
             gutterDirty = true;
             var diff = height - line.height;
@@ -362,7 +360,6 @@ var CodeMirror = (function () {
                 splitLines(code), top, top);
             updateInput = true;
         }
-
         function getValue(code) {
             var text = [];
             doc.iter(0, doc.size, function (line) {
@@ -469,7 +466,6 @@ var CodeMirror = (function () {
                 up();
             }), true);
         }
-
         function onDoubleClick(e) {
             for (var n = e_target(e); n != wrapper; n = n.parentNode)
                 if (n.parentNode == gutterText) return e_preventDefault(e);
@@ -479,7 +475,6 @@ var CodeMirror = (function () {
             e_preventDefault(e);
             selectWordAt(start);
         }
-
         function onDrop(e) {
             e.preventDefault();
             var pos = posFromMouse(e, true), files = e.dataTransfer.files;
@@ -499,7 +494,6 @@ var CodeMirror = (function () {
                     };
                     reader.readAsText(file);
                 }
-
                 var n = files.length, text = Array(n), read = 0;
                 for (var i = 0; i < n; ++i) loadFile(files[i], i);
             }
@@ -518,7 +512,6 @@ var CodeMirror = (function () {
                 }
             }
         }
-
         function onDragStart(e) {
             var txt = getSelection();
             // This will reset escapeElement
@@ -526,7 +519,6 @@ var CodeMirror = (function () {
             e.dataTransfer.setDragImage(escapeElement, 0, 0);
             e.dataTransfer.setData("Text", txt);
         }
-
         function handleKeyBinding(e) {
             var name = keyNames[e.keyCode], next = keyMap[options.keyMap].auto, bound, dropShift;
             if (name == null || e.altGraphKey) {
@@ -556,9 +548,7 @@ var CodeMirror = (function () {
             e_preventDefault(e);
             return true;
         }
-
         var lastStoppedKey = null;
-
         function onKeyDown(e) {
             if (!focused) onFocus();
             var code = e.keyCode;
@@ -577,7 +567,6 @@ var CodeMirror = (function () {
                     replaceSelection("");
             }
         }
-
         function onKeyPress(e) {
             if (window.opera && e.keyCode == lastStoppedKey) {
                 lastStoppedKey = null;
@@ -595,7 +584,6 @@ var CodeMirror = (function () {
             }
             fastPoll();
         }
-
         function onKeyUp(e) {
             if (options.onKeyEvent && options.onKeyEvent(instance, addStop(e))) return;
             if (e.keyCode == 16) shiftSelecting = null;
@@ -613,7 +601,6 @@ var CodeMirror = (function () {
             slowPoll();
             restartBlink();
         }
-
         function onBlur() {
             if (focused) {
                 if (options.onBlur) options.onBlur(instance);
@@ -639,7 +626,6 @@ var CodeMirror = (function () {
             }
             updateLinesNoUndo(from, to, newText, selFrom, selTo);
         }
-
         function unredoHelper(from, to) {
             var change = from.pop();
             if (change) {
@@ -778,7 +764,6 @@ var CodeMirror = (function () {
             function updateLine(n) {
                 return n <= Math.min(to.line, to.line + lendiff) ? n : n + lendiff;
             }
-
             setSelection(selFrom, selTo, updateLine(sel.from.line), updateLine(sel.to.line));
 
             // Make sure the scroll-size div has the correct height.
@@ -798,7 +783,6 @@ var CodeMirror = (function () {
                     ch += code[code.length - 1].length - (to.ch - (to.line == from.line ? from.ch : 0));
                 return {line: line, ch: ch};
             }
-
             var end;
             replaceRange1(code, from, to, function (end1) {
                 end = end1;
@@ -806,7 +790,6 @@ var CodeMirror = (function () {
             });
             return end;
         }
-
         function replaceSelection(code, collapse) {
             replaceRange1(splitLines(code), sel.from, sel.to, function (end) {
                 if (collapse == "end") return {from: end, to: end};
@@ -814,7 +797,6 @@ var CodeMirror = (function () {
                 else return {from: sel.from, to: end};
             });
         }
-
         function replaceRange1(code, from, to, computeSel) {
             var endch = code.length == 1 ? code[0].length + from.ch : code[code.length - 1].length;
             var newSel = computeSel({line: from.line + code.length - 1, ch: endch});
@@ -831,7 +813,6 @@ var CodeMirror = (function () {
             code.push(getLine(l2).text.slice(0, to.ch));
             return code.join("\n");
         }
-
         function getSelection() {
             return getRange(sel.from, sel.to);
         }
@@ -846,7 +827,6 @@ var CodeMirror = (function () {
                 endOperation();
             });
         }
-
         function fastPoll() {
             var missed = false;
             pollingFast = true;
@@ -863,7 +843,6 @@ var CodeMirror = (function () {
                 }
                 endOperation();
             }
-
             poll.set(20, p);
         }
 
@@ -873,7 +852,6 @@ var CodeMirror = (function () {
         // events that indicate IME taking place, but these are not widely
         // supported or compatible enough yet to rely on.)
         var prevInput = "";
-
         function readInput() {
             if (leaveInputAlone || !focused || hasSelection(input)) return false;
             var text = input.value;
@@ -892,7 +870,6 @@ var CodeMirror = (function () {
             prevInput = text;
             return true;
         }
-
         function resetInput(user) {
             if (!posEq(sel.from, sel.to)) {
                 prevInput = "";
@@ -913,13 +890,11 @@ var CodeMirror = (function () {
             var winH = window.innerHeight || Math.max(document.body.offsetHeight, document.documentElement.offsetHeight);
             if (rect.top < 0 || rect.bottom > winH) cursor.scrollIntoView();
         }
-
         function scrollCursorIntoView() {
             var cursor = localCoords(sel.inverted ? sel.from : sel.to);
             var x = options.lineWrapping ? Math.min(cursor.x, lineSpace.offsetWidth) : cursor.x;
             return scrollIntoView(x, cursor.y, x, cursor.yBot);
         }
-
         function scrollIntoView(x1, y1, x2, y2) {
             var pl = paddingLeft(), pt = paddingTop(), lh = textHeight();
             y1 += pt;
@@ -961,7 +936,6 @@ var CodeMirror = (function () {
                 to: lineAtHeight(doc, to_height)
             };
         }
-
         // Uses a set of changes plus the current scroll position to
         // determine which DOM updates have to be made, and makes the
         // updates.
@@ -1089,7 +1063,6 @@ var CodeMirror = (function () {
                     node.parentNode.removeChild(node);
                     return tmp;
                 }
-
                 var domPos = 0, curNode = lineDiv.firstChild, n;
                 for (var i = 0; i < intact.length; ++i) {
                     var cur = intact[i];
@@ -1168,7 +1141,6 @@ var CodeMirror = (function () {
             lineSpace.style.marginLeft = gutter.offsetWidth + "px";
             gutterDirty = false;
         }
-
         function updateCursor() {
             var head = sel.inverted ? sel.from : sel.to, lh = textHeight();
             var pos = localCoords(head, true);
@@ -1187,7 +1159,6 @@ var CodeMirror = (function () {
             if (val) shiftSelecting = shiftSelecting || (sel.inverted ? sel.to : sel.from);
             else shiftSelecting = null;
         }
-
         function setSelectionUser(from, to) {
             var sh = shiftSelecting && clipPos(shiftSelecting);
             if (sh) {
@@ -1197,7 +1168,6 @@ var CodeMirror = (function () {
             setSelection(from, to);
             userSelChange = true;
         }
-
         // Update the selection. Last two args are only used by
         // updateLines, since they have to be expressed in the line
         // numbers before the update.
@@ -1250,7 +1220,6 @@ var CodeMirror = (function () {
             sel.to = to;
             selectionChanged = true;
         }
-
         function skipHidden(pos, oldLine, oldCh) {
             function getNonHidden(dir) {
                 var lNo = pos.line + dir, end = dir == 1 ? doc.size : -1;
@@ -1264,13 +1233,11 @@ var CodeMirror = (function () {
                     lNo += dir;
                 }
             }
-
             var line = getLine(pos.line);
             if (!line.hidden) return pos;
             if (pos.line >= oldLine) return getNonHidden(1) || getNonHidden(-1);
             else return getNonHidden(-1) || getNonHidden(1);
         }
-
         function setCursor(line, ch, user) {
             var pos = clipPos({line: line, ch: ch || 0});
             (user ? setSelectionUser : setSelection)(pos, pos);
@@ -1279,7 +1246,6 @@ var CodeMirror = (function () {
         function clipLine(n) {
             return Math.max(0, Math.min(n, doc.size - 1));
         }
-
         function clipPos(pos) {
             if (pos.line < 0) return {line: 0, ch: 0};
             if (pos.line >= doc.size) return {line: doc.size - 1, ch: getLine(doc.size - 1).text.length};
@@ -1292,7 +1258,6 @@ var CodeMirror = (function () {
         function findPosH(dir, unit) {
             var end = sel.inverted ? sel.from : sel.to, line = end.line, ch = end.ch;
             var lineObj = getLine(line);
-
             function findNextLine() {
                 for (var l = line + dir, e = dir < 0 ? -1 : doc.size; l != e; l += dir) {
                     var lo = getLine(l);
@@ -1303,7 +1268,6 @@ var CodeMirror = (function () {
                     }
                 }
             }
-
             function moveOnce(boundToLine) {
                 if (ch == (dir < 0 ? 0 : lineObj.text.length)) {
                     if (!boundToLine && findNextLine()) ch = dir < 0 ? lineObj.text.length : 0;
@@ -1311,7 +1275,6 @@ var CodeMirror = (function () {
                 } else ch += dir;
                 return true;
             }
-
             if (unit == "char") moveOnce();
             else if (unit == "column") moveOnce(true);
             else if (unit == "word") {
@@ -1331,22 +1294,18 @@ var CodeMirror = (function () {
             }
             return {line: line, ch: ch};
         }
-
         function moveH(dir, unit) {
             var pos = dir < 0 ? sel.from : sel.to;
             if (shiftSelecting || posEq(sel.from, sel.to)) pos = findPosH(dir, unit);
             setCursor(pos.line, pos.ch, true);
         }
-
         function deleteH(dir, unit) {
             if (!posEq(sel.from, sel.to)) replaceRange("", sel.from, sel.to);
             else if (dir < 0) replaceRange("", findPosH(dir, unit), sel.to);
             else replaceRange("", sel.from, findPosH(dir, unit));
             userSelChange = true;
         }
-
         var goalColumn = null;
-
         function moveV(dir, unit) {
             var dist = 0, pos = localCoords(sel.inverted ? sel.from : sel.to, true);
             if (goalColumn != null) pos.x = goalColumn;
@@ -1364,11 +1323,9 @@ var CodeMirror = (function () {
             while (end < line.length && isWordChar(line.charAt(end))) ++end;
             setSelectionUser({line: pos.line, ch: start}, {line: pos.line, ch: end});
         }
-
         function selectLine(line) {
             setSelectionUser({line: line, ch: 0}, {line: line, ch: getLine(line).text.length});
         }
-
         function indentSelected(mode) {
             if (posEq(sel.from, sel.to)) return indentLine(sel.from.line, mode);
             var e = sel.to.line - (sel.to.ch ? 0 : 1);
@@ -1422,14 +1379,12 @@ var CodeMirror = (function () {
             work = [0];
             startWorker();
         }
-
         function gutterChanged() {
             var visible = options.gutter || options.lineNumbers;
             gutter.style.display = visible ? "" : "none";
             if (visible) gutterDirty = true;
             else lineDiv.parentNode.style.marginLeft = 0;
         }
-
         function wrappingChanged(from, to) {
             if (options.lineWrapping) {
                 wrapper.className += " CodeMirror-wrap";
@@ -1451,17 +1406,14 @@ var CodeMirror = (function () {
             }
             changes.push({from: 0, to: doc.size});
         }
-
         function computeTabText() {
             for (var str = '<span class="cm-tab">', i = 0; i < options.tabSize; ++i) str += " ";
             return str + "</span>";
         }
-
         function tabsChanged() {
             tabText = computeTabText();
             updateDisplay(true);
         }
-
         function themeChanged() {
             scroller.className = scroller.className.replace(/\s*cm-s-\w+/g, "") +
                 options.theme.replace(/(^|\s)\s*/g, " cm-s-");
@@ -1509,11 +1461,9 @@ var CodeMirror = (function () {
             from = clipPos(from);
             to = clipPos(to);
             var tm = new TextMarker();
-
             function add(line, from, to, className) {
                 getLine(line).addMark(new MarkedText(from, to, className, tm.set));
             }
-
             if (from.line == to.line) add(from.line, from.ch, to.ch, className);
             else {
                 add(from.line, from.ch, null, className);
@@ -1538,7 +1488,6 @@ var CodeMirror = (function () {
             gutterDirty = true;
             return line;
         }
-
         function removeGutterMarker(line) {
             if (typeof line == "number") line = getLine(clipLine(line));
             line.gutterMarker = null;
@@ -1554,7 +1503,6 @@ var CodeMirror = (function () {
             else return null;
             return line;
         }
-
         function setLineClass(handle, className) {
             return changeLine(handle, function (line) {
                 if (line.className != className) {
@@ -1563,7 +1511,6 @@ var CodeMirror = (function () {
                 }
             });
         }
-
         function setLineHidden(handle, hidden) {
             return changeLine(handle, function (line, no) {
                 if (line.hidden != hidden) {
@@ -1600,18 +1547,15 @@ var CodeMirror = (function () {
             measure.firstChild.firstChild.firstChild.nodeValue = str;
             return measure.firstChild.firstChild.offsetWidth || 10;
         }
-
         // These are used to go from pixel positions to character
         // positions, taking varying character widths into account.
         function charFromX(line, x) {
             if (x <= 0) return 0;
             var lineObj = getLine(line), text = lineObj.text;
-
             function getX(len) {
                 measure.innerHTML = "<pre><span>" + lineObj.getHTML(null, null, false, tabText, len) + "</span></pre>";
                 return measure.firstChild.firstChild.offsetWidth;
             }
-
             var from = 0, fromX = 0, to = text.length, toX;
             // Guess a suitable upper bound for our search.
             var estimated = Math.min(to, Math.ceil(x / charWidth()));
@@ -1648,7 +1592,6 @@ var CodeMirror = (function () {
         }
 
         var tempId = Math.floor(Math.random() * 0xffffff).toString(16);
-
         function measureLine(line, ch) {
             var extra = "";
             // Include extra text at the end to make sure the measured line is wrapped in the right way.
@@ -1670,7 +1613,6 @@ var CodeMirror = (function () {
             }
             return {top: top, left: left};
         }
-
         function localCoords(pos, inLineWrap) {
             var x, lh = textHeight(), y = lh * (heightAtLine(doc, pos.line) - (inLineWrap ? displayOffset : 0));
             if (pos.ch == 0) x = 0;
@@ -1681,7 +1623,6 @@ var CodeMirror = (function () {
             }
             return {x: x, y: y, yBot: y + lh};
         }
-
         // Coords must be lineSpace-local
         function coordsChar(x, y) {
             if (y < 0) y = 0;
@@ -1699,7 +1640,6 @@ var CodeMirror = (function () {
                 }
                 return sp.left;
             }
-
             var from = 0, fromX = 0, to = text.length, toX;
             // Guess a suitable upper bound for our search.
             var estimated = Math.min(to, Math.ceil((x + innerOff * scroller.clientWidth * .9) / cw));
@@ -1734,14 +1674,12 @@ var CodeMirror = (function () {
                 }
             }
         }
-
         function pageCoords(pos) {
             var local = localCoords(pos, true), off = eltOffset(lineSpace);
             return {x: off.left + local.x, y: off.top + local.y, yBot: off.top + local.yBot};
         }
 
         var cachedHeight, cachedHeightFor, measureText;
-
         function textHeight() {
             if (measureText == null) {
                 measureText = "<pre>";
@@ -1756,9 +1694,7 @@ var CodeMirror = (function () {
             measure.innerHTML = "";
             return cachedHeight;
         }
-
         var cachedWidth, cachedWidthFor = 0;
-
         function charWidth() {
             if (scroller.clientWidth == cachedWidthFor) return cachedWidth;
             cachedWidthFor = scroller.clientWidth;
@@ -1790,7 +1726,6 @@ var CodeMirror = (function () {
             var offL = eltOffset(lineSpace, true);
             return coordsChar(x - offL.left, y - offL.top);
         }
-
         function onContextMenu(e) {
             var pos = posFromMouse(e);
             if (!pos || window.opera) return; // Opera is difficult.
@@ -1839,7 +1774,6 @@ var CodeMirror = (function () {
         }
 
         var matching = {"(": ")>", ")": "(<", "[": "]>", "]": "[<", "{": "}>", "}": "{<"};
-
         function matchBrackets(autoclear) {
             var head = sel.inverted ? sel.from : sel.to, line = getLine(head.line), pos = head.ch - 1;
             var match = (pos >= 0 && matching[line.text.charAt(pos)]) || matching[line.text.charAt(++pos)];
@@ -1852,7 +1786,6 @@ var CodeMirror = (function () {
                 }
 
             var stack = [line.text.charAt(pos)], re = /[(){}[\]]/;
-
             function scan(line, from, to) {
                 if (!line.text) return;
                 var st = line.styles, pos = forward ? 0 : line.text.length - 1, cur;
@@ -1909,7 +1842,6 @@ var CodeMirror = (function () {
             }
             return minline;
         }
-
         function getStateBefore(n) {
             var start = findStartLine(n), state = start && getLine(start - 1).stateAfter;
             if (!state) state = startState(mode);
@@ -1922,7 +1854,6 @@ var CodeMirror = (function () {
             if (n < doc.size && !getLine(n).stateAfter) work.push(n);
             return state;
         }
-
         function highlightLines(start, end) {
             var state = getStateBefore(start);
             doc.iter(start, end, function (line) {
@@ -1930,7 +1861,6 @@ var CodeMirror = (function () {
                 line.stateAfter = copyState(mode, state);
             });
         }
-
         function highlightWorker() {
             var end = +new Date + options.workTime;
             var foundWork = work.length;
@@ -1970,7 +1900,6 @@ var CodeMirror = (function () {
             if (foundWork && options.onHighlightComplete)
                 options.onHighlightComplete(instance);
         }
-
         function startWorker(time) {
             if (!work.length) return;
             highlight.set(time, operation(highlightWorker));
@@ -1986,7 +1915,6 @@ var CodeMirror = (function () {
             selectionChanged = false;
             callbacks = [];
         }
-
         function endOperation() {
             var reScroll = false, updated;
             if (selectionChanged) reScroll = !scrollCursorIntoView();
@@ -2021,9 +1949,7 @@ var CodeMirror = (function () {
             for (var i = 0; i < cbs.length; ++i) cbs[i](instance);
             if (updated && options.onUpdate) options.onUpdate(instance);
         }
-
         var nestedOperation = 0;
-
         function operation(f) {
             return function () {
                 if (!nestedOperation++) startOperation();
@@ -2274,10 +2200,8 @@ var CodeMirror = (function () {
             }
             return null;
         }
-
         return extraMap ? lookup(name, extraMap, map) : lookup(name, keyMap[map]);
     }
-
     function isModifierKey(event) {
         var name = keyNames[event.keyCode];
         return name == "Ctrl" || name == "Alt" || name == "Shift" || name == "Mod";
@@ -2292,20 +2216,17 @@ var CodeMirror = (function () {
         function save() {
             textarea.value = instance.getValue();
         }
-
         if (textarea.form) {
             // Deplorable hack to make the submit method do the right thing.
             var rmSubmit = connect(textarea.form, "submit", save, true);
             if (typeof textarea.form.submit == "function") {
                 var realSubmit = textarea.form.submit;
-
                 function wrappedSubmit() {
                     save();
                     textarea.form.submit = realSubmit;
                     textarea.form.submit();
                     textarea.form.submit = wrappedSubmit;
                 }
-
                 textarea.form.submit = wrappedSubmit;
             }
         }
@@ -2344,12 +2265,10 @@ var CodeMirror = (function () {
         }
         return nstate;
     }
-
     CodeMirror.copyState = copyState;
     function startState(mode, a1, a2) {
         return mode.startState ? mode.startState(a1, a2) : true;
     }
-
     CodeMirror.startState = startState;
 
     // The character stream used by a mode's parser.
@@ -2358,7 +2277,6 @@ var CodeMirror = (function () {
         this.string = string;
         this.tabSize = tabSize || 8;
     }
-
     StringStream.prototype = {
         eol: function () {
             return this.pos >= this.string.length;
@@ -2417,7 +2335,6 @@ var CodeMirror = (function () {
                 function cased(str) {
                     return caseInsensitive ? str.toLowerCase() : str;
                 }
-
                 if (cased(this.string).indexOf(cased(pattern), this.pos) == this.pos) {
                     if (consume !== false) this.pos += pattern.length;
                     return true;
@@ -2441,7 +2358,6 @@ var CodeMirror = (function () {
         this.style = className;
         this.set = set;
     }
-
     MarkedText.prototype = {
         attach: function (line) {
             this.set.push(line);
@@ -2482,7 +2398,6 @@ var CodeMirror = (function () {
         this.to = pos;
         this.line = null;
     }
-
     Bookmark.prototype = {
         attach: function (line) {
             this.line = line;
@@ -2717,7 +2632,6 @@ var CodeMirror = (function () {
                 if (style) html.push('<span class="', style, '">', htmlEscape(text).replace(/\t/g, tabText), "</span>");
                 else html.push(htmlEscape(text).replace(/\t/g, tabText));
             }
-
             var st = this.styles, allText = this.text, marked = this.marked;
             if (sfrom == sto) sfrom = null;
             var len = allText.length;
@@ -2735,14 +2649,12 @@ var CodeMirror = (function () {
             else {
                 var pos = 0, i = 0, text = "", style, sg = 0;
                 var markpos = -1, mark = null;
-
                 function nextMark() {
                     if (marked) {
                         markpos += 1;
                         mark = (markpos < marked.length) ? marked[markpos] : null;
                     }
                 }
-
                 nextMark();
                 while (pos < len) {
                     var upto = len;
@@ -2814,7 +2726,6 @@ var CodeMirror = (function () {
         }
         this.height = height;
     }
-
     LeafChunk.prototype = {
         chunkSize: function () {
             return this.lines.length;
@@ -2855,7 +2766,6 @@ var CodeMirror = (function () {
         this.height = height;
         this.parent = null;
     }
-
     BranchChunk.prototype = {
         chunkSize: function () {
             return this.size;
@@ -2962,7 +2872,6 @@ var CodeMirror = (function () {
         }
         return chunk.lines[n];
     }
-
     function lineNo(line) {
         if (line.parent == null) return null;
         var cur = line.parent, no = indexOf(cur.lines, line);
@@ -2974,7 +2883,6 @@ var CodeMirror = (function () {
         }
         return no;
     }
-
     function lineAtHeight(chunk, h) {
         var n = 0;
         outer: do {
@@ -2996,7 +2904,6 @@ var CodeMirror = (function () {
         }
         return n + i;
     }
-
     function heightAtLine(chunk, n) {
         var h = 0;
         outer: do {
@@ -3022,7 +2929,6 @@ var CodeMirror = (function () {
         this.done = [];
         this.undone = [];
     }
-
     History.prototype = {
         addChange: function (start, added, old) {
             this.undone.length = 0;
@@ -3053,7 +2959,6 @@ var CodeMirror = (function () {
     function stopMethod() {
         e_stop(this);
     }
-
     // Ensure an event has a stop method.
     function addStop(event) {
         if (!event.stop) event.stop = stopMethod;
@@ -3064,7 +2969,6 @@ var CodeMirror = (function () {
         if (e.preventDefault) e.preventDefault();
         else e.returnValue = false;
     }
-
     function e_stopPropagation(e) {
         if (e.stopPropagation) e.stopPropagation();
         else e.cancelBubble = true;
@@ -3074,7 +2978,6 @@ var CodeMirror = (function () {
         e_preventDefault(e);
         e_stopPropagation(e);
     }
-
     CodeMirror.e_stop = e_stop;
     CodeMirror.e_preventDefault = e_preventDefault;
     CodeMirror.e_stopPropagation = e_stopPropagation;
@@ -3082,7 +2985,6 @@ var CodeMirror = (function () {
     function e_target(e) {
         return e.target || e.srcElement;
     }
-
     function e_button(e) {
         if (e.which) return e.which;
         else if (e.button & 1) return 1;
@@ -3109,7 +3011,6 @@ var CodeMirror = (function () {
             };
         }
     }
-
     CodeMirror.connect = connect;
 
     function Delayed() {
@@ -3189,7 +3090,6 @@ var CodeMirror = (function () {
             }
         return {left: x, top: y};
     }
-
     // Use the faster and saner getBoundingClientRect method when possible.
     if (document.documentElement.getBoundingClientRect != null) eltOffset = function (node, screen) {
         // Take the parts of bounding client rect that we are interested in so we are able to edit if need be,
@@ -3235,12 +3135,10 @@ var CodeMirror = (function () {
     }
 
     var escapeElement = document.createElement("pre");
-
     function htmlEscape(str) {
         escapeElement.textContent = str;
         return escapeElement.innerHTML;
     }
-
     // Recent (late 2011) Opera betas insert bogus newlines at the start
     // of the textContent, so we strip those.
     if (htmlEscape("a") == "\na")
@@ -3273,7 +3171,6 @@ var CodeMirror = (function () {
             if (collection[i] == elt) return i;
         return -1;
     }
-
     function isWordChar(ch) {
         return /\w/.test(ch) || ch.toUpperCase() != ch.toLowerCase();
     }
@@ -3446,7 +3343,6 @@ CodeMirror.defineMode("xml", function (config, parserConfig) {
             return style;
         };
     }
-
     function doctype(depth) {
         return function (stream, state) {
             var ch;
@@ -3469,11 +3365,9 @@ CodeMirror.defineMode("xml", function (config, parserConfig) {
     }
 
     var curState, setStyle;
-
     function pass() {
         for (var i = arguments.length - 1; i >= 0; i--) curState.cc.push(arguments[i]);
     }
-
     function cont() {
         pass.apply(null, arguments);
         return true;
@@ -3489,7 +3383,6 @@ CodeMirror.defineMode("xml", function (config, parserConfig) {
             noIndent: noIndent
         };
     }
-
     function popContext() {
         if (curState.context) curState.context = curState.context.prev;
     }
@@ -3510,7 +3403,6 @@ CodeMirror.defineMode("xml", function (config, parserConfig) {
         }
         return cont();
     }
-
     function endtag(startOfLine) {
         return function (type) {
             if (type == "selfcloseTag" ||
@@ -3523,7 +3415,6 @@ CodeMirror.defineMode("xml", function (config, parserConfig) {
             return cont();
         };
     }
-
     function endclosetag(err) {
         return function (type) {
             if (err) setStyle = "error";
@@ -3548,7 +3439,6 @@ CodeMirror.defineMode("xml", function (config, parserConfig) {
         }
         return pass();
     }
-
     function attvalue(type) {
         if (type == "word" && Kludges.allowUnquoted) {
             setStyle = "string";
@@ -3557,7 +3447,6 @@ CodeMirror.defineMode("xml", function (config, parserConfig) {
         if (type == "string") return cont(attvaluemaybe);
         return pass();
     }
-
     function attvaluemaybe(type) {
         if (type == "string") return cont(attvaluemaybe);
         else return pass();
@@ -3627,7 +3516,6 @@ CodeMirror.defineMode("javascript", function (config, parserConfig) {
         function kw(type) {
             return {type: type, style: "keyword"};
         }
-
         var A = kw("keyword a"), B = kw("keyword b"), C = kw("keyword c");
         var operator = kw("operator"), atom = {type: "atom", style: "atom"};
         return {
@@ -3661,7 +3549,6 @@ CodeMirror.defineMode("javascript", function (config, parserConfig) {
     // Used as scratch variables to communicate multiple values without
     // consing up tons of objects.
     var type, content;
-
     function ret(tp, style, cont) {
         type = tp;
         content = cont;
@@ -3780,16 +3667,13 @@ CodeMirror.defineMode("javascript", function (config, parserConfig) {
     // Combinator utils
 
     var cx = {state: null, column: null, marked: null, cc: null};
-
     function pass() {
         for (var i = arguments.length - 1; i >= 0; i--) cx.cc.push(arguments[i]);
     }
-
     function cont() {
         pass.apply(null, arguments);
         return true;
     }
-
     function register(varname) {
         var state = cx.state;
         if (state.context) {
@@ -3803,17 +3687,14 @@ CodeMirror.defineMode("javascript", function (config, parserConfig) {
     // Combinators
 
     var defaultVars = {name: "this", next: {name: "arguments"}};
-
     function pushcontext() {
         if (!cx.state.context) cx.state.localVars = defaultVars;
         cx.state.context = {prev: cx.state.context, vars: cx.state.localVars};
     }
-
     function popcontext() {
         cx.state.localVars = cx.state.context.vars;
         cx.state.context = cx.state.context.prev;
     }
-
     function pushlex(type, info) {
         var result = function () {
             var state = cx.state;
@@ -3822,7 +3703,6 @@ CodeMirror.defineMode("javascript", function (config, parserConfig) {
         result.lex = true;
         return result;
     }
-
     function poplex() {
         var state = cx.state;
         if (state.lexical.prev) {
@@ -3831,7 +3711,6 @@ CodeMirror.defineMode("javascript", function (config, parserConfig) {
             state.lexical = state.lexical.prev;
         }
     }
-
     poplex.lex = true;
 
     function expect(wanted) {
@@ -3860,7 +3739,6 @@ CodeMirror.defineMode("javascript", function (config, parserConfig) {
             statement, poplex, popcontext);
         return pass(pushlex("stat"), expression, expect(";"), poplex);
     }
-
     function expression(type) {
         if (atomicTypes.hasOwnProperty(type)) return cont(maybeoperator);
         if (type == "function") return cont(functiondef);
@@ -3871,7 +3749,6 @@ CodeMirror.defineMode("javascript", function (config, parserConfig) {
         if (type == "{") return cont(pushlex("}"), commasep(objprop, "}"), poplex, maybeoperator);
         return cont();
     }
-
     function maybeexpression(type) {
         if (type.match(/[;\}\)\],]/)) return pass();
         return pass(expression);
@@ -3885,42 +3762,35 @@ CodeMirror.defineMode("javascript", function (config, parserConfig) {
         if (type == ".") return cont(property, maybeoperator);
         if (type == "[") return cont(pushlex("]"), expression, expect("]"), poplex, maybeoperator);
     }
-
     function maybelabel(type) {
         if (type == ":") return cont(poplex, statement);
         return pass(maybeoperator, expect(";"), poplex);
     }
-
     function property(type) {
         if (type == "variable") {
             cx.marked = "property";
             return cont();
         }
     }
-
     function objprop(type) {
         if (type == "variable") cx.marked = "property";
         if (atomicTypes.hasOwnProperty(type)) return cont(expect(":"), expression);
     }
-
     function commasep(what, end) {
         function proceed(type) {
             if (type == ",") return cont(what, proceed);
             if (type == end) return cont();
             return cont(expect(end));
         }
-
         return function commaSeparated(type) {
             if (type == end) return cont();
             else return pass(what, proceed);
         };
     }
-
     function block(type) {
         if (type == "}") return cont();
         return pass(statement, block);
     }
-
     function vardef1(type, value) {
         if (type == "variable") {
             register(value);
@@ -3928,34 +3798,28 @@ CodeMirror.defineMode("javascript", function (config, parserConfig) {
         }
         return cont();
     }
-
     function vardef2(type, value) {
         if (value == "=") return cont(expression, vardef2);
         if (type == ",") return cont(vardef1);
     }
-
     function forspec1(type) {
         if (type == "var") return cont(vardef1, forspec2);
         if (type == ";") return pass(forspec2);
         if (type == "variable") return cont(formaybein);
         return pass(forspec2);
     }
-
     function formaybein(type, value) {
         if (value == "in") return cont(expression);
         return cont(maybeoperator, forspec2);
     }
-
     function forspec2(type, value) {
         if (type == ";") return cont(forspec3);
         if (value == "in") return cont(expression);
         return cont(expression, expect(";"), forspec3);
     }
-
     function forspec3(type) {
         if (type != ")") cont(expression);
     }
-
     function functiondef(type, value) {
         if (type == "variable") {
             register(value);
@@ -3963,7 +3827,6 @@ CodeMirror.defineMode("javascript", function (config, parserConfig) {
         }
         if (type == "(") return cont(pushlex(")"), pushcontext, commasep(funarg, ")"), poplex, statement, popcontext);
     }
-
     function funarg(type, value) {
         if (type == "variable") {
             register(value);
@@ -4175,14 +4038,12 @@ CodeMirror.defineMode("htmlmixed", function (config, parserConfig) {
         }
         return style;
     }
-
     function maybeBackup(stream, pat, style) {
         var cur = stream.current();
         var close = cur.search(pat);
         if (close > -1) stream.backUp(cur.length - close);
         return style;
     }
-
     function javascript(stream, state) {
         if (stream.match(/^<\/\s*script\s*>/i, false)) {
             state.token = html;
@@ -4193,7 +4054,6 @@ CodeMirror.defineMode("htmlmixed", function (config, parserConfig) {
         return maybeBackup(stream, /<\/\s*script\s*>/,
             jsMode.token(stream, state.localState));
     }
-
     function css(stream, state) {
         if (stream.match(/^<\/\s*style\s*>/i, false)) {
             state.token = html;

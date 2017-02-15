@@ -5097,7 +5097,7 @@
                 0xe2, 0xe3, 0xe4, 0xe5, 0xe6, 0xe7, 0xe8, 0xe9,
                 0xea, 0xf2, 0xf3, 0xf4, 0xf5, 0xf6, 0xf7, 0xf8,
                 0xf9, 0xfa
-            ];
+                ];
 
             function initQuantTables(sf) {
                 var YQT = [
@@ -5119,7 +5119,7 @@
                         t = 255;
                     }
                     YTable[ZigZag[i]] = t;
-                }
+                    }
                 var UVQT = [
                     17, 18, 24, 47, 99, 99, 99, 99,
                     18, 21, 26, 66, 99, 99, 99, 99,
@@ -5138,7 +5138,7 @@
                         u = 255;
                     }
                     UVTable[ZigZag[j]] = u;
-                }
+                    }
                 var aasf = [
                     1.0, 1.387039845, 1.306562965, 1.175875602,
                     1.0, 0.785694958, 0.541196100, 0.275899379
@@ -5150,8 +5150,8 @@
                         fdtbl_UV[k] = (1.0 / (UVTable[ZigZag[k]] * aasf[row] * aasf[col] * 8.0));
                         k++;
                     }
+                    }
                 }
-            }
 
             function computeHuffmanTbl(nrcodes, std_table) {
                 var codevalue = 0;
@@ -5166,9 +5166,9 @@
                         codevalue++;
                     }
                     codevalue *= 2;
-                }
+                    }
                 return HT;
-            }
+                }
 
             function initHuffmanTbl() {
                 YDC_HT = computeHuffmanTbl(std_dc_luminance_nrcodes, std_dc_luminance_values);
@@ -5197,8 +5197,8 @@
                     }
                     nrlower <<= 1;
                     nrupper <<= 1;
+                    }
                 }
-            }
 
             function initRGBYUVTable() {
                 for (var i = 0; i < 256; i++) {
@@ -5210,7 +5210,7 @@
                     RGB_YUV_TABLE[(i + 1280) >> 0] = 32768 * i + 0x807FFF;
                     RGB_YUV_TABLE[(i + 1536) >> 0] = -27439 * i;
                     RGB_YUV_TABLE[(i + 1792) >> 0] = -5329 * i;
-                }
+                    }
             }
 
             // IO functions
@@ -5220,7 +5220,7 @@
                 while (posval >= 0) {
                     if (value & (1 << posval)) {
                         bytenew |= (1 << bytepos);
-                    }
+                        }
                     posval--;
                     bytepos--;
                     if (bytepos < 0) {
@@ -5233,18 +5233,18 @@
                         }
                         bytepos = 7;
                         bytenew = 0;
+                        }
                     }
                 }
-            }
 
             function writeByte(value) {
                 byteout.push(clt[value]); // write char directly instead of converting later
-            }
+                }
 
             function writeWord(value) {
                 writeByte((value >> 8) & 0xFF);
                 writeByte((value   ) & 0xFF);
-            }
+                }
 
             // DCT & quantization core
             function fDCTQuant(data, fdtbl) {
@@ -5398,7 +5398,7 @@
 
                 }
                 return outputfDCTQuant;
-            }
+                }
 
             function writeAPP0() {
                 writeWord(0xFFE0); // marker
@@ -5415,7 +5415,7 @@
                 writeWord(1); // ydensity
                 writeByte(0); // thumbnwidth
                 writeByte(0); // thumbnheight
-            }
+                }
 
             function writeSOF0(width, height) {
                 writeWord(0xFFC0); // marker
@@ -5433,7 +5433,7 @@
                 writeByte(3);    // IdV
                 writeByte(0x11); // HVV
                 writeByte(1);    // QTV
-            }
+                }
 
             function writeDQT() {
                 writeWord(0xFFDB); // marker
@@ -5446,7 +5446,7 @@
                 for (var j = 0; j < 64; j++) {
                     writeByte(UVTable[j]);
                 }
-            }
+                }
 
             function writeDHT() {
                 writeWord(0xFFC4); // marker
@@ -5483,7 +5483,7 @@
                 for (var p = 0; p <= 161; p++) {
                     writeByte(std_ac_chrominance_values[p]);
                 }
-            }
+                }
 
             function writeSOS() {
                 writeWord(0xFFDA); // marker
@@ -5498,7 +5498,7 @@
                 writeByte(0); // Ss
                 writeByte(0x3f); // Se
                 writeByte(0); // Bf
-            }
+                }
 
             function processDU(CDU, fdtbl, DC, HTDC, HTAC) {
                 var EOB = HTAC[0x00];
@@ -5553,15 +5553,15 @@
                 if (end0pos != I63) {
                     writeBits(EOB);
                 }
-                return DC;
-            }
+                    return DC;
+                }
 
             function initCharLookupTable() {
                 var sfcc = String.fromCharCode;
                 for (var i = 0; i < 256; i++) { ///// ACHTUNG // 255
                     clt[i] = sfcc(i);
+                    }
                 }
-            }
 
             this.encode = function (image, quality) // image data object
             {
@@ -5649,7 +5649,7 @@
                         x += 32;
                     }
                     y += 8;
-                }
+                    }
 
 
                 ////////////////////////////////////////////////////////////////

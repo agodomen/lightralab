@@ -133,7 +133,7 @@
             mouseUpHandler = function (e) {
                 onMouseUp(e);
             };
-
+            
             $(document).one("mouseup", mouseUpHandler);
         }
 

@@ -465,10 +465,10 @@
                 //horizontal-slide
                 if (this.options.animation == "horizontal-slide") {
                     if (slideDirection == "next") {
-                        this.$slides
-                            .eq(this.activeSlide)
-                            .css({"left": this.orbitWidth, "z-index": 3})
-                            .animate({"left": 0}, this.options.animationSpeed, this.resetAndUnlock);
+            this.$slides
+                .eq(this.activeSlide)
+                .css({"left": this.orbitWidth, "z-index": 3})
+                .animate({"left": 0}, this.options.animationSpeed, this.resetAndUnlock);
                     }
                     if (slideDirection == "prev") {
                         this.$slides
@@ -476,7 +476,7 @@
                             .css({"left": -this.orbitWidth, "z-index": 3})
                             .animate({"left": 0}, this.options.animationSpeed, this.resetAndUnlock);
                     }
-                }
+        }
 
                 //vertical-slide
                 if (this.options.animation == "vertical-slide") {

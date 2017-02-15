@@ -51,7 +51,6 @@ label.iPhoneCheckLabelOn {
 label.iPhoneCheckLabelOn span {
     padding-left: 8px;
 }
-
 label.iPhoneCheckLabelOff {
     color: #8b8b8b;
     background: url('../img/iphone-style-checkboxes/off.png?1284697268') no-repeat right 0;
@@ -142,7 +141,6 @@ label.iOSCheckLabelOn {
 label.iOSCheckLabelOn span {
     padding-left: 8px;
 }
-
 label.iOSCheckLabelOff {
     color: #8b8b8b;
     background: url('../img/ios-style-checkboxes/off.png?1284697268') no-repeat right 0;

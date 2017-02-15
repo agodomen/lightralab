@@ -161,14 +161,14 @@ if (!document.createElement('canvas').getContext) {
                         el.style.width = attrs.width.nodeValue + 'px';
                     } else {
                         el.width = el.clientWidth;
-                    }
+        }
                     if (attrs.height && attrs.height.specified) {
                         // TODO: use runtimeStyle and coordsize
                         // el.getContext().setHeight_(attrs.height.nodeValue);
                         el.style.height = attrs.height.nodeValue + 'px';
                     } else {
                         el.height = el.clientHeight;
-                    }
+        }
                     //el.getContext().setCoordsize_()
                 }
                 return el;
@@ -228,7 +228,7 @@ if (!document.createElement('canvas').getContext) {
 
                     for (var z = 0; z < 3; z++) {
                         sum += m1[x][z] * m2[z][y];
-                    }
+        }
 
                     result[x][y] = sum;
                 }
@@ -468,7 +468,7 @@ if (!document.createElement('canvas').getContext) {
                         n = Math.floor(percent(parts[i]) * 255);
                     } else {
                         n = +parts[i];
-                    }
+        }
                     str += decToHex[clamp(n, 0, 255)];
                 }
                 alpha = +parts[3];
@@ -1036,7 +1036,7 @@ if (!document.createElement('canvas').getContext) {
                     // converted to a scientific notation string.
                     if (angle < 1e-6) {
                         angle = 0;
-                    }
+        }
                 } else {
                     var p0 = getCoords(ctx, fillStyle.x0_, fillStyle.y0_);
                     focus = {

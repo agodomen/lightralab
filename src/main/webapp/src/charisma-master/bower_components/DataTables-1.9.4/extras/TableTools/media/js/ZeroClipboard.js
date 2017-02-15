@@ -386,5 +386,5 @@ ZeroClipboard_TableTools.Client.prototype = {
             } // foreach event handler defined
         } // user defined handler for event
     }
-
+	
 };

@@ -1,4 +1,5 @@
 describe "Bootstrap Tour", ->
+
   beforeEach ->
     $.support.transition = false
     $.fx.off = true

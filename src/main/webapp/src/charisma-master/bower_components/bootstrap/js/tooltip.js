@@ -40,7 +40,7 @@
         viewport: {
             selector: 'body',
             padding: 0
-        }
+    }
     }
 
     Tooltip.prototype.init = function (type, element, options) {
@@ -64,7 +64,7 @@
                 this.$element.on(eventIn + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
                 this.$element.on(eventOut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
             }
-        }
+    }
 
         this.options.selector ?
             (this._options = $.extend({}, this.options, {trigger: 'manual', selector: ''})) :
@@ -83,7 +83,7 @@
                 show: options.delay,
                 hide: options.delay
             }
-        }
+    }
 
         return options
     }
@@ -106,7 +106,7 @@
         if (!self) {
             self = new this.constructor(obj.currentTarget, this.getDelegateOptions())
             $(obj.currentTarget).data('bs.' + this.type, self)
-        }
+    }
 
         clearTimeout(self.timeout)
 
@@ -126,7 +126,7 @@
         if (!self) {
             self = new this.constructor(obj.currentTarget, this.getDelegateOptions())
             $(obj.currentTarget).data('bs.' + this.type, self)
-        }
+    }
 
         clearTimeout(self.timeout)
 
@@ -247,7 +247,7 @@
 
         if (placement == 'top' && actualHeight != height) {
             offset.top = offset.top + height - actualHeight
-        }
+    }
 
         var delta = this.getViewportAdjustedDelta(placement, offset, actualWidth, actualHeight)
 
@@ -307,7 +307,7 @@
         var $e = this.$element
         if ($e.attr('title') || typeof ($e.attr('data-original-title')) != 'string') {
             $e.attr('data-original-title', $e.attr('title') || '').attr('title', '')
-        }
+    }
     }
 
     Tooltip.prototype.hasContent = function () {
@@ -359,7 +359,7 @@
             } else if (rightEdgeOffset > viewportDimensions.width) { // right overflow
                 delta.left = viewportDimensions.left + viewportDimensions.width - rightEdgeOffset
             }
-        }
+    }
 
         return delta
     }
@@ -394,7 +394,7 @@
             this.hide()
             this.$element = null
             this.options = null
-        }
+    }
     }
 
     Tooltip.prototype.enable = function () {
@@ -417,7 +417,7 @@
                 self = new this.constructor(e.currentTarget, this.getDelegateOptions())
                 $(e.currentTarget).data('bs.' + this.type, self)
             }
-        }
+    }
 
         self.tip().hasClass('in') ? self.leave(self) : self.enter(self)
     }

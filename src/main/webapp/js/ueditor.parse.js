@@ -245,7 +245,6 @@
                     }
 
                 }
-
                 return function (doc, obj, fn) {
                     var item = getItem(doc, obj);
                     if (item) {
@@ -310,8 +309,8 @@
             load: function (opt) {
                 utils.each(parselist, function (v) {
                     v.call(opt, utils);
-                })
-            }
+            })
+        }
         };
         uParse = function (selector, opt) {
             utils.domReady(function () {
@@ -326,7 +325,7 @@
                         utils.each(document.getElementsByTagName('*'), function (node) {
                             if (node.className && new RegExp('\\b' + selector.replace(/^\./, '') + '\\b', 'i').test(node.className)) {
                                 contents.push(node)
-                            }
+                        }
                         })
                     } else {
                         contents = document.getElementsByTagName(selector)
@@ -367,9 +366,9 @@
                 }, function () {
                     utils.each(pres, function (pi) {
                         if (pi && /brush/i.test(pi.className)) {
-                            SyntaxHighlighter.highlight(pi);
-                        }
-                    });
+                        SyntaxHighlighter.highlight(pi);
+                    }
+                });
                 });
             } else {
                 utils.each(pres, function (pi) {
@@ -377,7 +376,7 @@
                         SyntaxHighlighter.highlight(pi);
                     }
                 });
-            }
+        }
         }
 
     });
@@ -412,7 +411,7 @@
                     if (!node.firstChild) {
                         node.innerHTML = '&nbsp;';
 
-                    }
+                }
                 })
             });
 
@@ -429,7 +428,7 @@
                         if (colIndex != -1) {
                             sortTable(table, colIndex, me.tableSortCompareFn || sortType);
                             updateTable(table);
-                        }
+                    }
                     });
                 }
             });
@@ -441,9 +440,9 @@
                 while (current) {
                     for (i = 0; i < tagNames.length; i++) {
                         if (current.tagName == tagNames[i].toUpperCase()) return current;
-                    }
-                    current = current.parentNode;
                 }
+                    current = current.parentNode;
+            }
                 return null;
             }
 
@@ -485,7 +484,7 @@
                         if (value1) value1 = +value1[0];
                         if (value2) value2 = +value2[0];
                         return (value2 || 0) - (value1 || 0);
-                    }
+                }
                 };
 
                 //对表格设置排序的标记data-sort-type
@@ -501,15 +500,15 @@
                         result = 1;
                     } else if (compareFn && typeof compareFn === "string" && Fn[compareFn]) {
                         result = Fn[compareFn].call(this, tr1.cells[sortByCellIndex], tr2.cells[sortByCellIndex]);
-                    } else {
+                } else {
                         result = Fn['orderbyasc'].call(this, tr1.cells[sortByCellIndex], tr2.cells[sortByCellIndex]);
-                    }
+                }
                     return result;
                 });
                 var fragment = table.ownerDocument.createDocumentFragment();
                 for (var j = 0, len = trArray.length; j < len; j++) {
                     fragment.appendChild(trArray[j]);
-                }
+            }
                 var tbody = table.getElementsByTagName("tbody")[0];
                 if (!lastRowIndex) {
                     tbody.appendChild(fragment);
@@ -529,9 +528,9 @@
                             var t = array[i];
                             array[i] = array[j];
                             array[j] = t;
-                        }
                     }
                 }
+            }
                 return array;
             }
 
@@ -541,10 +540,10 @@
                 if (!utils.hasClass(table.rows[0], "firstRow")) {
                     for (var i = 1; i < table.rows.length; i++) {
                         utils.removeClass(table.rows[i], "firstRow");
-                    }
-                    utils.addClass(table.rows[0], "firstRow");
                 }
+                    utils.addClass(table.rows[0], "firstRow");
             }
+        }
         }
     });
     UE.parse.register('charts', function (utils) {
@@ -570,7 +569,7 @@
 
             if (!containers) {
                 return null;
-            }
+        }
 
             return extractChartData(containers);
 
@@ -590,9 +589,9 @@
 
                     data.push(formatData(tableNode));
 
-                }
-
             }
+
+        }
 
             return data.length ? data : null;
 
@@ -614,7 +613,7 @@
                     var value = ( cell.innerText || cell.textContent || '' );
                     rowData.push(cell.tagName == 'TH' ? value : (value | 0));
 
-                }
+            }
 
                 data.push(rowData);
 
@@ -627,7 +626,7 @@
                 metaData = metaData.split(":");
                 metaConfig[metaData[0]] = metaData[1];
 
-            }
+        }
 
 
             return {
@@ -657,7 +656,7 @@
                     defer: "defer"
                 }, function () {
 
-                    loadHighcharts();
+                loadHighcharts();
 
                 });
 
@@ -681,7 +680,7 @@
                     defer: "defer"
                 }, function () {
 
-                    loadTypeConfig();
+                loadTypeConfig();
 
                 });
 
@@ -726,7 +725,7 @@
 
                 renderChart(container, typeConfig[config.meta.chartType], chartConfig);
 
-            }
+        }
 
 
         }
@@ -759,13 +758,13 @@
                 xAxis: {
                     title: {
                         text: config.xTitle
-                    },
+                },
                     categories: config.categories
                 },
                 yAxis: {
-                    title: {
-                        text: config.yTitle
-                    },
+                title: {
+                    text: config.yTitle
+                },
                     plotLines: [{
                         value: 0,
                         width: 1,
@@ -822,13 +821,13 @@
 
                         if (!result[j]) {
                             result[j] = [];
-                        }
+                    }
 
                         result[j][i] = data[i][j];
 
-                    }
-
                 }
+
+            }
 
                 data = result;
 
@@ -864,7 +863,7 @@
 
                     curData.push([data[0][i], data[1][i] | 0]);
 
-                }
+            }
 
                 //饼图
                 series[0] = {
@@ -877,7 +876,7 @@
                 result.title = meta.title;
                 result.suffix = meta.suffix;
 
-            }
+        }
 
             return result;
 
@@ -894,7 +893,7 @@
             styles = ci.getAttribute('data-background');
             if (styles) {
                 ci.parentNode.removeChild(ci);
-            }
+        }
         }
 
         //追加默认的表格样式
@@ -957,7 +956,7 @@
                             }
                         });
                         utils.pushItem(customCss, selector + ' ol.custom_' + listStyle + '{list-style:none;}' + selector + ' ol.custom_' + listStyle + ' li{background-position:0 3px;background-repeat:no-repeat}');
-                    }
+                }
                     switch (listStyle) {
                         case 'cn':
                             utils.pushItem(customCss, selector + ' li.list-' + listStyle + '-paddingleft-1{padding-left:25px}');
@@ -1023,9 +1022,9 @@
                     type: "text/javascript"
                 }, function () {
                     videojs.options.flash.swf = swfUrl;
-                    videojs.autoSetup();
+                videojs.autoSetup();
                 });
-            }
+        }
 
         }
     });

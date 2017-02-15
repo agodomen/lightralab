@@ -17,7 +17,7 @@
     if ($.event.fixHooks) {
         for (var i = types.length; i;) {
             $.event.fixHooks[types[--i]] = $.event.mouseHooks;
-        }
+    }
     }
 
     $.event.special.mousewheel = {
@@ -25,7 +25,7 @@
             if (this.addEventListener) {
                 for (var i = types.length; i;) {
                     this.addEventListener(types[--i], handler, false);
-                }
+            }
             } else {
                 this.onmousewheel = handler;
             }
@@ -35,10 +35,10 @@
             if (this.removeEventListener) {
                 for (var i = types.length; i;) {
                     this.removeEventListener(types[--i], handler, false);
-                }
+            }
             } else {
                 this.onmousewheel = null;
-            }
+        }
         }
     };
 
@@ -73,7 +73,7 @@
         if (orgEvent.axis !== undefined && orgEvent.axis === orgEvent.HORIZONTAL_AXIS) {
             deltaY = 0;
             deltaX = -1 * delta;
-        }
+    }
 
         // Webkit
         if (orgEvent.wheelDeltaY !== undefined) {

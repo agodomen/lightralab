@@ -89,7 +89,7 @@
             this.$element.offset({
                 top: scrollHeight - this.$element.height() - offsetBottom
             })
-        }
+    }
     }
 
 
@@ -136,7 +136,7 @@
             if (data.offsetTop)    data.offset.top = data.offsetTop
 
             Plugin.call($spy, data)
-        })
+    })
     })
 
 }(jQuery);

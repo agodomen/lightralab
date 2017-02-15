@@ -51,7 +51,7 @@ $(document).ready(function () {
             id: '52617155@N08'
         },
         itemTemplate: '<li><a href="{{image_b}}"><img src="{{image_s}}" alt="{{title}}" /></a></li>'
-    });
+});
     $("#twitter").getTwitter({
         userName: "fiximgfx",
         numTweets: 3,

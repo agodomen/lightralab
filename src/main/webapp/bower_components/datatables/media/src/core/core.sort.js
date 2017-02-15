@@ -267,7 +267,7 @@ function _fnSortAttachListener(oSettings, nNode, iDataIndex, fnCallback) {
 
 
 /**
- * Set the sorting classes on the header, Note: it is safe to call this function
+ * Set the sorting classes on the header, Note: it is safe to call this function 
  * when bSort and bSortClasses are false
  *  @param {object} oSettings dataTables settings object
  *  @memberof DataTable#oApi

@@ -6,7 +6,6 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
     font-size: 100%;
     vertical-align: baseline; /*background: transparent;*/
 }
-
 /* HTML5 display-role reset for older browsers */
 article, aside, figure, footer, header, hgroup, nav, section {
     display: block;
@@ -45,7 +44,6 @@ abbr[title], dfn[title] {
 body {
     line-height: 1;
 }
-
 /* tables still need cellspacing="0" in the markup */
 table {
     border-collapse: collapse;
@@ -79,7 +77,6 @@ hr1 {
     margin: 1em 0;
     padding: 0;
 }
-
 /* Form Elements */
 input, select {
     vertical-align: middle;
@@ -130,22 +127,18 @@ sup {
 sub {
     bottom: -0.25em;
 }
-
 /* standardize any monospaced elements */
 pre, code, kbd, samp {
     font-family: monospace, sans-serif;
 }
-
 /* hand cursor on clickable elements */
 .clickable, input[type=button], input[type=submit], button {
     cursor: pointer;
 }
-
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
 button, input, select, textarea {
     margin: 0;
 }
-
 /* make buttons play nice in IE */
 button {
     width: auto;
@@ -157,7 +150,6 @@ a, img a, img, a img {
     outline: 0;
     text-decoration: none;
 }
-
 /* FLOAT-elements */
 .fltleft {
     float: left;
@@ -166,7 +158,6 @@ a, img a, img, a img {
 .fltright {
     float: right;
 }
-
 /* let's clear some floats */
 .clearfix:before, .clearfix:after {
     content: "\0020";
@@ -178,13 +169,11 @@ a, img a, img, a img {
 .clearfix:after {
     clear: both;
 }
-
 /* only to clear floats - to be used with any class as addition */
 .clear {
     clear: both;
     overflow: hidden;
 }
-
 /* clear float with blank <div>or <br>*/
 .clrflt {
     clear: both;
@@ -246,7 +235,6 @@ body {
     font-style: normal;
 
 }
-
 /*===================== Index Part Start ========================*/
 
 .header_wrapper {
@@ -254,7 +242,6 @@ body {
     background: url(../img/header_bg.jpg) repeat-x left top;
     margin: 20px auto;
 }
-
 /*----------------------
 	*	Header Start
 		---------------------*/
@@ -265,7 +252,6 @@ body {
     padding: 40px 8px 0 13px;
     position: relative;
 }
-
 /*----------------------
 	*	Logo Start
 		---------------------*/
@@ -276,7 +262,6 @@ body {
     position: relative;
     top: -25px;
 }
-
 /*----------------------
 	*	Navigation Start
 		---------------------*/
@@ -324,7 +309,6 @@ body {
 .navigation ul li a:hover, .navigation ul li.active a {
     color: #1dc468;
 }
-
 /*======================= Sub Menu ======================*/
 
 .navigation ul ul {
@@ -404,7 +388,6 @@ body {
     height: 30px;
     background: url(../img/top_bottombb.png) no-repeat left bottom;
 }
-
 /*
 *	*	container part =================*/
 
@@ -429,7 +412,6 @@ body {
 .scrolldiv {
     padding: 0 0 16px 0;
 }
-
 /*----------------------
 	*	Main Content Part 1 Start
 		---------------------*/
@@ -441,7 +423,6 @@ body {
 .leftpad {
     padding: 18px 20px 0 16px;
 }
-
 /*----------------------
 	*	Content Left 1 Start
 		---------------------*/
@@ -506,7 +487,6 @@ body {
 .nobr2 {
     border: none;
 }
-
 /*----------------------
 	*	Banner Box Start
 		---------------------*/
@@ -530,7 +510,6 @@ body {
     position: relative;
     margin: 0 0 15px;
 }
-
 .pager {
     width: 60px;
     height: 9px;
@@ -651,7 +630,6 @@ body {
     font-size: 0;
     overflow: hidden;
 }
-
 /*----------------------
 	*	Content Box Start
 		---------------------*/
@@ -885,7 +863,6 @@ body {
     text-indent: -9999px;
     font-size: 1px;
 }
-
 /*content_right */
 
 .content_right {
@@ -1312,7 +1289,6 @@ body {
     font-size: 10px;
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;
 }
-
 /*==================================================================== INNER 1 START ========================================================================*/
 
 .cotent_bolck1 {
@@ -1470,7 +1446,6 @@ body {
     display: inline;
     color: #1dc468;
 }
-
 /*Innre 3 Start*/
 
 .full_width {
@@ -1526,7 +1501,6 @@ body {
 .scroll_bar {
     width: 12px;
 }
-
 /*==================================================================== INNER 4 START ========================================================================*/
 
 .content_main2 {
@@ -1665,7 +1639,6 @@ body {
 .banner2:hover .arrowLeft2, .banner2:hover .rightArrow2 {
     display: block;
 }
-
 /**/
 
 .contMain_Right {
@@ -1891,7 +1864,6 @@ body {
     color: #000;
     text-decoration: underline;
 }
-
 /*---------------------inner 5 Start ---------------------*/
 
 .content_main3 {
@@ -2029,7 +2001,6 @@ body {
     font-size: 9px;
     line-height: 11px;
 }
-
 /*--------------------------*/
 
 .get_mar1 {
@@ -2049,7 +2020,6 @@ body {
 .rwork_Box .boxHover, .rwork_Box .boxHover a {
     width: 232px;
 }
-
 /*==================================== inner 6 Start ==============================*/
 
 .getPad2 {
@@ -2062,7 +2032,6 @@ body {
     margin: 0 0 20px;
     cursor: pointer;
 }
-
 /*.bannerSlider { width:976px; height:auto; overflow:hidden; position:relative; clear:both; }*/
 /*.slider_area { width:976px; cursor:pointer; overflow:hidden; position:relative; }*/
 .arrowLeft3 {
@@ -2406,7 +2375,6 @@ body {
     padding: 0;
     margin: 0;
 }
-
 /*.slider_button_left { width:22px; height:32px; position:absolute; top:45%; margin-top:-16px; left:18px; z-index:9999; }
 .slider_button_left a { width:22px; height:32px; display:block; background:url(../img/left_arrow.png) no-repeat 0 0; }
 .slider_button_left a:hover { background-position: 0 -32px; }
@@ -2518,6 +2486,9 @@ body {
 .container_middle {
     margin-top: -0px !important;
 }
+
+
+
 
 /*---------------------------------about_us-----------------------------------------*/
 .content_top {

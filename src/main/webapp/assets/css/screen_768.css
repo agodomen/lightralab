@@ -52,47 +52,36 @@ span.speaker {
     background: url(../images/site/speakers_red.jpg) 0 0 no-repeat;
     background-size: 1000%;
 }
-
 span.speaker.frank {
     background-position-x: 11.111111%;
 }
-
 span.speaker.trent {
     background-position-x: 22.222222%;
 }
-
 span.speaker.denise {
     background-position-x: 33.333333%;
 }
-
 span.speaker.naomi {
     background-position-x: 44.444444%;
 }
-
 span.speaker.travis {
     background-position-x: 55.555555%;
 }
-
 span.speaker.cameron {
     background-position-x: 66.666666%;
 }
-
 span.speaker.robbie {
     background-position-x: 77.777777%;
 }
-
 span.speaker.ben {
     background-position-x: 88.888888%;
 }
-
 span.speaker.standardistas {
     background-position-x: 100%;
 }
-
 span.speaker img {
     visibility: hidden;
 }
-
 .firefox span.speaker img {
     visibility: visible;
 }
@@ -115,35 +104,27 @@ div#page_title {
     margin-bottom: 6%;
     margin-bottom: 3.9216%;
 }
-
 .home div#page_title {
     background-image: url(../images/site/pagetitle_home.jpg);
 }
-
 .conference div#page_title {
     background-image: url(../images/site/pagetitle_conference.jpg);
 }
-
 .workshops div#page_title {
     background-image: url(../images/site/pagetitle_workshops.jpg);
 }
-
 .extras div#page_title {
     background-image: url(../images/site/pagetitle_extras.jpg);
 }
-
 .location div#page_title {
     background-image: url(../images/site/pagetitle_location.jpg);
 }
-
 .sponsors div#page_title {
     background-image: url(../images/site/pagetitle_sponsors.jpg);
 }
-
 .register div#page_title {
     background-image: url(../images/site/pagetitle_register.jpg);
 }
-
 .docs div#page_title {
     background-image: url(../images/site/pagetitle_docs.jpg);
 }
@@ -157,12 +138,10 @@ div#sponsors ul li {
     width: 23.404%;
     margin: 0 0 2.08333% 2.08333%;
 }
-
 div#sponsors ul li:nth-child(2n+1) {
     margin-left: 2.08333%;
     clear: none;
 }
-
 div#sponsors ul li:nth-child(4n+1) {
     margin-left: 0;
     clear: both;
@@ -178,11 +157,9 @@ div#footer p.twitter {
     text-align: right;
     margin: 0;
 }
-
 div#footer p.twitter a.follow {
     margin-bottom: 0.8em;
 }
-
 div#footer p.twitter a.follow:hover,
 div#footer p.twitter a.follow:focus {
     opacity: 0.5;
@@ -191,14 +168,12 @@ div#footer p.twitter a.follow:focus {
 div#footer ul {
     line-height: 1.2em;
 }
-
 div#footer ul li {
     margin: 0;
     float: left;
     border-left: 1px solid #de9a98;
     padding: 0 0.5em;
 }
-
 div#footer ul li:first-child {
     padding-left: 0;
     border: 0;
@@ -207,7 +182,7 @@ div#footer ul li:first-child {
 /* @end */
 
 /* @group HOME
----------------------------------------------------------------------- */
+---------------------------------------------------------------------- */  
 
 .home div#page_title {
     padding: 25.98% 0 0 0;
@@ -244,33 +219,27 @@ div.speakers {
     width: 65.9574%;
     float: left;
 }
-
 div.speakers ul {
     overflow: hidden;
 }
-
 div.speakers ul li {
     margin: 0 0 20px 0;
     width: 48.39%;
     float: left;
 }
-
 div.speakers ul li:nth-child(2n+1) {
     margin-left: 0;
     clear: both;
     width: 51.39%;
 }
-
 div.speakers ul li span.speaker {
     width: 20%;
     margin-right: 5px;
 }
-
 div.speakers ul li h3 {
     font-size: 1.875em;
     margin-top: 0.2em;
 }
-
 div.speakers ul li p {
     font-size: 0.8em;
     margin: 0.1em 0 0 0;
@@ -281,7 +250,6 @@ div.plus {
     float: right;
     width: 31.91%;
 }
-
 div.plus ul {
 }
 
@@ -293,7 +261,6 @@ div.quotes {
     float: left;
     background: #f9f9f9;
 }
-
 div.quotes blockquote {
     margin-right: 3.226%;
     width: 45.164%;
@@ -302,7 +269,6 @@ div.quotes blockquote {
     background: none;
     float: left;
 }
-
 div.quotes blockquote + blockquote {
     margin: 0;
     padding-left: 0;
@@ -324,7 +290,6 @@ div.finally {
     overflow: hidden;
     margin-bottom: 2em;
 }
-
 .conference div#content_pri div.intro {
     width: 57.447%;
 }
@@ -336,7 +301,6 @@ div.finally {
 .conference div.listing.break {
     padding: 1.0638%;
 }
-
 .conference div.listing.break h4,
 .conference div.listing.break p {
     display: block;
@@ -348,27 +312,22 @@ div.finally {
     width: 7.609%;
     float: left;
 }
-
 .conference div.listing span.speaker {
     float: left;
     width: 15.217%;
     margin: 0.2em 2.173% 1em 0;
 }
-
 .conference div.listing img {
     width: 100%;
 }
-
 .conference div.listing div {
     width: 50%;
     float: left;
     margin-right: 2.173%;
 }
-
 .conference div.listing h2 {
     margin-bottom: 0.25em;
 }
-
 .conference div.listing p.links {
     float: left;
     margin-top: 2.5em;
@@ -382,17 +341,14 @@ div.finally {
 .workshops div#content_pri div.intro {
     width: 56.25%;
 }
-
 div.workshops_action {
     float: right;
     width: 28.191%;
 }
-
 div.workshops_action h3 {
     overflow: visible;
     font-size: 1.4615em;
 }
-
 .workshops div.author {
     width: 28.191%;
     float: right;
@@ -411,7 +367,6 @@ div.workshops_action h3 {
     width: 47.916667%;
     float: left;
 }
-
 .extras div.wrap + div.wrap {
     float: right;
 }
@@ -430,7 +385,6 @@ div.workshops_action h3 {
     width: 56.25%;
     float: left;
 }
-
 .extras.single div#content_sec {
     width: 31.25%;
     float: right;
@@ -455,7 +409,6 @@ div.workshops_action h3 {
 ul.hotels {
     clear: left;
 }
-
 ul.hotels li {
     width: 45%;
     width: 14.893%;
@@ -463,11 +416,9 @@ ul.hotels li {
     clear: none;
     padding-top: 1em;
 }
-
 ul.hotels li:first-child {
     margin-left: 0;
 }
-
 ul.hotels li:nth-child(2n) {
     float: left;
     clear: none;
@@ -482,7 +433,6 @@ ul.hotels li:nth-child(2n) {
     width: 31.25%;
     float: right;
 }
-
 .sponsors div#content_sec {
     width: 56.25%;
     float: left;
@@ -502,7 +452,6 @@ ul.hotels li:nth-child(2n) {
     float: right;
     margin: 0.1em -10em 1em 1em;
 }
-
 .sponsors p.logo img {
     max-height: none;
     width: 100%;
@@ -516,7 +465,6 @@ ul.hotels li:nth-child(2n) {
 .register div#content_pri p {
     width: 56.25%;
 }
-
 .register div.block {
     margin-bottom: 3em;
 }

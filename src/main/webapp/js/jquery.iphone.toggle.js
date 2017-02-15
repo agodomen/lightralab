@@ -25,7 +25,7 @@
 
         iOSCheckbox.prototype.isDisabled = function () {
             return this.elem.is(':disabled');
-        };
+    };
         iOSCheckbox.prototype.wrapCheckboxWithDivs = function () {
             this.elem.wrap("<div class='" + this.containerClass + "' />");
             this.container = this.elem.parent();
@@ -56,14 +56,14 @@
                 newWidth += this._getDimension(this.handle, "width") + this.handleMargin;
                 return this.container.css({
                     width: newWidth
-                });
+        });
             } else {
                 newWidth = onLabelWidth > offLabelWidth ? onLabelWidth : offLabelWidth;
                 return this.handle.css({
                     width: newWidth
                 });
             }
-        };
+    };
         iOSCheckbox.prototype.onMouseDown = function (event) {
             var x;
             event.preventDefault();

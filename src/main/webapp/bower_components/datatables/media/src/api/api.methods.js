@@ -9,7 +9,7 @@
  *    Can be either 'current', whereby the current sorting of the table is used, or
  *    'original' whereby the original order the data was read into the table is used.
  *  @param {string} [oOpts.page=all] Limit the selection to the currently displayed page
- *    ("current") or not ("all"). If 'current' is given, then order is assumed to be
+ *    ("current") or not ("all"). If 'current' is given, then order is assumed to be 
  *    'current' and filter is 'applied', regardless of what they might be given as.
  *  @returns {object} jQuery object, filtered by the given selector.
  *  @dtopt API
@@ -112,7 +112,7 @@ this.$ = function (sSelector, oOpts) {
  * Almost identical to $ in operation, but in this case returns the data for the matched
  * rows - as such, the jQuery selector used should match TR row nodes or TD/TH cell nodes
  * rather than any descendants, so the data can be obtained for the row/cell. If matching
- * rows are found, the data returned is the original data array/object that was used to
+ * rows are found, the data returned is the original data array/object that was used to  
  * create the row (or a generated array if from a DOM source).
  *
  * This method is often useful in-combination with $ where both functions are given the
@@ -125,10 +125,10 @@ this.$ = function (sSelector, oOpts) {
  *    Can be either 'current', whereby the current sorting of the table is used, or
  *    'original' whereby the original order the data was read into the table is used.
  *  @param {string} [oOpts.page=all] Limit the selection to the currently displayed page
- *    ("current") or not ("all"). If 'current' is given, then order is assumed to be
+ *    ("current") or not ("all"). If 'current' is given, then order is assumed to be 
  *    'current' and filter is 'applied', regardless of what they might be given as.
  *  @returns {array} Data for the matched elements. If any elements, as a result of the
- *    selector, were not TR, TD or TH elements in the DataTable, they will have a null
+ *    selector, were not TR, TD or TH elements in the DataTable, they will have a null 
  *    entry in the array.
  *  @dtopt API
  *
@@ -170,7 +170,7 @@ this._ = function (sSelector, oOpts) {
 
 /**
  * Add a single new row or multiple rows of data to the table. Please note
- * that this is suitable for client-side processing only - if you are using
+ * that this is suitable for client-side processing only - if you are using 
  * server-side processing (i.e. "bServerSide": true), then to add data, you
  * must add it to the data source, i.e. the server-side, through an Ajax call.
  *  @param {array|object} mData The data to be added to the table. This can be:
@@ -182,18 +182,18 @@ this._ = function (sSelector, oOpts) {
  *    </ul>
  *  @param {bool} [bRedraw=true] redraw the table or not
  *  @returns {array} An array of integers, representing the list of indexes in
- *    <i>aoData</i> ({@link DataTable.models.oSettings}) that have been added to
+ *    <i>aoData</i> ({@link DataTable.models.oSettings}) that have been added to 
  *    the table.
  *  @dtopt API
  *
  *  @example
  *    // Global var for counter
  *    var giCount = 2;
- *
+ *    
  *    $(document).ready(function() {
  *      $('#example').dataTable();
  *    } );
- *
+ *    
  *    function fnClickAddRow() {
  *      $('#example').dataTable().fnAddData( [
  *        giCount+".1",
@@ -246,7 +246,7 @@ this.fnAddData = function (mData, bRedraw) {
 /**
  * This function will make DataTables recalculate the column sizes, based on the data
  * contained in the table and the sizes applied to the columns (in the DOM, CSS or
- * through the sWidth parameter). This can be useful when the width of the table's
+ * through the sWidth parameter). This can be useful when the width of the table's 
  * parent element changes (for example a window resize).
  *  @param {boolean} [bRedraw=true] Redraw the table or not, you will typically want to
  *  @dtopt API
@@ -302,7 +302,7 @@ this.fnClearTable = function (bRedraw) {
 
 
 /**
- * The exact opposite of 'opening' a row, this function will close any rows which
+ * The exact opposite of 'opening' a row, this function will close any rows which 
  * are currently 'open'.
  *  @param {node} nTr the table row to 'close'
  *  @returns {int} 0 on success, or 1 if failed (can't find the row)
@@ -409,7 +409,7 @@ this.fnDeleteRow = function (mTarget, fnCallBack, bRedraw) {
 
 
 /**
- * Restore the table to it's original state in the DOM by removing all of DataTables
+ * Restore the table to it's original state in the DOM by removing all of DataTables 
  * enhancements, alterations to the DOM structure of the table and event listeners.
  *  @param {boolean} [bRemove=false] Completely remove the table from the DOM
  *  @dtopt API
@@ -638,7 +638,7 @@ this.fnFilter = function (sInput, iColumn, bRegex, bSmart, bShowGlobal, bCaseIns
 
 
 /**
- * Get the data for the whole table, an individual row or an individual cell based on the
+ * Get the data for the whole table, an individual row or an individual cell based on the 
  * provided parameters.
  *  @param {int|node} [mRow] A TR row node, TD/TH cell node or an integer. If given as
  *    a TR node then the data source for the whole row will be returned. If given as a
@@ -701,7 +701,7 @@ this.fnGetData = function (mRow, iCol) {
 
 /**
  * Get an array of the TR nodes that are used in the table's body. Note that you will
- * typically want to use the '$' API method in preference to this as it is more
+ * typically want to use the '$' API method in preference to this as it is more 
  * flexible.
  *  @param {int} [iRow] Optional row index for the TR element you want
  *  @returns {array|node} If iRow is undefined, returns an array of all TR elements
@@ -732,7 +732,7 @@ this.fnGetNodes = function (iRow) {
  * and column index including hidden columns
  *  @param {node} nNode this can either be a TR, TD or TH in the table's body
  *  @returns {int} If nNode is given as a TR, then a single index is returned, or
- *    if given as a cell, an array of [row index, column index (visible),
+ *    if given as a cell, an array of [row index, column index (visible), 
  *    column index (all)] is given.
  *  @dtopt API
  *
@@ -808,7 +808,7 @@ this.fnIsOpen = function (nTr) {
 /**
  * This function will place a new row directly after a row which is currently
  * on display on the page, with the HTML contents that is passed into the
- * function. This can be used, for example, to ask for confirmation that a
+ * function. This can be used, for example, to ask for confirmation that a 
  * particular record should be deleted.
  *  @param {node} nTr The table row to 'open'
  *  @param {string|node|jQuery} mHtml The HTML to put into the row
@@ -877,7 +877,7 @@ this.fnOpen = function (nTr, mHtml, sClass) {
 
 /**
  * Change the pagination - provides the internal logic for pagination in a simple API
- * function. With this function you can have a DataTables table go to the next,
+ * function. With this function you can have a DataTables table go to the next, 
  * previous, first or last pages.
  *  @param {string|int} mAction Paging action to take: "first", "previous", "next" or "last"
  *    or page number to jump to (integer), note that page 0 is the first page.
@@ -1004,7 +1004,7 @@ this.fnSetColumnVis = function (iCol, bShow, bRedraw) {
 
 /**
  * Get the settings for a particular table for external manipulation
- *  @returns {object} DataTables settings object. See
+ *  @returns {object} DataTables settings object. See 
  *    {@link DataTable.models.oSettings}
  *  @dtopt API
  *
@@ -1024,7 +1024,7 @@ this.fnSettings = function () {
 
 /**
  * Sort the table by a particular column
- *  @param {int} iCol the data index to sort on. Note that this will not match the
+ *  @param {int} iCol the data index to sort on. Note that this will not match the 
  *    'display index' if you have hidden data entries
  *  @dtopt API
  *

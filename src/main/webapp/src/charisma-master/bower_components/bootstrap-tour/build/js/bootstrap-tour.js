@@ -83,7 +83,7 @@
                     if (e.code === DOMException.QUOTA_EXCEEDED_ERR) {
                         this.debug("LocalStorage quota exceeded. setState failed.");
                     }
-                }
+        }
                 return this._options.afterSetState(keyName, value);
             } else {
                 if (this._state == null) {
@@ -347,9 +347,9 @@
                         _this._debug("Skip the orphan step " + (_this._current + 1) + ". Orphan option is false and the element doesn't exist or is hidden.");
                         if (skipToPrevious) {
                             _this._showPrevStep();
-                        } else {
+            } else {
                             _this._showNextStep();
-                        }
+            }
                         return;
                     }
                     _this._debug("Show the orphan step " + (_this._current + 1) + ". Orphans option is true.");
@@ -600,15 +600,15 @@
                         e.preventDefault();
                         if (_this._isLast()) {
                             return _this.next();
-                        } else {
+            } else {
                             return _this.end();
-                        }
+            }
                         break;
                     case 37:
                         e.preventDefault();
                         if (_this._current > 0) {
                             return _this.prev();
-                        }
+            }
                         break;
                     case 27:
                         e.preventDefault();

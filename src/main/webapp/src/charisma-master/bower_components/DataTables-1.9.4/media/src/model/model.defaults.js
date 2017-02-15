@@ -1,5 +1,5 @@
 /**
- * Initialisation options that can be given to DataTables at initialisation
+ * Initialisation options that can be given to DataTables at initialisation 
  * time.
  *  @namespace
  */

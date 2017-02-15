@@ -39,9 +39,9 @@ blockquote, q {
     quotes: none;
 }
 
-blockquote:before,
+blockquote:before, 
 blockquote:after,
-q:before,
+q:before, 
 q:after {
     content: '';
     content: none;
@@ -78,7 +78,7 @@ table {
     border-spacing: 0;
 }
 
-input,
+input, 
 select {
     vertical-align: middle;
 }
@@ -88,7 +88,6 @@ table {
     border-collapse: separate;
     border-spacing: 0;
 }
-
 caption,
 th,
 td {

@@ -44,6 +44,7 @@ abbr, acronym {
     border: 0;
 }
 
+
 html, body {
     margin: 0;
     padding: 0;
@@ -109,7 +110,6 @@ div.fw_footer {
 .example-code {
     margin-left: 30px;
 }
-
 .example-code td.code {
     border-top: 1px solid #4E6CA3 !important;
 }
@@ -151,14 +151,13 @@ div.doc_overview dd, div.doc_overview dt {
     padding: 2px 0.5em 2px 1em;
     text-align: right;
 }
-
 .right_border {
     border-right: 3px solid #4E6CA3;
 }
-
 .bottom_border {
     border-bottom: 1px solid #4E6CA3;
 }
+
 
 a {
     text-decoration: none;
@@ -290,9 +289,11 @@ div.page-info {
     right: 0;
 }
 
+
 .private {
     display: none;
 }
+
 
 code {
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;

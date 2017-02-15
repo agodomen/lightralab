@@ -26,6 +26,7 @@
  *     ../images/ - relative to this CSS file.
  */
 
+
 /*
  * jQuery UI specific styling
  */
@@ -73,6 +74,7 @@ table.display thead th {
 div.dataTables_wrapper .ui-widget-header {
     font-weight: normal;
 }
+
 
 /*
  * Sort arrow icon positioning
@@ -234,6 +236,7 @@ table.display tr.even.gradeU {
     background-color: #eee;
 }
 
+
 tr.odd {
     background-color: #E2E4FF;
 }
@@ -292,6 +295,7 @@ td.details {
     border: 2px solid #A19B9E;
 }
 
+
 .example_alt_pagination div.dataTables_info {
     width: 40%;
 }
@@ -329,6 +333,7 @@ table.display tr.odd.row_selected td {
     background-color: #9FAFD1;
 }
 
+
 /*
  * Sorting classes for columns
  */
@@ -356,6 +361,7 @@ tr.even td.sorting_2 {
 tr.even td.sorting_3 {
     background-color: #F9F9FF;
 }
+
 
 /* For the Conditional-CSS grading rows */
 /*

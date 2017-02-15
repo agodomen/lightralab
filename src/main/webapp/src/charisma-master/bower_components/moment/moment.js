@@ -326,14 +326,12 @@
 
     function deprecate(msg, fn) {
         var firstTime = true;
-
         function printMsg() {
             if (moment.suppressDeprecationWarnings === false &&
                 typeof console !== 'undefined' && console.warn) {
                 console.warn("Deprecation warning: " + msg);
             }
         }
-
         return extend(function () {
             if (firstTime) {
                 printMsg();
@@ -348,7 +346,6 @@
             return leftZeroFill(func.call(this, a), count);
         };
     }
-
     function ordinalizeToken(func, period) {
         return function (a) {
             return this.lang().ordinal(func.call(this, a), period);
@@ -1208,7 +1205,7 @@
             case 'GGGGG':
                 token = token.substr(0, 2);
                 if (input) {
-                    config._w = config._w || {};
+                config._w = config._w || {};
                     config._w[token] = toInt(input);
                 }
                 break;

@@ -1227,9 +1227,9 @@ KE.util = {
                                     if (val !== null && val !== "") {
                                         val = KE.util.removeDomain(id, tagName, attr, val);
                                         attrStr += ' ' + attr + '="' + val + '"';
-                                    }
                                 }
                             }
+                        }
                         }
                         setStartTag(tagName, attrStr, styleStr, isEnd);
                         if (node.hasChildNodes()) {
@@ -1239,8 +1239,8 @@ KE.util = {
                                 var prevHtml = htmlList[htmlList.length - 1];
                                 if (typeof prevHtml != "undefined" && prevHtml.match(/^<p|^<div/) != null) {
                                     htmlList.push("&nbsp;");
-                                }
                             }
+                        }
                         }
                         break;
                     case 3:

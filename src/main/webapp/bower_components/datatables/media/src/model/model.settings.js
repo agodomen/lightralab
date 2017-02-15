@@ -3,11 +3,11 @@
  * given table, including configuration, data and current application of the
  * table options. DataTables does not have a single instance for each DataTable
  * with the settings attached to that instance, but rather instances of the
- * DataTable "class" are created on-the-fly as needed (typically by a
+ * DataTable "class" are created on-the-fly as needed (typically by a 
  * $().dataTable() call) and the settings object is then applied to that
  * instance.
  *
- * Note that this object is related to {@link DataTable.defaults} but this
+ * Note that this object is related to {@link DataTable.defaults} but this 
  * one is the internal data store for DataTables's cache of columns. It should
  * NOT be manipulated outside of DataTables. Any configuration should be done
  * through the initialisation options.
@@ -15,7 +15,7 @@
  *  @todo Really should attach the settings object to individual instances so we
  *    don't need to create new instances on each $().dataTable() call (if the
  *    table already exists). It would also save passing oSettings around and
- *    into every single function. However, this is a very significant
+ *    into every single function. However, this is a very significant 
  *    architecture change for DataTables and will almost certainly break
  *    backwards compatibility with older installations. This is something that
  *    will be done in 2.0.

@@ -3,7 +3,7 @@
  * for plug-ins that can be used to extend the default DataTables behaviour - indeed many
  * of the build in methods use this method to provide their own capabilities (sorting methods
  * for example).
- *
+ * 
  * Note that this namespace is aliased to jQuery.fn.dataTableExt so it can be readily accessed
  * and modified by plug-ins.
  *  @namespace

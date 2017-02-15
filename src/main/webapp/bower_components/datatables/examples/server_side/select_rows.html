@@ -13,33 +13,33 @@
     <script type="text/javascript" language="javascript" src="../../media/js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function () {
-            var aSelected = [];
-
-            /* Init the table */
-            $("#example").dataTable({
-                "bProcessing": true,
-                "bServerSide": true,
-                "sAjaxSource": "scripts/id.php",
-                "fnRowCallback": function (nRow, aData, iDisplayIndex) {
-                    if (jQuery.inArray(aData.DT_RowId, aSelected) !== -1) {
-                        $(nRow).addClass('row_selected');
-                    }
-                }
-            });
-
-            /* Click event handler */
-            $('#example tbody tr').live('click', function () {
-                var id = this.id;
-                var index = jQuery.inArray(id, aSelected);
-
-                if (index === -1) {
-                    aSelected.push(id);
-                } else {
-                    aSelected.splice(index, 1);
-                }
-
-                $(this).toggleClass('row_selected');
-            });
+	var aSelected = [];
+	
+	/* Init the table */
+	$("#example").dataTable({
+		"bProcessing": true,
+		"bServerSide": true,
+		"sAjaxSource": "scripts/id.php",
+		"fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+			if ( jQuery.inArray(aData.DT_RowId, aSelected) !== -1 ) {
+				$(nRow).addClass('row_selected');
+			}
+		}
+	});
+	
+	/* Click event handler */
+	$('#example tbody tr').live('click', function () {
+		var id = this.id;
+		var index = jQuery.inArray(id, aSelected);
+		
+		if ( index === -1 ) {
+			aSelected.push( id );
+		} else {
+			aSelected.splice( index, 1 );
+		}
+		
+		$(this).toggleClass('row_selected');
+	} );
         });
     </script>
 </head>

@@ -47,7 +47,7 @@ module.exports = function (grunt) {
             grunt: {
                 options: {
                     jshintrc: 'grunt/.jshintrc'
-                },
+        },
                 src: ['Gruntfile.js', 'grunt/*.js']
             },
             src: {
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
             test: {
                 options: {
                     jshintrc: 'js/tests/unit/.jshintrc'
-                },
+        },
                 src: 'js/tests/unit/*.js'
             },
             assets: {
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
             assets: {
                 options: {
                     requireCamelCaseOrUpperCaseIdentifiers: null
-                },
+        },
                 src: '<%= jshint.assets.src %>'
             }
         },
@@ -154,7 +154,7 @@ module.exports = function (grunt) {
                     outputSourceFiles: true,
                     sourceMapURL: '<%= pkg.name %>.css.map',
                     sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
-                },
+        },
                 files: {
                     'dist/css/<%= pkg.name %>.css': 'less/bootstrap.less'
                 }
@@ -166,7 +166,7 @@ module.exports = function (grunt) {
                     outputSourceFiles: true,
                     sourceMapURL: '<%= pkg.name %>-theme.css.map',
                     sourceMapFilename: 'dist/css/<%= pkg.name %>-theme.css.map'
-                },
+        },
                 files: {
                     'dist/css/<%= pkg.name %>-theme.css': 'less/theme.less'
                 }
@@ -189,13 +189,13 @@ module.exports = function (grunt) {
             core: {
                 options: {
                     map: true
-                },
+        },
                 src: 'dist/css/<%= pkg.name %>.css'
             },
             theme: {
                 options: {
                     map: true
-                },
+        },
                 src: 'dist/css/<%= pkg.name %>-theme.css'
             },
             docs: {
@@ -224,7 +224,7 @@ module.exports = function (grunt) {
                 options: {
                     ids: false,
                     'overqualified-elements': false
-                },
+        },
                 src: 'docs/assets/css/_src/docs.css'
             }
         },
@@ -324,7 +324,7 @@ module.exports = function (grunt) {
                         var parser = new BsLessdocParser(fileContent);
                         return {sections: parser.parseFile()};
                     }
-                },
+        },
                 files: {
                     'docs/_includes/customizer-variables.html': 'docs/_jade/customizer-variables.jade',
                     'docs/_includes/nav/customize.html': 'docs/_jade/customizer-nav.jade'
@@ -382,7 +382,7 @@ module.exports = function (grunt) {
                     maxRetries: 3,
                     urls: ['http://127.0.0.1:3000/js/tests/index.html'],
                     browsers: grunt.file.readYAML('grunt/sauce_browsers.yml')
-                }
+        }
             }
         },
 
@@ -477,6 +477,6 @@ module.exports = function (grunt) {
             fs.renameSync('npm-shrinkwrap.json', dest);
             grunt.log.writeln('File ' + dest.cyan + ' updated.');
             done();
-        });
+    });
     });
 };

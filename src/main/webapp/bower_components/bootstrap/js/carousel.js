@@ -46,7 +46,7 @@
                 break
             default:
                 return
-        }
+    }
 
         e.preventDefault()
     }
@@ -88,7 +88,7 @@
         if (this.$element.find('.next, .prev').length && $.support.transition) {
             this.$element.trigger($.support.transition.end)
             this.cycle(true)
-        }
+    }
 
         this.interval = clearInterval(this.interval)
 
@@ -116,7 +116,7 @@
         if (!$next.length) {
             if (!this.options.wrap) return
             $next = this.$element.find('.item')[fallback]()
-        }
+    }
 
         if ($next.hasClass('active')) return (this.sliding = false)
 
@@ -224,7 +224,7 @@
         $('[data-ride="carousel"]').each(function () {
             var $carousel = $(this)
             Plugin.call($carousel, $carousel.data())
-        })
+    })
     })
 
 }(jQuery);

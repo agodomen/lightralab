@@ -35,7 +35,7 @@
                     if (scripts[i].readyState === "interactive" && (jsPath = scripts[i].src)) {
                         break;
                     }
-                }
+        }
             } else if (document.readyState === "loading") {
                 jsPath = scripts[scripts.length - 1].src;
             } else {
@@ -53,10 +53,10 @@
                         jsDir = null;
                         break;
                     }
-                }
+        }
                 if (jsDir !== null) {
                     jsPath = jsDir;
-                }
+        }
             }
         }
         if (jsPath) {
@@ -68,10 +68,10 @@
     var _camelizeCssPropName = function () {
         var matcherRegex = /\-([a-z])/g, replacerFn = function (match, group) {
             return group.toUpperCase();
-        };
+    };
         return function (prop) {
             return prop.replace(matcherRegex, replacerFn);
-        };
+    };
     }();
     var _getStyle = function (el, prop) {
         var value, camelProp, tagName;
@@ -90,7 +90,7 @@
                 tagName = el.tagName.toLowerCase();
                 if (tagName === "a") {
                     return "pointer";
-                }
+        }
             }
         }
         return value;
@@ -144,15 +144,15 @@
             if (element.nodeType === 1) {
                 if (!element.className) {
                     element.className = value;
-                } else {
+        } else {
                     var className = " " + element.className + " ", setClass = element.className;
                     for (var c = 0, cl = classNames.length; c < cl; c++) {
                         if (className.indexOf(" " + classNames[c] + " ") < 0) {
                             setClass += " " + classNames[c];
-                        }
+            }
                     }
                     element.className = setClass.replace(/^\s+|\s+$/g, "");
-                }
+        }
             }
         }
         return element;
@@ -176,9 +176,9 @@
                         className = className.replace(" " + classNames[c] + " ", " ");
                     }
                     element.className = className.replace(/^\s+|\s+$/g, "");
-                } else {
+        } else {
                     element.className = "";
-                }
+        }
             }
         }
         return element;
@@ -200,7 +200,7 @@
             width: 0,
             height: 0,
             zIndex: _getSafeZIndex(defaultZIndex) - 1
-        };
+    };
         if (obj.getBoundingClientRect) {
             var rect = obj.getBoundingClientRect();
             var pageXOffset, pageYOffset, zoomFactor;
@@ -250,7 +250,7 @@
                         break;
                     }
                     trustedOriginsExpanded.push.apply(trustedOriginsExpanded, [domain, "//" + domain, window.location.protocol + "//" + domain]);
-                }
+        }
             }
         }
         if (trustedOriginsExpanded.length) {
@@ -321,12 +321,12 @@
                         copy = arg[prop];
                         if (target === copy) {
                             continue;
-                        }
+            }
                         if (copy !== undefined) {
                             target[prop] = copy;
-                        }
+            }
                     }
-                }
+        }
             }
         }
         return target;
@@ -370,9 +370,9 @@
                     if (_inArray(tmp, resultsArray) === -1) {
                         resultsArray.push(tmp);
                     }
-                }
+        }
             }
-        };
+    };
         return function (currentDomain, configOptions) {
             var swfDomain = _extractDomain(configOptions.swfPath);
             if (swfDomain === null) {
@@ -385,16 +385,16 @@
             if (len > 0) {
                 if (len === 1 && trustedDomains[0] === "*") {
                     return "always";
-                }
+        }
                 if (_inArray(currentDomain, trustedDomains) !== -1) {
                     if (len === 1 && currentDomain === swfDomain) {
                         return "sameDomain";
                     }
                     return "always";
-                }
+        }
             }
             return "never";
-        };
+    };
     }();
     var _objectKeys = function (obj) {
         if (obj == null) {
@@ -416,7 +416,7 @@
             for (var prop in obj) {
                 if (obj.hasOwnProperty(prop)) {
                     delete obj[prop];
-                }
+        }
             }
         }
         return obj;
@@ -482,13 +482,13 @@
 
                     default:
                         break;
-                }
+        }
             }
         }
         return {
             data: newClipData,
             formatMap: formatMap
-        };
+    };
     };
     var _mapClipResultsFromFlash = function (clipResults, formatMap) {
         if (!(typeof clipResults === "object" && clipResults && typeof formatMap === "object" && formatMap)) {
@@ -500,14 +500,14 @@
                 if (prop !== "success" && prop !== "data") {
                     newResults[prop] = clipResults[prop];
                     continue;
-                }
+        }
                 newResults[prop] = {};
                 var tmpHash = clipResults[prop];
                 for (var dataFormat in tmpHash) {
                     if (dataFormat && tmpHash.hasOwnProperty(dataFormat) && formatMap.hasOwnProperty(dataFormat)) {
                         newResults[prop][formatMap[dataFormat]] = tmpHash[dataFormat];
                     }
-                }
+        }
             }
         }
         return newResults;
@@ -515,7 +515,7 @@
     var _args = function (arraySlice) {
         return function (args) {
             return arraySlice.call(args, 0);
-        };
+    };
     }(window.Array.prototype.slice);
     var _detectFlashSupport = function () {
         var plugin, ax, mimeType, hasFlash = false, isActiveX = false, isPPAPI = false, flashVersion = "";
@@ -535,13 +535,13 @@
                 hasFlash = true;
                 if (plugin.version) {
                     flashVersion = parseFlashVersion(plugin.version);
-                }
+        }
                 if (!flashVersion && plugin.description) {
                     flashVersion = parseFlashVersion(plugin.description);
-                }
+        }
                 if (plugin.filename) {
                     isPPAPI = isPepperFlash(plugin.filename);
-                }
+        }
             }
         }
 
@@ -575,7 +575,7 @@
                     } catch (e3) {
                         isActiveX = false;
                     }
-                }
+        }
             }
         }
         _flashState.disabled = hasFlash !== true;
@@ -593,7 +593,7 @@
             instance: this,
             elements: [],
             handlers: {}
-        };
+    };
         if (elements) {
             this.clip(elements);
         }
@@ -702,9 +702,9 @@
                     } else {
                         copy[prop] = _extend({}, _globalConfig[prop]);
                     }
-                } else {
+        } else {
                     copy[prop] = _globalConfig[prop];
-                }
+        }
             }
         }
         return copy;
@@ -716,7 +716,7 @@
                 var client = _clientMeta[clientId].instance;
                 if (client && typeof client.destroy === "function") {
                     client.destroy();
-                }
+        }
             }
         }
         var flashBridge = _flashState.bridge;
@@ -730,7 +730,7 @@
                             for (var prop in flashBridge) {
                                 if (typeof flashBridge[prop] === "function") {
                                     flashBridge[prop] = null;
-                                }
+                }
                             }
                             flashBridge.parentNode.removeChild(flashBridge);
                             if (htmlBridge.parentNode) {
@@ -738,14 +738,14 @@
                             }
                         } else {
                             setTimeout(removeSwfFromIE, 10);
-                        }
+            }
                     })();
-                } else {
+        } else {
                     flashBridge.parentNode.removeChild(flashBridge);
                     if (htmlBridge.parentNode) {
                         htmlBridge.parentNode.removeChild(htmlBridge);
                     }
-                }
+        }
             }
             _flashState.ready = null;
             _flashState.bridge = null;
@@ -793,7 +793,7 @@
                 version: ZeroClipboard.version,
                 config: ZeroClipboard.config()
             }
-        };
+    };
     };
     ZeroClipboard.setData = function (format, data) {
         var dataObj;
@@ -939,14 +939,14 @@
                 context = originalContext;
                 if (typeof func === "string" && typeof window[func] === "function") {
                     func = window[func];
-                }
+        }
                 if (typeof func === "object" && func && typeof func.handleEvent === "function") {
                     context = func;
                     func = func.handleEvent;
-                }
+        }
                 if (typeof func === "function") {
                     _dispatchCallback(func, context, [event], async);
-                }
+        }
             }
         }
         return this;
@@ -989,10 +989,10 @@
         if (event.type === "error") {
             event.target = null;
             if (/^flash-(outdated|unavailable|deactivated|overdue)$/.test(event.name)) {
-                _extend(event, {
-                    version: _flashState.version,
-                    minimumVersion: "11.0.0"
-                });
+        _extend(event, {
+            version: _flashState.version,
+            minimumVersion: "11.0.0"
+        });
             }
         }
         if (event.type === "copy") {
@@ -1089,7 +1089,7 @@
             for (i in eventName) {
                 if (eventName.hasOwnProperty(i) && typeof i === "string" && i && typeof eventName[i] === "function") {
                     this.on(i, eventName[i]);
-                }
+        }
             }
         }
         if (events && events.length) {
@@ -1098,7 +1098,7 @@
                 added[eventName] = true;
                 if (!handlers[eventName]) {
                     handlers[eventName] = [];
-                }
+        }
                 handlers[eventName].push(func);
             }
             if (added.ready && _flashState.ready) {
@@ -1118,7 +1118,7 @@
                         });
                         break;
                     }
-                }
+        }
             }
         }
         return this;
@@ -1133,7 +1133,7 @@
             for (i in eventName) {
                 if (eventName.hasOwnProperty(i) && typeof i === "string" && i && typeof eventName[i] === "function") {
                     this.off(i, eventName[i]);
-                }
+        }
             }
         }
         if (events && events.length) {
@@ -1146,11 +1146,11 @@
                         while (foundIndex !== -1) {
                             perEventHandlers.splice(foundIndex, 1);
                             foundIndex = _inArray(func, perEventHandlers, foundIndex);
-                        }
+            }
                     } else {
                         handlers[eventName].length = 0;
                     }
-                }
+        }
             }
         }
         return this;
@@ -1165,7 +1165,7 @@
             for (prop in handlers) {
                 if (handlers.hasOwnProperty(prop) && handlers[prop]) {
                     copy[prop] = handlers[prop].slice(0);
-                }
+        }
             }
         }
         return copy;
@@ -1182,11 +1182,11 @@
                     }
                 } else if (_inArray(this.id, _elementMeta[elements[i].zcClippingId]) === -1) {
                     _elementMeta[elements[i].zcClippingId].push(this.id);
-                }
+        }
                 var clippedElements = _clientMeta[this.id].elements;
                 if (_inArray(elements[i], clippedElements) === -1) {
                     clippedElements.push(elements[i]);
-                }
+        }
             }
         }
         return this;
@@ -1208,7 +1208,7 @@
                 arrayIndex = 0;
                 while ((arrayIndex = _inArray(elements[i], clippedElements, arrayIndex)) !== -1) {
                     clippedElements.splice(arrayIndex, 1);
-                }
+        }
                 var clientIds = _elementMeta[elements[i].zcClippingId];
                 if (clientIds) {
                     arrayIndex = 0;
@@ -1218,13 +1218,13 @@
                     if (clientIds.length === 0) {
                         if (_globalConfig.autoActivate === true) {
                             _removeEventHandler(elements[i], "mouseover", _elementMouseOver);
-                        }
+            }
                         delete elements[i].zcClippingId;
                     }
-                }
-            }
         }
-        return this;
+            }
+    }
+    return this;
     };
     ZeroClipboard.prototype.elements = function () {
         var meta = _clientMeta[this.id];

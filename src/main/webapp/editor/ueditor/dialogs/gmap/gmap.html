@@ -48,7 +48,7 @@
             streetViewControl: false,
             scaleControl: true,
             mapTypeId: google.maps.MapTypeId.ROADMAP
-        });
+            });
         var imgcss;
         var marker = new google.maps.Marker({
             map: map,
@@ -66,7 +66,7 @@
                     marker.setTitle(address);
                 } else alert(lang.searchError);
             });
-        }
+            }
 
         $G('address').onkeydown = function (evt) {
             evt = evt || event;

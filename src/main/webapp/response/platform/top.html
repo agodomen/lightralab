@@ -1,70 +1,70 @@
 <div class="navbar-inner">
-    <button type="button" class="navbar-toggle pull-left animated flip">
-        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
-        <span class="icon-bar"></span> <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" onclick="loadHtml('/user/index','');"> <img alt="Logo图标"
-                                                                        src="${contextPath!}/img/logo20.png"
-                                                                        class="hidden-xs"/> <span>后台登陆系统</span></a>
+	<button type="button" class="navbar-toggle pull-left animated flip">
+		<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+		<span class="icon-bar"></span> <span class="icon-bar"></span>
+	</button>
+	<a class="navbar-brand" onclick="loadHtml('/user/index','');"> <img alt="Logo图标"
+																		src="${contextPath!}/img/logo20.png"
+																		class="hidden-xs"/> <span>后台登陆系统</span></a>
 
-    <!-- user dropdown starts -->
-    <div class="btn-group pull-right">
-        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-user"></i><span
-                class="hidden-sm hidden-xs">用户管理员</span> <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-            <li><a href="#" onclick="loadHtml('/user/index','');">用户配置</a></li>
-            <li class="divider"></li>
-            <li><a href="#" onclick="loadHtml('/user/logoff','');">注销</a></li>
-        </ul>
-    </div>
-    <!-- theme selector starts -->
-    <div class="btn-group pull-right theme-container animated tada">
-        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-tint"></i><span
-                class="hidden-sm hidden-xs"> 更改主题</span> <span
-                class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" id="themes">
-            <li><a data-value="classic" href="#"><i class="whitespace"></i>
-                默认</a></li>
-            <li><a data-value="cerulean" href="#"><i class="whitespace"></i>
-                天蓝</a></li>
-            <li><a data-value="cyborg" href="#"><i class="whitespace"></i>
-                雅黑</a></li>
-            <li><a data-value="simplex" href="#"><i class="whitespace"></i>
-                残雪</a></li>
-            <li><a data-value="darkly" href="#"><i class="whitespace"></i>
-                湛蓝</a></li>
-            <li><a data-value="lumen" href="#"><i class="whitespace"></i>
-                黑雪</a></li>
-            <li><a data-value="slate" href="#"><i class="whitespace"></i>
-                黑华</a></li>
-            <li><a data-value="spacelab" href="#"><i class="whitespace"></i>
-                白灰</a></li>
-            <li><a data-value="united" href="#"><i class="whitespace"></i>
-                典红</a></li>
-        </ul>
-    </div>
-    <!-- theme selector ends -->
+	<!-- user dropdown starts -->
+	<div class="btn-group pull-right">
+		<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="glyphicon glyphicon-user"></i><span
+				class="hidden-sm hidden-xs">用户管理员</span> <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li><a href="#" onclick="loadHtml('/user/index','');">用户配置</a></li>
+			<li class="divider"></li>
+			<li><a href="#" onclick="loadHtml('/user/logoff','');">注销</a></li>
+		</ul>
+	</div>
+	<!-- theme selector starts -->
+	<div class="btn-group pull-right theme-container animated tada">
+		<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="glyphicon glyphicon-tint"></i><span
+				class="hidden-sm hidden-xs"> 更改主题</span> <span
+				class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" id="themes">
+			<li><a data-value="classic" href="#"><i class="whitespace"></i>
+				默认</a></li>
+			<li><a data-value="cerulean" href="#"><i class="whitespace"></i>
+				天蓝</a></li>
+			<li><a data-value="cyborg" href="#"><i class="whitespace"></i>
+				雅黑</a></li>
+			<li><a data-value="simplex" href="#"><i class="whitespace"></i>
+				残雪</a></li>
+			<li><a data-value="darkly" href="#"><i class="whitespace"></i>
+				湛蓝</a></li>
+			<li><a data-value="lumen" href="#"><i class="whitespace"></i>
+				黑雪</a></li>
+			<li><a data-value="slate" href="#"><i class="whitespace"></i>
+				黑华</a></li>
+			<li><a data-value="spacelab" href="#"><i class="whitespace"></i>
+				白灰</a></li>
+			<li><a data-value="united" href="#"><i class="whitespace"></i>
+				典红</a></li>
+		</ul>
+	</div>
+	<!-- theme selector ends -->
 
-    <!-- user dropdown ends -->
-    <ul class="collapse navbar-collapse nav navbar-nav top-menu">
-        <li onclick="loadHtml('/user/index','');"><a href="#"><i class="glyphicon glyphicon-globe"></i>刷新系统</a></li>
-        <li class="dropdown"><a href="#" data-toggle="dropdown"><i
-                class="glyphicon glyphicon-star"></i>收藏<span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#>操作</a></li>
+	<!-- user dropdown ends -->
+	<ul class="collapse navbar-collapse nav navbar-nav top-menu">
+		<li onclick="loadHtml('/user/index','');"><a href="#"><i class="glyphicon glyphicon-globe"></i>刷新系统</a></li>
+		<li class="dropdown"><a href="#" data-toggle="dropdown"><i
+				class="glyphicon glyphicon-star"></i>收藏<span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="#>操作</a></li>
 				
 			</ul></li>
 		<li>
 			<form class=" navbar-search pull-left">
-                    <input placeholder="Search"
-                           class="search-query form-control col-md-10" name="query"
-                           type="text">
-                    </form>
-                </li>
-            </ul>
+					<input placeholder="Search"
+						   class="search-query form-control col-md-10" name="query"
+						   type="text">
+					</form>
+				</li>
+			</ul>
 
 </div>

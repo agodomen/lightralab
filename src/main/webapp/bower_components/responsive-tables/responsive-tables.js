@@ -7,13 +7,13 @@ $(document).ready(function () {
                 splitTable($(element));
             });
             return true;
-        }
+    }
         else if (switched && ($(window).width() > 767)) {
             switched = false;
             $("table.responsive").each(function (i, element) {
                 unsplitTable($(element));
             });
-        }
+    }
     };
 
     $(window).load(updateTables);

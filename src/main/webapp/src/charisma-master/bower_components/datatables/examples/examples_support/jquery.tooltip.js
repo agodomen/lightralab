@@ -296,5 +296,5 @@
         if (settings(this).fixPNG)
             helper.parent.unfixPNG();
     }
-
+	
 })(jQuery);

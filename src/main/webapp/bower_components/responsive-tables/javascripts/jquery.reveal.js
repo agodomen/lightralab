@@ -77,7 +77,7 @@
                         }, options.animationSpeed / 2, function () {
                             modal.css({'top': topMeasure, 'opacity': 1, 'visibility': 'hidden'});
                             unlockModal();
-                        });
+            });
                     }
                     if (options.animation == "fade") {
                         modalBg.delay(options.animationSpeed).fadeOut(options.animationSpeed);
@@ -86,7 +86,7 @@
                         }, options.animationSpeed, function () {
                             modal.css({'opacity': 1, 'visibility': 'hidden', 'top': topMeasure});
                             unlockModal();
-                        });
+            });
                     }
                     if (options.animation == "none") {
                         modal.css({'visibility': 'hidden', 'top': topMeasure});
@@ -107,7 +107,7 @@
                 modalBg.css({"cursor": "pointer"});
                 modalBg.bind('click.modalEvent', function () {
                     modal.trigger('reveal:close');
-                });
+        });
             }
 
             $('body').keyup(function (event) {

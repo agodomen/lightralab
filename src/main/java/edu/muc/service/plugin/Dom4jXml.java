@@ -4,6 +4,7 @@
 package edu.muc.service.plugin;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -29,9 +30,13 @@ public class Dom4jXml {
         List list = null;
         Element root = null;
         SAXReader reader = new SAXReader();
-        Document document;
+        Document document = null;
         try {
-            document = reader.read(new File(path));
+            try {
+                document = reader.read(new File(path));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
             root = document.getRootElement();
             for (Iterator i = root.elementIterator(); i.hasNext(); ) {
                 Element element = (Element) i.next();

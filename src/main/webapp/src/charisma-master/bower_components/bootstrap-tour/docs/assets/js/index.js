@@ -69,7 +69,7 @@ $(function () {
             placement: "bottom",
             title: "Fixed position",
             content: "Works well for fixed positioned elements! :)"
-        }
+    }
     ]);
     tour.init();
     tour.start();

@@ -40,9 +40,9 @@ var vjs = function (id, options, ready) {
             return vjs.players[id];
 
             // Otherwise get element for ID
-        } else {
+    } else {
             tag = vjs.el(id);
-        }
+    }
 
         // ID is a media element
     } else {
@@ -223,7 +223,7 @@ vjs.CoreObject.extend = function (props) {
     for (var name in props) {
         if (props.hasOwnProperty(name)) {
             subObj.prototype[name] = props[name];
-        }
+    }
     }
 
     return subObj;
@@ -296,7 +296,7 @@ vjs.on = function (elem, type, fn) {
                     } else {
                         handlersCopy[m].call(elem, event);
                     }
-                }
+        }
             }
         };
     }
@@ -306,7 +306,7 @@ vjs.on = function (elem, type, fn) {
             elem.addEventListener(type, data.dispatcher, false);
         } else if (document.attachEvent) {
             elem.attachEvent('on' + type, data.dispatcher);
-        }
+    }
     }
 };
 
@@ -357,7 +357,7 @@ vjs.off = function (elem, type, fn) {
             if (handlers[n].guid === fn.guid) {
                 handlers.splice(n--, 1);
             }
-        }
+    }
     }
 
     vjs.cleanUpEvents(elem, type);
@@ -383,7 +383,7 @@ vjs.cleanUpEvents = function (elem, type) {
             elem.removeEventListener(type, data.dispatcher, false);
         } else if (document.detachEvent) {
             elem.detachEvent('on' + type, data.dispatcher);
-        }
+    }
     }
 
     // Remove the events object if there are no types left
@@ -438,12 +438,12 @@ vjs.fixEvent = function (event) {
             if (key !== 'layerX' && key !== 'layerY') {
                 event[key] = old[key];
             }
-        }
+    }
 
         // The event occurred on this element
         if (!event.target) {
             event.target = event.srcElement || document;
-        }
+    }
 
         // Handle which other element the event is related to
         event.relatedTarget = event.fromElement === event.target ?
@@ -504,7 +504,7 @@ vjs.fixEvent = function (event) {
             event.button = (event.button & 1 ? 0 :
                 (event.button & 4 ? 1 :
                     (event.button & 2 ? 2 : 0)));
-        }
+    }
     }
 
     // Returns fixed-up instance
@@ -557,7 +557,7 @@ vjs.trigger = function (elem, event) {
             }
             // Re-enables event dispatching.
             targetData.disabled = false;
-        }
+    }
     }
 
     // Inform the triggerer if the default was prevented by returning false
@@ -629,7 +629,7 @@ vjs.createEl = function (tagName, properties) {
             } else {
                 el[propName] = properties[propName];
             }
-        }
+    }
     }
     return el;
 };
@@ -685,7 +685,7 @@ vjs.obj.each = function (obj, fn, context) {
     for (var key in obj) {
         if (hasOwnProp.call(obj, key)) {
             fn.call(context || this, key, obj[key]);
-        }
+    }
     }
 };
 
@@ -703,7 +703,7 @@ vjs.obj.merge = function (obj1, obj2) {
     for (var key in obj2) {
         if (hasOwnProp.call(obj2, key)) {
             obj1[key] = obj2[key];
-        }
+    }
     }
     return obj1;
 };
@@ -735,7 +735,7 @@ vjs.obj.deepMerge = function (obj1, obj2) {
             } else {
                 obj1[key] = obj2[key];
             }
-        }
+    }
     }
     return obj1;
 };
@@ -869,7 +869,7 @@ vjs.removeData = function (el) {
         } else {
             // IE doesn't appear to support removeAttribute on the document element
             el[vjs.expando] = null;
-        }
+    }
     }
 };
 
@@ -884,7 +884,7 @@ vjs.isEmpty = function (obj) {
         // Inlude null properties as empty.
         if (obj[prop] !== null) {
             return false;
-        }
+    }
     }
     return true;
 };
@@ -920,7 +920,7 @@ vjs.removeClass = function (element, classToRemove) {
     for (i = classNames.length - 1; i >= 0; i--) {
         if (classNames[i] === classToRemove) {
             classNames.splice(i, 1);
-        }
+    }
     }
 
     element.className = classNames.join(' ');
@@ -1027,7 +1027,7 @@ vjs.getAttributeValues = function (tag) {
             }
 
             obj[attrName] = attrVal;
-        }
+    }
     }
 
     return obj;
@@ -1229,11 +1229,11 @@ vjs.get = function (url, onSuccess, onError) {
             if (request.status === 200 || local && request.status === 0) {
                 onSuccess(request.responseText);
             } else {
-                if (onError) {
-                    onError();
-                }
-            }
+        if (onError) {
+            onError();
         }
+            }
+    }
     };
 
     try {
@@ -1266,7 +1266,7 @@ vjs.setLocalStorage = function (key, value) {
             } else {
                 vjs.log('LocalStorage Error (VideoJS)', e);
             }
-        }
+    }
     }
 };
 
@@ -1414,7 +1414,7 @@ vjs.Component.prototype.dispose = function () {
             if (this.children_[i].dispose) {
                 this.children_[i].dispose();
             }
-        }
+    }
     }
 
     // Delete child references
@@ -1745,7 +1745,7 @@ vjs.Component.prototype.removeChild = function (component) {
             childFound = true;
             this.children_.splice(i, 1);
             break;
-        }
+    }
     }
 
     if (!childFound) return;
@@ -1921,7 +1921,7 @@ vjs.Component.prototype.ready = function (fn) {
                 this.readyQueue_ = [];
             }
             this.readyQueue_.push(fn);
-        }
+    }
     }
     return this;
 };
@@ -2434,7 +2434,7 @@ vjs.Slider.prototype.calculateDistance = function (event) {
 
         if (event.changedTouches) {
             pageX = event.changedTouches[0].pageX;
-        } else {
+    } else {
             pageX = event.pageX;
         }
 
@@ -2444,7 +2444,7 @@ vjs.Slider.prototype.calculateDistance = function (event) {
             // Adjusted X and Width, so handle doesn't go outside the bar
             boxX = boxX + (handleW / 2);
             boxW = boxW - handleW;
-        }
+    }
 
         // Percent that the click is through the adjusted area
         return Math.max(0, Math.min(1, (pageX - boxX) / boxW));
@@ -2618,7 +2618,7 @@ vjs.MenuButton = vjs.Button.extend({
         // Automatically hide empty menu buttons
         if (this.items && this.items.length === 0) {
             this.hide();
-        }
+    }
 
         this.on('keyup', this.onKeyPress);
         this.el_.setAttribute('aria-haspopup', true);
@@ -2651,7 +2651,7 @@ vjs.MenuButton.prototype.createMenu = function () {
         // Add menu items to the menu
         for (var i = 0; i < this.items.length; i++) {
             menu.addItem(this.items[i]);
-        }
+    }
     }
 
     return menu;
@@ -2702,7 +2702,7 @@ vjs.MenuButton.prototype.onKeyPress = function (event) {
             this.unpressButton();
         } else {
             this.pressButton();
-        }
+    }
         // Check for escape (27) key
     } else if (event.which == 27) {
         if (this.buttonPressed_) {
@@ -2828,7 +2828,7 @@ vjs.Player = vjs.Component.extend({
             vjs.obj.each(options['plugins'], function (key, val) {
                 this[key](val);
             }, this);
-        }
+    }
 
         this.listenForUserActivity();
     }
@@ -2902,7 +2902,7 @@ vjs.Player.prototype.getTagSettings = function (tag) {
             } else if (childName === 'track') {
                 options['tracks'].push(vjs.getAttributeValues(child));
             }
-        }
+    }
     }
 
     return options;
@@ -2936,7 +2936,7 @@ vjs.Player.prototype.createEl = function () {
 
         for (i = 0; i < removeNodes.length; i++) {
             tag.removeChild(removeNodes[i]);
-        }
+    }
     }
 
     // Make sure tag ID exists
@@ -3014,7 +3014,7 @@ vjs.Player.prototype.loadTech = function (techName, source) {
     if (source) {
         if (source.src == this.cache_.src && this.cache_.currentTime > 0) {
             techOptions['startTime'] = this.cache_.currentTime;
-        }
+    }
 
         this.cache_.src = source.src;
     }
@@ -3298,7 +3298,7 @@ vjs.Player.prototype.techCall = function (method, arg) {
         } catch (e) {
             vjs.log(e);
             throw e;
-        }
+    }
     }
 };
 
@@ -3323,10 +3323,10 @@ vjs.Player.prototype.techGet = function (method) {
                     this.tech.isReady_ = false;
                 } else {
                     vjs.log(e);
-                }
+        }
             }
             throw e;
-        }
+    }
     }
 
     return;
@@ -3650,7 +3650,7 @@ vjs.Player.prototype.fullWindowOnEscKey = function (event) {
             this.cancelFullScreen();
         } else {
             this.exitFullWindow();
-        }
+    }
     }
 };
 
@@ -3685,9 +3685,9 @@ vjs.Player.prototype.selectSource = function (sources) {
                 // Check if source can be played with this technology
                 if (tech['canPlaySource'](source)) {
                     return {source: source, tech: techName};
-                }
-            }
         }
+            }
+    }
     }
 
     return false;
@@ -3753,7 +3753,7 @@ vjs.Player.prototype.src = function (source) {
 
         if (window['videojs'][this.techName]['canPlaySource'](source)) {
             this.src(source.src);
-        } else {
+    } else {
             // Send through tech loop to check for a compatible technology.
             this.src([source]);
         }
@@ -3775,7 +3775,7 @@ vjs.Player.prototype.src = function (source) {
             if (this.options_['autoplay']) {
                 this.play();
             }
-        }
+    }
     }
     return this;
 };
@@ -3875,7 +3875,7 @@ vjs.Player.prototype.controls = function (bool) {
                 this.addClass('vjs-controls-disabled');
                 this.trigger('controlsdisabled');
             }
-        }
+    }
         return this;
     }
     return this.controls_;
@@ -3926,7 +3926,7 @@ vjs.Player.prototype.usingNativeControls = function (bool) {
                  */
                 this.trigger('usingcustomcontrols');
             }
-        }
+    }
         return this;
     }
     return this.usingNativeControls_;
@@ -3983,7 +3983,7 @@ vjs.Player.prototype.userActive = function (bool) {
                 this.addClass('vjs-user-inactive');
                 this.trigger('userinactive');
             }
-        }
+    }
         return this;
     }
     return this.userActive_;
@@ -4056,7 +4056,7 @@ vjs.Player.prototype.listenForUserActivity = function () {
                 // causing a flicker
                 if (!this.userActivity_) {
                     this.userActive(false);
-                }
+        }
             }), 2000);
         }
     }), 250);
@@ -4121,12 +4121,12 @@ vjs.Player.prototype.listenForUserActivity = function () {
         } else {
             prefix = 'webkit';
             requestFS.isFullScreen = prefix + 'IsFullScreen';
-        }
+    }
 
         if (div[prefix + 'RequestFullScreen']) {
             requestFS.requestFn = prefix + 'RequestFullScreen';
             requestFS.cancelFn = prefix + 'CancelFullScreen';
-        }
+    }
         requestFS.eventName = prefix + 'fullscreenchange';
     }
 
@@ -4460,10 +4460,10 @@ vjs.SeekBar.prototype.getPercent = function () {
         var cache = this.player_.getCache();
         if (cache.lastSetCurrentTime) {
             currentTime = cache.lastSetCurrentTime;
-        }
-        else {
+    }
+    else {
             currentTime = this.player_.currentTime();
-        }
+    }
     }
     else {
         currentTime = this.player_.currentTime();
@@ -4602,7 +4602,7 @@ vjs.VolumeControl = vjs.Component.extend({
         // hide volume controls when they're not supported by the current tech
         if (player.tech && player.tech.features && player.tech.features['volumeControl'] === false) {
             this.addClass('vjs-hidden');
-        }
+    }
         player.on('loadstart', vjs.bind(this, function () {
             if (player.tech.features && player.tech.features['volumeControl'] === false) {
                 this.addClass('vjs-hidden');
@@ -4745,7 +4745,7 @@ vjs.MuteToggle = vjs.Button.extend({
         // hide mute toggle if the current tech doesn't support volume control
         if (player.tech && player.tech.features && player.tech.features['volumeControl'] === false) {
             this.addClass('vjs-hidden');
-        }
+    }
         player.on('loadstart', vjs.bind(this, function () {
             if (player.tech.features && player.tech.features['volumeControl'] === false) {
                 this.addClass('vjs-hidden');
@@ -4813,7 +4813,7 @@ vjs.VolumeMenuButton = vjs.MenuButton.extend({
         // hide mute toggle if the current tech doesn't support volume control
         if (player.tech && player.tech.features && player.tech.features.volumeControl === false) {
             this.addClass('vjs-hidden');
-        }
+    }
         player.on('loadstart', vjs.bind(this, function () {
             if (player.tech.features && player.tech.features.volumeControl === false) {
                 this.addClass('vjs-hidden');
@@ -4862,7 +4862,7 @@ vjs.PosterImage = vjs.Button.extend({
 
         if (!player.poster() || !player.controls()) {
             this.hide();
-        }
+    }
 
         player.on('play', vjs.bind(this, this.hide));
     }
@@ -4882,7 +4882,7 @@ vjs.PosterImage.prototype.createEl = function () {
             el.style.backgroundImage = 'url("' + poster + '")';
         } else {
             el.appendChild(vjs.createEl('img', {src: poster}));
-        }
+    }
     }
 
     return el;
@@ -5100,7 +5100,7 @@ vjs.MediaTechController.prototype.onClick = function (event) {
             this.player().play();
         } else {
             this.player().pause();
-        }
+    }
     }
 };
 
@@ -5232,7 +5232,7 @@ vjs.Html5.prototype.createEl = function () {
                 id: player.id() + '_html5_api',
                 className: 'vjs-tech'
             });
-        }
+    }
         // associate the player with the new tag
         el['player'] = player;
 
@@ -5245,7 +5245,7 @@ vjs.Html5.prototype.createEl = function () {
         var attr = attrs[i];
         if (player.options_[attr] !== null) {
             el[attr] = player.options_[attr];
-        }
+    }
     }
 
     return el;
@@ -5355,7 +5355,7 @@ vjs.Html5.prototype.supportsFullScreen = function () {
         // Seems to be broken in Chromium/Chrome && Safari in Leopard
         if (/Android/.test(vjs.USER_AGENT) || !/Chrome|Mac OS X 10.5/.test(vjs.USER_AGENT)) {
             return true;
-        }
+    }
     }
     return false;
 };
@@ -5710,7 +5710,7 @@ vjs.Flash = vjs.MediaTechController.extend({
             // If not using iFrame mode, embed as normal object
         } else {
             vjs.Flash.embed(options['swf'], placeHolder, flashVars, params, attributes);
-        }
+    }
     }
 });
 
@@ -5757,7 +5757,7 @@ vjs.Flash.prototype.currentSrc = function () {
 
         if (connection && stream) {
             src = vjs.Flash.streamFromParts(connection, stream);
-        }
+    }
     }
     return src;
 };
@@ -6022,7 +6022,7 @@ vjs.Flash.streamToParts = function (src) {
         if (connEnd === 0) {
             // really, there's not a '/'?
             connEnd = streamBegin = src.length;
-        }
+    }
     }
     parts.connection = src.substring(0, connEnd);
     parts.stream = src.substring(streamBegin, src.length);
@@ -6063,7 +6063,7 @@ vjs.MediaLoader = vjs.Component.extend({
                 if (tech && tech.isSupported()) {
                     player.loadTech(techName);
                     break;
-                }
+        }
             }
         } else {
             // // Loop through playback technologies (HTML5, Flash) and check for support.
@@ -6071,7 +6071,7 @@ vjs.MediaLoader = vjs.Component.extend({
             // // A few assumptions here:
             // //   All playback technologies respect preload false.
             player.src(player.options_['sources']);
-        }
+    }
     }
 });
 /**
@@ -6176,7 +6176,7 @@ vjs.Player.prototype.showTextTrack = function (id, disableSameKind) {
             // Disable tracks of the same kind
         } else if (disableSameKind && track.kind() == disableSameKind && track.mode() > 0) {
             track.disable();
-        }
+    }
     }
 
     // Get track kind from shown track or disableSameKind
@@ -6478,7 +6478,7 @@ vjs.TextTrack.prototype.activate = function () {
         // Add to display
         if (this.kind_ === 'captions' || this.kind_ === 'subtitles') {
             this.player_.getChild('textTrackDisplay').addChild(this);
-        }
+    }
     }
 };
 
@@ -6573,7 +6573,7 @@ vjs.TextTrack.prototype.parseCues = function (srcContent) {
 
             // Add this cue
             this.cues_.push(cue);
-        }
+    }
     }
 
     this.readyState_ = 2;
@@ -6741,7 +6741,7 @@ vjs.TextTrack.prototype.update = function () {
             this.updateDisplay();
 
             this.trigger('cuechange');
-        }
+    }
     }
 };
 
@@ -6814,7 +6814,7 @@ vjs.TextTrackDisplay = vjs.Component.extend({
         // tracks that don't need a display.
         if (player.options_['tracks'] && player.options_['tracks'].length > 0) {
             this.player_.addTextTracks(player.options_['tracks']);
-        }
+    }
     }
 });
 
@@ -6897,7 +6897,7 @@ vjs.OffTextTrackMenuItem.prototype.update = function () {
         track = tracks[i];
         if (track.kind() == this.track.kind() && track.mode() == 2) {
             off = false;
-        }
+    }
     }
 
     this.selected(off);
@@ -6915,7 +6915,7 @@ vjs.TextTrackButton = vjs.MenuButton.extend({
 
         if (this.items.length <= 1) {
             this.hide();
-        }
+    }
     }
 });
 
@@ -6957,7 +6957,7 @@ vjs.TextTrackButton.prototype.createItems = function () {
             items.push(new vjs.TextTrackMenuItem(this.player_, {
                 'track': track
             }));
-        }
+    }
     }
 
     return items;
@@ -7023,7 +7023,7 @@ vjs.ChaptersButton.prototype.createItems = function () {
             items.push(new vjs.TextTrackMenuItem(this.player_, {
                 'track': track
             }));
-        }
+    }
     }
 
     return items;
@@ -7047,7 +7047,7 @@ vjs.ChaptersButton.prototype.createMenu = function () {
                 chaptersTrack = track;
                 break;
             }
-        }
+    }
     }
 
     var menu = this.menu = new vjs.Menu(this.player_);
@@ -7074,7 +7074,7 @@ vjs.ChaptersButton.prototype.createMenu = function () {
             items.push(mi);
 
             menu.addChild(mi);
-        }
+    }
     }
 
     if (this.items.length > 0) {
@@ -7240,14 +7240,14 @@ vjs.autoSetup = function () {
                         // Create new video.js instance.
                         player = videojs(vid, options);
                     }
-                }
+        }
 
                 // If getAttribute isn't defined, we need to wait for the DOM.
             } else {
-                vjs.autoSetupTimeout(1);
+        vjs.autoSetupTimeout(1);
                 break;
             }
-        }
+    }
 
         // No videos were found, so keep looping unless page is finisehd loading.
     } else if (!vjs.windowLoaded) {

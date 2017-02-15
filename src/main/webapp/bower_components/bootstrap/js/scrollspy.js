@@ -47,7 +47,7 @@
         if (!$.isWindow(this.$scrollElement[0])) {
             offsetMethod = 'position'
             offsetBase = this.$scrollElement.scrollTop()
-        }
+    }
 
         this.offsets = []
         this.targets = []
@@ -87,7 +87,7 @@
 
         if (this.scrollHeight != scrollHeight) {
             this.refresh()
-        }
+    }
 
         if (scrollTop >= maxScroll) {
             return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
@@ -102,7 +102,7 @@
             && scrollTop >= offsets[i]
             && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
             && this.activate(targets[i])
-        }
+    }
     }
 
     ScrollSpy.prototype.activate = function (target) {
@@ -124,7 +124,7 @@
             active = active
                 .closest('li.dropdown')
                 .addClass('active')
-        }
+    }
 
         active.trigger('activate.bs.scrollspy')
     }
@@ -166,7 +166,7 @@
         $('[data-spy="scroll"]').each(function () {
             var $spy = $(this)
             Plugin.call($spy, $spy.data())
-        })
+    })
     })
 
 }(jQuery);

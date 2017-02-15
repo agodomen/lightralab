@@ -43,7 +43,7 @@
         addClass = function (elem, c) {
             if (!hasClass(elem, c)) {
                 elem.className = elem.className + ' ' + c;
-            }
+    }
         };
         removeClass = function (elem, c) {
             elem.className = elem.className.replace(classReg(c), ' ');

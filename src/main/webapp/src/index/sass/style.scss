@@ -7,6 +7,7 @@
 @charset 'UTF-8';
 @import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900');
 @import url('font-awesome.min.css');
+
 @import 'vars';
 @import 'mixins';
 
@@ -43,7 +44,7 @@ a {
     border-color: transparent;
   }
 }
-
+	
 /* Wrapper */
 
 @include vendor-keyframes('wrapper') {
@@ -129,7 +130,7 @@ a {
     width: 1px;
   }
 }
-
+	
 /* Header */
 
 @include vendor-keyframes('header') {
@@ -247,7 +248,7 @@ a {
     }
   }
 }
-
+	
 /* Footer */
 
 #footer {

@@ -79,7 +79,7 @@
                 if (el === this[i]) return i;
             }
             return -1;
-        }
+    }
     }
 
     // Format a number to the length = digits. For ex:
@@ -96,7 +96,7 @@
         var s = number.toString();
         if (number.length > digits) {
             return number.substr(number.length - digits, number.length);
-        }
+    }
         while (s.length < digits) {
             s = '0' + s;
         }
@@ -118,7 +118,7 @@
     var _transport = function (opts) {
         if ((!fleegix || typeof fleegix.xhr === 'undefined') && (!$ || typeof $.ajax === 'undefined')) {
             throw new Error('Please use the Fleegix.js XHR module, jQuery ajax, Zepto ajax, or define your own transport mechanism for downloading zone files.');
-        }
+    }
         if (!opts) return;
         if (!opts.url) throw new Error('URL must be specified');
         if (!('async' in opts)) opts.async = true;
@@ -153,16 +153,16 @@
 
         //We support several different constructors, including all the ones from `Date` object
         // with a timezone string at the end.
-        //
+    //
         //- `[tz]`: Returns object with time in `tz` specified.
-        //
+    //
         // - `utcMillis`, `[tz]`: Return object with UTC time = `utcMillis`, in `tz`.
-        //
+    //
         // - `Date`, `[tz]`: Returns object with UTC time = `Date.getTime()`, in `tz`.
-        //
+    //
         // - `year, month, [date,] [hours,] [minutes,] [seconds,] [millis,] [tz]: Same as `Date` object
         // with tz.
-        //
+    //
         // - `Array`: Can be any combo of the above.
         //
         //If 1st argument is an array, we can use it as a list of arguments itself
@@ -182,7 +182,7 @@
             default:
                 for (var i = 0; i < 7; i++) {
                     arr[i] = args[i] || 0;
-                }
+        }
                 dt = new Date(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
                 break;
         }
@@ -467,7 +467,7 @@
                         return timezoneJS.Months[_month];
                     } else if (_len > 2) {
                         return timezoneJS.Months[_month].substring(0, _len);
-                    }
+        }
                     return _fixWidth(_month + 1, _len);
                 })
                 // `k`: AM/PM
@@ -477,7 +477,7 @@
                             hours -= 12;
                         }
                         return 'PM';
-                    }
+        }
                     return 'AM';
                 })
                 // `H`: hour
@@ -632,10 +632,10 @@
                         opts.callback();
                     }
                     return true;
-                },
+        },
                 error: function () {
                     throw new Error('Error retrieving "' + url + '" zoneinfo files');
-                }
+        }
             });
         }
 
@@ -705,7 +705,7 @@
                     // legacy zone we need the backward file for.
                     _this.loadZoneFile('backward');
                     return getZone(dt, tz);
-                }
+        }
                 invalidTZError(t);
             }
             if (zoneList.length === 0) {
@@ -754,7 +754,7 @@
                     offset = getAdjustedOffset(basicOffset, rule);
                 } else {
                     throw("unknown type " + type);
-                }
+        }
                 offset *= 60 * 1000; // to millis
 
                 return new Date(date.getTime() + offset);
@@ -803,33 +803,33 @@
                             effectiveDate = new Date(Date.UTC(year, SHORT_MONTHS[rule[3]] + 1, 1, hms[1] - 24, hms[2], hms[3], 0));
                             targetDay = SHORT_DAYS[rule[4].substr(4, 3)];
                             operator = "<=";
-                        }
+            }
                         //Example: `Sun>=15`
                         else {
                             //Start at the specified date.
                             effectiveDate = new Date(Date.UTC(year, SHORT_MONTHS[rule[3]], rule[4].substr(5), hms[1], hms[2], hms[3], 0));
                             targetDay = SHORT_DAYS[rule[4].substr(0, 3)];
                             operator = rule[4].substr(3, 2);
-                        }
+            }
                         var ourDay = effectiveDate.getUTCDay();
                         //Go forwards.
                         if (operator === ">=") {
                             effectiveDate.setUTCDate(effectiveDate.getUTCDate() + (targetDay - ourDay + ((targetDay < ourDay) ? 7 : 0)));
-                        }
+            }
                         //Go backwards.  Looking for the last of a certain day, or operator is "<=" (less likely).
                         else {
                             effectiveDate.setUTCDate(effectiveDate.getUTCDate() + (targetDay - ourDay - ((targetDay > ourDay) ? 7 : 0)));
-                        }
+            }
                     }
                     EXACT_DATE_TIME[year][rule] = effectiveDate;
-                }
+        }
 
 
                 //If previous rule is given, correct for the fact that the starting time of the current
                 // rule may be specified in local time.
                 if (prevRule) {
                     effectiveDate = convertDateToUTC(effectiveDate, hms[4], prevRule);
-                }
+        }
                 return effectiveDate;
             };
 
@@ -998,10 +998,10 @@
                 data = eval('(' + data + ')');
                 for (var z in data.zones) {
                     _this.zones[z] = data.zones[z];
-                }
+        }
                 for (var r in data.rules) {
                     _this.rules[r] = data.rules[r];
-                }
+        }
             };
             return sync
                 ? processData(_this.transport({url: url, async: false}))
@@ -1036,7 +1036,7 @@
                 l = lines[i];
                 if (l.match(/^\s/)) {
                     l = "Zone " + zone + l;
-                }
+        }
                 l = l.split("#")[0];
                 if (l.length > 3) {
                     arr = l.split(/\s+/);
@@ -1081,7 +1081,7 @@
                 }
             }
             return true;
-        };
+    };
         //Expose transport mechanism and allow overwrite.
         this.transport = _transport;
         this.getTzInfo = function (dt, tz, isUTC) {

@@ -50,14 +50,14 @@ jQuery(document).ready(function ($) {
                 $li = $('<li>' + $(this).html() + '</li>');
                 $customSelect.find('ul').append($li);
             });
-        }
+    }
 
         $options.each(function (index) {
             if (this.selected) {
                 $customSelect.find('li').eq(index).addClass('selected');
                 $customSelect.find('.current').html($(this).html());
             }
-        });
+    });
 
         $customSelect.find('li').each(function () {
             $customSelect.addClass('open');
@@ -65,7 +65,7 @@ jQuery(document).ready(function ($) {
                 maxWidth = $(this).outerWidth();
             }
             $customSelect.removeClass('open');
-        });
+    });
         $customSelect.css('width', maxWidth + 18 + 'px');
         $customSelect.find('ul').css('width', maxWidth + 16 + 'px');
 
@@ -88,7 +88,7 @@ jQuery(document).ready(function ($) {
         $options.each(function () {
             $li = $('<li>' + $(this).html() + '</li>');
             $customSelect.find('ul').append($li);
-        });
+    });
 
         // re-populate
         $options.each(function (index) {
@@ -96,7 +96,7 @@ jQuery(document).ready(function ($) {
                 $customSelect.find('li').eq(index).addClass('selected');
                 $customSelect.find('.current').html($(this).html());
             }
-        });
+    });
 
         // fix width
         $customSelect.removeAttr('style')
@@ -107,7 +107,7 @@ jQuery(document).ready(function ($) {
                 maxWidth = $(this).outerWidth();
             }
             $customSelect.removeClass('open');
-        });
+    });
         $customSelect.css('width', maxWidth + 18 + 'px');
         $customSelect.find('ul').css('width', maxWidth + 16 + 'px');
 
@@ -160,7 +160,7 @@ jQuery(document).ready(function ($) {
             $customRadio;
         if ($associatedElement.length !== 0) {
             if ($associatedElement.attr('type') === 'checkbox') {
-                event.preventDefault();
+        event.preventDefault();
                 $customCheckbox = $(this).find('span.custom.checkbox');
                 toggleCheckbox($customCheckbox);
             } else if ($associatedElement.attr('type') === 'radio') {
@@ -212,8 +212,8 @@ jQuery(document).ready(function ($) {
             if ($this[0] == this) {
                 selectedIndex = index;
             }
-
-        });
+      
+    });
         $select[0].selectedIndex = selectedIndex;
 
         $select.trigger('change');

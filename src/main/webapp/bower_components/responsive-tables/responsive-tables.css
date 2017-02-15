@@ -9,6 +9,7 @@
 :: Page Name 2
 */
 
+
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
@@ -80,5 +81,6 @@ table td, table th {
     table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td {
         display: none;
     }
-
+	
+	
 }

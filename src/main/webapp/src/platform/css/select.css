@@ -19,7 +19,6 @@
     border-style: solid;
     border-color: #bababa #e9e9e9 #e9e9e9 #bababa;
 }
-
 /***** 下拉框 *****/
 .uew-select {
     position: relative;
@@ -55,7 +54,6 @@
     cursor: pointer;
     height: 28px;
 }
-
 /***** 去除聚焦虚线框 *****/
 a:focus, input[type=checkbox]:focus, input[type=radio]:focus, button:focus, select {
     outline: none;

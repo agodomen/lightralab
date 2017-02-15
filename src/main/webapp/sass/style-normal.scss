@@ -3,6 +3,7 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+
 @import 'vars';
 @import 'mixins';
 
@@ -11,7 +12,7 @@
 body, input, select, textarea {
   font-size: 12pt;
 }
-
+	
 /* BG */
 
 @include bg(1200px);

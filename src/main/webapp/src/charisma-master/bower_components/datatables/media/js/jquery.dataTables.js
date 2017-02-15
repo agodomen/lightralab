@@ -4637,7 +4637,7 @@
              * Quickly and simply clear a table
              *  @param {bool} [bRedraw=true] redraw the table or not
              *  @dtopt API
-             *
+		 *
              *  @example
              *    $(document).ready(function() {
 		 *      var oTable = $('#example').dataTable();
@@ -4663,7 +4663,7 @@
              *  @param {node} nTr the table row to 'close'
              *  @returns {int} 0 on success, or 1 if failed (can't find the row)
              *  @dtopt API
-             *
+		 *
              *  @example
              *    $(document).ready(function() {
 		 *      var oTable;
@@ -4707,7 +4707,7 @@
              *  @param {bool} [bRedraw=true] Redraw the table or not
              *  @returns {array} The row that was deleted
              *  @dtopt API
-             *
+		 *
              *  @example
              *    $(document).ready(function() {
 		 *      var oTable = $('#example').dataTable();
@@ -4893,7 +4893,7 @@
              * Redraw the table
              *  @param {bool} [bComplete=true] Re-filter and resort (if enabled) the table before the draw.
              *  @dtopt API
-             *
+		 *
              *  @example
              *    $(document).ready(function() {
 		 *      var oTable = $('#example').dataTable();
@@ -4923,7 +4923,7 @@
              *  @param {bool} [bShowGlobal=true] Show the input global filter in it's input box(es)
              *  @param {bool} [bCaseInsensitive=true] Do case-insensitive matching (true) or not (false)
              *  @dtopt API
-             *
+		 *
              *  @example
              *    $(document).ready(function() {
 		 *      var oTable = $('#example').dataTable();
@@ -5063,7 +5063,7 @@
              *  @returns {array|node} If iRow is undefined, returns an array of all TR elements
              *    in the table's body, or iRow is defined, just the TR element requested.
              *  @dtopt API
-             *
+		 *
              *  @example
              *    $(document).ready(function() {
 		 *      var oTable = $('#example').dataTable();
@@ -5131,7 +5131,7 @@
              *  @param {node} nTr the table row to check
              *  @returns {boolean} true if the row is currently open, false otherwise
              *  @dtopt API
-             *
+		 *
              *  @example
              *    $(document).ready(function() {
 		 *      var oTable;
@@ -5173,7 +5173,7 @@
              *    first parameter, is not found in the table, this method will silently
              *    return.
              *  @dtopt API
-             *
+		 *
              *  @example
              *    $(document).ready(function() {
 		 *      var oTable;
@@ -5263,7 +5263,7 @@
              *  @param {bool} bShow Show (true) or hide (false) the column
              *  @param {bool} [bRedraw=true] Redraw the table or not
              *  @dtopt API
-             *
+		 *
              *  @example
              *    $(document).ready(function() {
 		 *      var oTable = $('#example').dataTable();
@@ -5383,7 +5383,7 @@
              *  @param {int} iCol the data index to sort on. Note that this will not match the
              *    'display index' if you have hidden data entries
              *  @dtopt API
-             *
+		 *
              *  @example
              *    $(document).ready(function() {
 		 *      var oTable = $('#example').dataTable();
@@ -5405,7 +5405,7 @@
              *  @param {int} iColumn the column that a click on this node will sort on
              *  @param {function} [fnCallback] callback function when sort is run
              *  @dtopt API
-             *
+		 *
              *  @example
              *    $(document).ready(function() {
 		 *      var oTable = $('#example').dataTable();

@@ -7621,7 +7621,6 @@
 
         return {state: "success", data: response};
     }
-
 // Install script dataType
     jQuery.ajaxSetup({
         accepts: {
@@ -8769,7 +8768,6 @@
     function getWindow(elem) {
         return jQuery.isWindow(elem) ? elem : elem.nodeType === 9 && elem.defaultView;
     }
-
 // Create innerHeight, innerWidth, height, width, outerHeight and outerWidth methods
     jQuery.each({Height: "height", Width: "width"}, function (name, type) {
         jQuery.each({padding: "inner" + name, content: type, "": "outer" + name}, function (defaultExtra, funcName) {

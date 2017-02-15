@@ -237,7 +237,7 @@
                 options = {text: text};
             }
             $.noty(options);
-        };
+    };
     }
     $.noty.stopConsumeAlert = function () {
         window.alert = windowAlert;

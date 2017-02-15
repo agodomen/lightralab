@@ -36,7 +36,7 @@ div.orbit {
     position: relative;
     overflow: hidden
 }
-
+    
 div.orbit.with-bullets {
     margin-bottom: 40px;
 }
@@ -66,6 +66,7 @@ div.orbit > a {
 }
 
 /* Note: If your slider only uses content or anchors, you're going to want to put the width and height declarations on the ".orbit>div" and "div.orbit>a" tags in addition to just the .orbit-wrapper */
+
 
 /* TIMER
    ================================================== */
@@ -135,6 +136,7 @@ span.pause.active {
     opacity: 1
 }
 
+
 /* CAPTIONS
    ================================================== */
 
@@ -156,6 +158,7 @@ span.pause.active {
     bottom: 0;
     width: 100%;
 }
+
 
 /* DIRECTIONAL NAV
    ================================================== */
@@ -214,7 +217,7 @@ div.slider-nav span.left {
     color: #222;
     background-position: -8px 0;
 }
-
+    
 .orbit-bullets li.has-thumb {
     background: none;
     width: 100px;
@@ -225,7 +228,7 @@ div.slider-nav span.left {
     background-position: 0 0;
     border-top: 2px solid #000;
 }
-
+    
 /* FLUID LAYOUT
    ================================================== */
 .orbit .fluid-placeholder {

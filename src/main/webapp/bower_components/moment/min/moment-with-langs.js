@@ -326,14 +326,12 @@
 
     function deprecate(msg, fn) {
         var firstTime = true;
-
         function printMsg() {
             if (moment.suppressDeprecationWarnings === false &&
                 typeof console !== 'undefined' && console.warn) {
                 console.warn("Deprecation warning: " + msg);
             }
         }
-
         return extend(function () {
             if (firstTime) {
                 printMsg();
@@ -348,7 +346,6 @@
             return leftZeroFill(func.call(this, a), count);
         };
     }
-
     function ordinalizeToken(func, period) {
         return function (a) {
             return this.lang().ordinal(func.call(this, a), period);
@@ -1208,7 +1205,7 @@
             case 'GGGGG':
                 token = token.substr(0, 2);
                 if (input) {
-                    config._w = config._w || {};
+                config._w = config._w || {};
                     config._w[token] = toInt(input);
                 }
                 break;
@@ -2677,7 +2674,7 @@
                     return "ص";
                 } else {
                     return "م";
-                }
+            }
             },
             calendar: {
                 sameDay: "[اليوم على الساعة] LT",
@@ -2768,7 +2765,7 @@
                     return "ص";
                 } else {
                     return "م";
-                }
+            }
             },
             calendar: {
                 sameDay: "[اليوم على الساعة] LT",
@@ -2887,7 +2884,7 @@
                     return "gündüz";
                 } else {
                     return "axşam";
-                }
+            }
             },
             ordinal: function (number) {
                 if (number === 0) {  // special case for zero
@@ -2941,8 +2938,8 @@
                         case 4:
                         case 5:
                             return '[В изминалия] dddd [в] LT';
-                    }
-                },
+                }
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -2977,7 +2974,7 @@
                     return number + '-ми';
                 } else {
                     return number + '-ти';
-                }
+            }
             },
             week: {
                 dow: 1, // Monday is the first day of the week.
@@ -3077,7 +3074,7 @@
                     return "বিকেল";
                 } else {
                     return "রাত";
-                }
+            }
             },
             week: {
                 dow: 0, // Sunday is the first day of the week.
@@ -3111,20 +3108,20 @@
                     return number + ' bloaz';
                 default:
                     return number + ' vloaz';
-            }
+        }
         }
 
         function lastNumber(number) {
             if (number > 9) {
                 return lastNumber(number % 10);
-            }
+        }
             return number;
         }
 
         function mutation(text, number) {
             if (number === 2) {
                 return softMutation(text);
-            }
+        }
             return text;
         }
 
@@ -3135,8 +3132,8 @@
                 'd': 'z'
             };
             if (mutationTable[text.charAt(0)] === undefined) {
-                return text;
-            }
+            return text;
+        }
             return mutationTable[text.charAt(0)] + text.substring(1);
         }
 
@@ -3183,7 +3180,7 @@
             week: {
                 dow: 1, // Monday is the first day of the week.
                 doy: 4  // The week that contains Jan 4th is the first week of the year.
-            }
+        }
         });
     }));
 // moment.js language configuration
@@ -3207,7 +3204,7 @@
                         result += 'minute';
                     } else {
                         result += 'minuta';
-                    }
+            }
                     return result;
                 case 'h':
                     return withoutSuffix ? 'jedan sat' : 'jednog sata';
@@ -3245,7 +3242,7 @@
                         result += 'godina';
                     }
                     return result;
-            }
+        }
         }
 
         return moment.lang('bs', {
@@ -3279,7 +3276,7 @@
                         case 5:
                             return '[u] dddd [u] LT';
                     }
-                },
+            },
                 lastDay: '[jučer u] LT',
                 lastWeek: function () {
                     switch (this.day()) {
@@ -3294,7 +3291,7 @@
                         case 5:
                             return '[prošli] dddd [u] LT';
                     }
-                },
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -3342,13 +3339,13 @@
             calendar: {
                 sameDay: function () {
                     return '[avui a ' + ((this.hours() !== 1) ? 'les' : 'la') + '] LT';
-                },
+            },
                 nextDay: function () {
                     return '[demà a ' + ((this.hours() !== 1) ? 'les' : 'la') + '] LT';
-                },
+            },
                 nextWeek: function () {
                     return 'dddd [a ' + ((this.hours() !== 1) ? 'les' : 'la') + '] LT';
-                },
+            },
                 lastDay: function () {
                     return '[ahir a ' + ((this.hours() !== 1) ? 'les' : 'la') + '] LT';
                 },
@@ -3405,7 +3402,7 @@
                         return result + (plural(number) ? 'minuty' : 'minut');
                     } else {
                         return result + 'minutami';
-                    }
+            }
                     break;
                 case 'h':  // an hour / in an hour / an hour ago
                     return withoutSuffix ? 'hodina' : (isFuture ? 'hodinu' : 'hodinou');
@@ -3443,7 +3440,7 @@
                         return result + 'lety';
                     }
                     break;
-            }
+        }
         }
 
         return moment.lang('cs', {
@@ -3485,8 +3482,8 @@
                             return '[v pátek v] LT';
                         case 6:
                             return '[v sobotu v] LT';
-                    }
-                },
+                }
+            },
                 lastDay: '[včera v] LT',
                 lastWeek: function () {
                     switch (this.day()) {
@@ -3503,7 +3500,7 @@
                         case 6:
                             return '[minulou sobotu v] LT';
                     }
-                },
+            },
                 sameElse: "L"
             },
             relativeTime: {
@@ -3560,7 +3557,7 @@
                 future: function (output) {
                     var affix = /сехет$/i.exec(output) ? "рен" : /çул$/i.exec(output) ? "тан" : "ран";
                     return output + affix;
-                },
+            },
                 past: "%s каялла",
                 s: "пĕр-ик çеккунт",
                 m: "пĕр минут",
@@ -3639,10 +3636,10 @@
                         output = 'fed'; // not 30ain, 70ain or 90ain
                     } else {
                         output = 'ain';
-                    }
+                }
                 } else if (b > 0) {
                     output = lookup[b];
-                }
+            }
 
                 return number + output;
             },
@@ -3879,8 +3876,8 @@
                             return '[το προηγούμενο] dddd [{}] LT';
                         default:
                             return '[την προηγούμενη] dddd [{}] LT';
-                    }
-                },
+                }
+            },
                 sameElse: 'L'
             },
             calendar: function (key, mom) {
@@ -3889,7 +3886,7 @@
 
                 if (typeof output === 'function') {
                     output = output.apply(mom);
-                }
+            }
 
                 return output.replace("{}", (hours % 12 === 1 ? "στη" : "στις"));
             },
@@ -4110,7 +4107,7 @@
                     return isLower ? 'p.t.m.' : 'P.T.M.';
                 } else {
                     return isLower ? 'a.t.m.' : 'A.T.M.';
-                }
+            }
             },
             calendar: {
                 sameDay: '[Hodiaŭ je] LT',
@@ -4174,16 +4171,16 @@
             calendar: {
                 sameDay: function () {
                     return '[hoy a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
-                },
+            },
                 nextDay: function () {
                     return '[mañana a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
-                },
+            },
                 nextWeek: function () {
                     return 'dddd [a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
-                },
+            },
                 lastDay: function () {
                     return '[ayer a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
-                },
+            },
                 lastWeek: function () {
                     return '[el] dddd [pasado a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';
                 },
@@ -4234,7 +4231,7 @@
             };
             if (withoutSuffix) {
                 return format[key][2] ? format[key][2] : format[key][1];
-            }
+        }
             return isFuture ? format[key][0] : format[key][1];
         }
 
@@ -4384,7 +4381,7 @@
                     return "قبل از ظهر";
                 } else {
                     return "بعد از ظهر";
-                }
+            }
             },
             calendar: {
                 sameDay: '[امروز ساعت] LT',
@@ -4467,7 +4464,7 @@
                 case 'yy':
                     result = isFuture ? 'vuoden' : 'vuotta';
                     break;
-            }
+        }
             result = verbalNumber(number, isFuture) + " " + result;
             return result;
         }
@@ -4696,13 +4693,13 @@
             calendar: {
                 sameDay: function () {
                     return '[hoxe ' + ((this.hours() !== 1) ? 'ás' : 'á') + '] LT';
-                },
+            },
                 nextDay: function () {
                     return '[mañá ' + ((this.hours() !== 1) ? 'ás' : 'á') + '] LT';
-                },
+            },
                 nextWeek: function () {
                     return 'dddd [' + ((this.hours() !== 1) ? 'ás' : 'a') + '] LT';
-                },
+            },
                 lastDay: function () {
                     return '[onte ' + ((this.hours() !== 1) ? 'á' : 'a') + '] LT';
                 },
@@ -4784,19 +4781,19 @@
                         return "שעתיים";
                     }
                     return number + " שעות";
-                },
+            },
                 d: "יום",
                 dd: function (number) {
                     if (number === 2) {
                         return "יומיים";
                     }
                     return number + " ימים";
-                },
+            },
                 M: "חודש",
                 MM: function (number) {
                     if (number === 2) {
                         return "חודשיים";
-                    }
+                }
                     return number + " חודשים";
                 },
                 y: "שנה",
@@ -4805,7 +4802,7 @@
                         return "שנתיים";
                     }
                     return number + " שנים";
-                }
+            }
             }
         });
     }));
@@ -4900,7 +4897,7 @@
                     return "शाम";
                 } else {
                     return "रात";
-                }
+            }
             },
             week: {
                 dow: 0, // Sunday is the first day of the week.
@@ -4930,7 +4927,7 @@
                         result += 'minute';
                     } else {
                         result += 'minuta';
-                    }
+            }
                     return result;
                 case 'h':
                     return withoutSuffix ? 'jedan sat' : 'jednog sata';
@@ -4968,7 +4965,7 @@
                         result += 'godina';
                     }
                     return result;
-            }
+        }
         }
 
         return moment.lang('hr', {
@@ -5002,7 +4999,7 @@
                         case 5:
                             return '[u] dddd [u] LT';
                     }
-                },
+            },
                 lastDay: '[jučer u] LT',
                 lastWeek: function () {
                     switch (this.day()) {
@@ -5017,7 +5014,7 @@
                         case 5:
                             return '[prošli] dddd [u] LT';
                     }
-                },
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -5078,7 +5075,7 @@
                     return 'egy' + (isFuture || withoutSuffix ? ' év' : ' éve');
                 case 'yy':
                     return num + (isFuture || withoutSuffix ? ' év' : ' éve');
-            }
+        }
 
             return '';
         }
@@ -5112,11 +5109,11 @@
                 nextDay: '[holnap] LT[-kor]',
                 nextWeek: function () {
                     return week.call(this, true);
-                },
+            },
                 lastDay: '[tegnap] LT[-kor]',
                 lastWeek: function () {
                     return week.call(this, false);
-                },
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -5193,10 +5190,10 @@
                 lastDay: '[երեկ] LT',
                 nextWeek: function () {
                     return 'dddd [օրը ժամը] LT';
-                },
+            },
                 lastWeek: function () {
                     return '[անցած] dddd [օրը ժամը] LT';
-                },
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -5235,11 +5232,11 @@
                     case 'DDDo':
                         if (number === 1) {
                             return number + '-ին';
-                        }
+                }
                         return number + '-րդ';
                     default:
                         return number;
-                }
+            }
             },
 
             week: {
@@ -5278,7 +5275,7 @@
                     return 'sore';
                 } else {
                     return 'malam';
-                }
+            }
             },
             calendar: {
                 sameDay: '[Hari ini pukul] LT',
@@ -5318,10 +5315,10 @@
     }(function (moment) {
         function plural(n) {
             if (n % 100 === 11) {
-                return true;
+            return true;
             } else if (n % 10 === 1) {
                 return false;
-            }
+        }
             return true;
         }
 
@@ -5337,7 +5334,7 @@
                         return result + (withoutSuffix || isFuture ? 'mínútur' : 'mínútum');
                     } else if (withoutSuffix) {
                         return result + 'mínúta';
-                    }
+            }
                     return result + 'mínútu';
                 case 'hh':
                     if (plural(number)) {
@@ -5381,7 +5378,7 @@
                         return result + (withoutSuffix || isFuture ? 'ár' : 'árum');
                     }
                     return result + (withoutSuffix || isFuture ? 'ár' : 'ári');
-            }
+        }
         }
 
         return moment.lang('is', {
@@ -5459,7 +5456,7 @@
             relativeTime: {
                 future: function (s) {
                     return ((/^[0-9].+$/).test(s) ? "tra" : "in") + " " + s;
-                },
+            },
                 past: "%s fa",
                 s: "alcuni secondi",
                 m: "un minuto",
@@ -5505,7 +5502,7 @@
                     return "午前";
                 } else {
                     return "午後";
-                }
+            }
             },
             calendar: {
                 sameDay: '[今日] LT',
@@ -5592,14 +5589,14 @@
                     return (/(წამი|წუთი|საათი|წელი)/).test(s) ?
                         s.replace(/ი$/, "ში") :
                     s + "ში";
-                },
+            },
                 past: function (s) {
                     if ((/(წამი|წუთი|საათი|დღე|თვე)/).test(s)) {
                         return s.replace(/(ი|ე)$/, "ის წინ");
-                    }
+                }
                     if ((/წელი/).test(s)) {
                         return s.replace(/წელი$/, "წლის წინ");
-                    }
+                }
                 },
                 s: "რამდენიმე წამი",
                 m: "წუთი",
@@ -5624,7 +5621,7 @@
 
                 if ((number < 20) || (number <= 100 && (number % 20 === 0)) || (number % 100 === 0)) {
                     return "მე-" + number;
-                }
+            }
 
                 return number + "-ე";
             },
@@ -5769,7 +5766,7 @@
             var number = string.substr(0, string.indexOf(' '));
             if (eifelerRegelAppliesToNumber(number)) {
                 return "a " + string;
-            }
+        }
             return "an " + string;
         }
 
@@ -5777,7 +5774,7 @@
             var number = string.substr(0, string.indexOf(' '));
             if (eifelerRegelAppliesToNumber(number)) {
                 return "viru " + string;
-            }
+        }
             return "virun " + string;
         }
 
@@ -5785,7 +5782,7 @@
             var weekday = this.format('d');
             if (eifelerRegelAppliesToWeekday(weekday)) {
                 return '[Leschte] dddd [um] LT';
-            }
+        }
             return '[Leschten] dddd [um] LT';
         }
 
@@ -5807,7 +5804,7 @@
                     return true;
                 default: // 2 Dënschdeg, 4 Donneschdeg
                     return false;
-            }
+        }
         }
 
         /**
@@ -5828,8 +5825,8 @@
             } else if (number < 10) {
                 // Only 1 digit
                 if (4 <= number && number <= 7) {
-                    return true;
-                }
+                return true;
+            }
                 return false;
             } else if (number < 100) {
                 // 2 digits
@@ -5848,7 +5845,7 @@
                 // Anything larger than 4 digits: recursively check first n-3 digits
                 number = number / 1000;
                 return eifelerRegelAppliesToNumber(number);
-            }
+        }
         }
 
         return moment.lang('lb', {
@@ -5920,7 +5917,7 @@
                 return "kelios sekundės";
             } else {
                 return isFuture ? "kelių sekundžių" : "kelias sekundes";
-            }
+        }
         }
 
         function translateSingular(number, withoutSuffix, key, isFuture) {
@@ -5944,10 +5941,10 @@
             } else {
                 if (isFuture) {
                     return result + forms(key)[1];
-                } else {
+            } else {
                     return result + (special(number) ? forms(key)[1] : forms(key)[2]);
-                }
             }
+        }
         }
 
         function relativeWeekDay(moment, format) {
@@ -6027,7 +6024,7 @@
                 return number % 10 === 1 && number !== 11 ? forms[2] : forms[3];
             } else {
                 return number % 10 === 1 && number !== 11 ? forms[0] : forms[1];
-            }
+        }
         }
 
         function relativeTimeWithPlural(number, withoutSuffix, key) {
@@ -6113,8 +6110,8 @@
                         case 4:
                         case 5:
                             return '[Во изминатиот] dddd [во] LT';
-                    }
-                },
+                }
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -6149,7 +6146,7 @@
                     return number + '-ми';
                 } else {
                     return number + '-ти';
-                }
+            }
             },
             week: {
                 dow: 1, // Monday is the first day of the week.
@@ -6211,7 +6208,7 @@
                     return "വൈകുന്നേരം";
                 } else {
                     return "രാത്രി";
-                }
+            }
             }
         });
     }));
@@ -6304,7 +6301,7 @@
                     return "सायंकाळी";
                 } else {
                     return "रात्री";
-                }
+            }
             },
             week: {
                 dow: 0, // Sunday is the first day of the week.
@@ -6341,7 +6338,7 @@
                     return 'petang';
                 } else {
                     return 'malam';
-                }
+            }
             },
             calendar: {
                 sameDay: '[Hari ini pukul] LT',
@@ -6491,7 +6488,7 @@
                     return "साँझ";
                 } else {
                     return "राती";
-                }
+            }
             },
             calendar: {
                 sameDay: '[आज] LT',
@@ -6539,7 +6536,7 @@
                     return monthsShortWithoutDots[m.month()];
                 } else {
                     return monthsShortWithDots[m.month()];
-                }
+            }
             },
             weekdays: "zondag_maandag_dinsdag_woensdag_donderdag_vrijdag_zaterdag".split("_"),
             weekdaysShort: "zo._ma._di._wo._do._vr._za.".split("_"),
@@ -6662,7 +6659,7 @@
                     return result + (plural(number) ? 'miesiące' : 'miesięcy');
                 case 'yy':
                     return result + (plural(number) ? 'lata' : 'lat');
-            }
+        }
         }
 
         return moment.lang('pl', {
@@ -6699,8 +6696,8 @@
                             return '[W zeszłą sobotę o] LT';
                         default:
                             return '[W zeszły] dddd [o] LT';
-                    }
-                },
+                }
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -6754,7 +6751,7 @@
                     return (this.day() === 0 || this.day() === 6) ?
                         '[Último] dddd [às] LT' : // Saturday + Sunday
                         '[Última] dddd [às] LT'; // Monday - Friday
-                },
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -6804,7 +6801,7 @@
                     return (this.day() === 0 || this.day() === 6) ?
                         '[Último] dddd [às] LT' : // Saturday + Sunday
                         '[Última] dddd [às] LT'; // Monday - Friday
-                },
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -6848,7 +6845,7 @@
                 separator = ' ';
             if (number % 100 >= 20 || (number >= 100 && number % 100 === 0)) {
                 separator = ' de ';
-            }
+        }
 
             return number + separator + format[key];
         }
@@ -6918,7 +6915,7 @@
             };
             if (key === 'm') {
                 return withoutSuffix ? 'минута' : 'минуту';
-            }
+        }
             else {
                 return number + ' ' + plural(format[key], +number);
             }
@@ -6983,7 +6980,7 @@
                 lastDay: '[Вчера в] LT',
                 nextWeek: function () {
                     return this.day() === 2 ? '[Во] dddd [в] LT' : '[В] dddd [в] LT';
-                },
+            },
                 lastWeek: function () {
                     switch (this.day()) {
                         case 0:
@@ -6996,8 +6993,8 @@
                         case 5:
                         case 6:
                             return '[В прошлую] dddd [в] LT';
-                    }
-                },
+                }
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -7030,7 +7027,7 @@
                     return "дня";
                 } else {
                     return "вечера";
-                }
+            }
             },
 
             ordinal: function (number, period) {
@@ -7082,7 +7079,7 @@
                         return result + (plural(number) ? 'minúty' : 'minút');
                     } else {
                         return result + 'minútami';
-                    }
+            }
                     break;
                 case 'h':  // an hour / in an hour / an hour ago
                     return withoutSuffix ? 'hodina' : (isFuture ? 'hodinu' : 'hodinou');
@@ -7120,7 +7117,7 @@
                         return result + 'rokmi';
                     }
                     break;
-            }
+        }
         }
 
         return moment.lang('sk', {
@@ -7162,8 +7159,8 @@
                             return '[v piatok o] LT';
                         case 6:
                             return '[v sobotu o] LT';
-                    }
-                },
+                }
+            },
                 lastDay: '[včera o] LT',
                 lastWeek: function () {
                     switch (this.day()) {
@@ -7180,7 +7177,7 @@
                         case 6:
                             return '[minulú sobotu o] LT';
                     }
-                },
+            },
                 sameElse: "L"
             },
             relativeTime: {
@@ -7226,7 +7223,7 @@
                         result += 'minute';
                     } else {
                         result += 'minut';
-                    }
+            }
                     return result;
                 case 'h':
                     return withoutSuffix ? 'ena ura' : 'eno uro';
@@ -7270,7 +7267,7 @@
                         result += 'let';
                     }
                     return result;
-            }
+        }
         }
 
         return moment.lang('sl', {
@@ -7304,7 +7301,7 @@
                         case 5:
                             return '[v] dddd [ob] LT';
                     }
-                },
+            },
                 lastDay: '[včeraj ob] LT',
                 lastWeek: function () {
                     switch (this.day()) {
@@ -7318,7 +7315,7 @@
                         case 5:
                             return '[prejšnji] dddd [ob] LT';
                     }
-                },
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -7425,7 +7422,7 @@
                     return withoutSuffix ? wordKey[0] : wordKey[1];
                 } else {
                     return number + ' ' + translator.correctGrammaticalCase(number, wordKey);
-                }
+            }
             }
         };
 
@@ -7460,7 +7457,7 @@
                         case 5:
                             return '[у] dddd [у] LT';
                     }
-                },
+            },
                 lastDay: '[јуче у] LT',
                 lastWeek: function () {
                     var lastWeekDays = [
@@ -7473,7 +7470,7 @@
                         '[прошле] [суботе] [у] LT'
                     ];
                     return lastWeekDays[this.day()];
-                },
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -7525,7 +7522,7 @@
                     return withoutSuffix ? wordKey[0] : wordKey[1];
                 } else {
                     return number + ' ' + translator.correctGrammaticalCase(number, wordKey);
-                }
+            }
             }
         };
 
@@ -7560,7 +7557,7 @@
                         case 5:
                             return '[u] dddd [u] LT';
                     }
-                },
+            },
                 lastDay: '[juče u] LT',
                 lastWeek: function () {
                     var lastWeekDays = [
@@ -7573,7 +7570,7 @@
                         '[prošle] [subote] [u] LT'
                     ];
                     return lastWeekDays[this.day()];
-                },
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -7753,7 +7750,7 @@
                     return " இரவு";
                 } else if (hour >= 0 && hour <= 6) {
                     return " வைகறை";
-                }
+            }
             },
             week: {
                 dow: 0, // Sunday is the first day of the week.
@@ -7786,7 +7783,7 @@
                     return "ก่อนเที่ยง";
                 } else {
                     return "หลังเที่ยง";
-                }
+            }
             },
             calendar: {
                 sameDay: '[วันนี้ เวลา] LT',
@@ -7939,7 +7936,7 @@
             ordinal: function (number) {
                 if (number === 0) {  // special case for zero
                     return number + "'ıncı";
-                }
+            }
                 var a = number % 10,
                     b = number % 100 - a,
                     c = number >= 100 ? 100 : null;
@@ -8073,10 +8070,10 @@
             };
             if (key === 'm') {
                 return withoutSuffix ? 'хвилина' : 'хвилину';
-            }
+        }
             else if (key === 'h') {
                 return withoutSuffix ? 'година' : 'годину';
-            }
+        }
             else {
                 return number + ' ' + plural(format[key], +number);
             }
@@ -8146,8 +8143,8 @@
                         case 2:
                         case 4:
                             return processHoursFunction('[Минулого] dddd [').call(this);
-                    }
-                },
+                }
+            },
                 sameElse: 'L'
             },
             relativeTime: {
@@ -8177,7 +8174,7 @@
                     return "дня";
                 } else {
                     return "вечора";
-                }
+            }
             },
 
             ordinal: function (number, period) {
@@ -8350,25 +8347,25 @@
             calendar: {
                 sameDay: function () {
                     return this.minutes() === 0 ? "[今天]Ah[点整]" : "[今天]LT";
-                },
+            },
                 nextDay: function () {
                     return this.minutes() === 0 ? "[明天]Ah[点整]" : "[明天]LT";
-                },
+            },
                 lastDay: function () {
                     return this.minutes() === 0 ? "[昨天]Ah[点整]" : "[昨天]LT";
-                },
+            },
                 nextWeek: function () {
                     var startOfWeek, prefix;
                     startOfWeek = moment().startOf('week');
                     prefix = this.unix() - startOfWeek.unix() >= 7 * 24 * 3600 ? '[下]' : '[本]';
                     return this.minutes() === 0 ? prefix + "dddAh点整" : prefix + "dddAh点mm";
-                },
+            },
                 lastWeek: function () {
                     var startOfWeek, prefix;
                     startOfWeek = moment().startOf('week');
                     prefix = this.unix() < startOfWeek.unix() ? '[上]' : '[本]';
                     return this.minutes() === 0 ? prefix + "dddAh点整" : prefix + "dddAh点mm";
-                },
+            },
                 sameElse: 'LL'
             },
             ordinal: function (number, period) {
@@ -8384,7 +8381,7 @@
                         return number + "周";
                     default:
                         return number;
-                }
+            }
             },
             relativeTime: {
                 future: "%s内",
@@ -8444,7 +8441,7 @@
                     return "下午";
                 } else {
                     return "晚上";
-                }
+            }
             },
             calendar: {
                 sameDay: '[今天]LT',

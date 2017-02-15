@@ -203,6 +203,8 @@
 })(jQuery);
 
 
+
+
 (function ($) {
     var options = {
         xaxis: {
@@ -317,7 +319,7 @@
 
             if (!c)
                 c = {left: w / 2, top: h / 2};
-
+                
             var xf = c.left / w,
                 yf = c.top / h,
                 minmax = {

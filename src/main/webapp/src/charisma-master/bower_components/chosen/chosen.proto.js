@@ -84,7 +84,7 @@
                         options_index: this.options_index,
                         empty: true
                     });
-                }
+        }
                 return this.options_index += 1;
             }
         };
@@ -174,7 +174,7 @@
                 this.default_text = this.options.placeholder_text_single || this.options.placeholder_text || AbstractChosen.default_single_text;
             }
             return this.results_none_found = this.form_field.getAttribute("data-no_results_text") || this.options.no_results_text || AbstractChosen.default_no_result_text;
-        };
+    };
 
         AbstractChosen.prototype.mouse_enter = function () {
             return this.mouse_on_container = true;
@@ -191,7 +191,7 @@
                     return setTimeout((function () {
                         return _this.container_mousedown();
                     }), 50);
-                }
+        }
             } else {
                 if (!this.active_field) {
                     return this.activate_field();
@@ -343,7 +343,7 @@
                         results_group = this.results_data[option.group_array_index];
                         if (results_group.active_options === 0 && results_group.search_match) {
                             results += 1;
-                        }
+            }
                         results_group.active_options += 1;
                     }
                     if (!(option.group && !this.group_search)) {
@@ -351,7 +351,7 @@
                         option.search_match = this.search_string_match(option.search_text, regex);
                         if (option.search_match && !option.group) {
                             results += 1;
-                        }
+            }
                         if (option.search_match) {
                             if (searchText.length) {
                                 startpos = option.search_text.search(zregex);
@@ -363,7 +363,7 @@
                             }
                         } else if ((option.group_array_index != null) && this.results_data[option.group_array_index].search_match) {
                             option.search_match = true;
-                        }
+            }
                     }
                 }
             }
@@ -388,7 +388,7 @@
                         part = parts[_i];
                         if (regex.test(part)) {
                             return true;
-                        }
+            }
                     }
                 }
             }
@@ -426,7 +426,7 @@
                     if (this.is_multiple && this.backstroke_length < 1 && this.choices_count() > 0) {
                         return this.keydown_backstroke();
                     } else if (!this.pending_backstroke) {
-                        this.result_clear_highlight();
+            this.result_clear_highlight();
                         return this.results_search();
                     }
                     break;
@@ -726,9 +726,9 @@
                 }
                 if (!((evt != null) && evt.target.hasClassName("search-choice-close"))) {
                     if (!this.active_field) {
-                        if (this.is_multiple) {
-                            this.search_field.clear();
-                        }
+            if (this.is_multiple) {
+                this.search_field.clear();
+            }
                         this.container.ownerDocument.observe("click", this.click_test_action);
                         this.results_show();
                     } else if (!this.is_multiple && evt && (evt.target === this.selected_item || evt.target.up("a.chosen-single"))) {

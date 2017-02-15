@@ -55,11 +55,13 @@
     filter: Alpha(Opacity=0);
 }
 
+
 /* Interaction Cues
 ----------------------------------*/
 .ui-state-disabled {
     cursor: default !important;
 }
+
 
 /* Icons
 ----------------------------------*/
@@ -71,6 +73,7 @@
     overflow: hidden;
     background-repeat: no-repeat;
 }
+
 
 /* Misc visuals
 ----------------------------------*/
@@ -118,7 +121,6 @@
     overflow: auto;
     zoom: 1;
 }
-
 .ui-autocomplete {
     position: absolute;
     top: 0;
@@ -193,7 +195,6 @@ button.ui-button-icons-only {
     padding-left: 2.1em;
     padding-right: 2.1em;
 }
-
 /* no icon support for input elements, provide padding by default */
 input.ui-button {
     padding: .4em 1em;
@@ -572,7 +573,6 @@ button.ui-button::-moz-focus-inner {
     zoom: 1;
     font-weight: normal;
 }
-
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active {
     font-weight: normal;
@@ -885,7 +885,6 @@ button.ui-button::-moz-focus-inner {
     padding: 1em 1.4em;
     background: none;
 }
-
 .ui-tooltip {
     padding: 8px;
     position: absolute;
@@ -894,7 +893,6 @@ button.ui-button::-moz-focus-inner {
     -webkit-box-shadow: 0 0 5px #aaa;
     box-shadow: 0 0 5px #aaa;
 }
-
 /* Fades and background-images don't work well together in IE6, drop the image */
 * html .ui-tooltip {
     background-image: none;
@@ -1609,7 +1607,6 @@ body .ui-tooltip {
 .ui-icon-seek-start {
     background-position: -80px -160px;
 }
-
 /* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
 .ui-icon-seek-first {
     background-position: -80px -160px;
@@ -1762,6 +1759,7 @@ body .ui-tooltip {
 .ui-icon-grip-diagonal-se {
     background-position: -80px -224px;
 }
+
 
 /* Misc visuals
 ----------------------------------*/

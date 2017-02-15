@@ -17,7 +17,7 @@
  */
 
 (function ($) {
-    $.fn.quicksand = function (collection, customOptions) {
+    $.fn.quicksand = function (collection, customOptions) {     
         var options = {
             duration: 750,
             easing: 'swing',
@@ -86,7 +86,7 @@
                     options.enhancement($sourceParent); // Perform custom visual enhancements on a newly replaced collection
                     if (typeof callbackFunction == 'function') {
                         callbackFunction.call(this);
-                    }
+                    }                    
                 }
             };
 
@@ -138,7 +138,7 @@
                     dy = -options.dy;
                 } else {
                     dx = options.dx;
-                    dy = options.dy;
+                    dy = options.dy;                    
                 }
 
                 rawObj.style.position = 'absolute';
@@ -155,7 +155,7 @@
             rawDest.setAttribute('id', '');
             rawDest.style.height = 'auto';
             rawDest.style.width = $sourceParent.width() + 'px';
-            $dest.append($collection);
+            $dest.append($collection);      
             // insert node into HTML
             // Note that the node is under visible source container in the exactly same position
             // The browser render all the items without showing them (opacity: 0.0)

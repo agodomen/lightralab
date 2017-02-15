@@ -132,7 +132,7 @@ Tokenizer.prototype.shift = function () {
         var result = this._shift();
         if (result === undefined) {
             continue;
-        }
+    }
         return result;
     }
 };
@@ -150,7 +150,7 @@ Parser.prototype.parseFile = function () {
                 throw new Error('Unexpected unparsed section of file remains!');
             }
             return sections;
-        }
+    }
         sections.push(section);
     }
 };
@@ -187,7 +187,7 @@ Parser.prototype.parseSubSections = function (section) {
             else {
                 break;
             }
-        }
+    }
         section.addSubSection(subsection);
     }
 
@@ -212,7 +212,7 @@ Parser.prototype.parseVars = function (subsection) {
         var variable = this.parseVar();
         if (variable === null) {
             return;
-        }
+    }
         subsection.addVar(variable);
     }
 };

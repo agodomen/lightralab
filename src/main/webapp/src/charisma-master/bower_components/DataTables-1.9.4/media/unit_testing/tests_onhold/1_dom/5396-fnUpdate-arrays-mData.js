@@ -14,12 +14,12 @@ $(document).ready(function () {
             "홍길동",
             "1154315",
             "etc1",
-            [
-                ["test1@daum.net", "2011-03-04"],
-                ["test1@naver.com", "2009-07-06"],
-                ["test4@naver.com", ",hide"],
-                ["test5?@naver.com", ""]
-            ],
+        [
+            ["test1@daum.net", "2011-03-04"],
+            ["test1@naver.com", "2009-07-06"],
+            ["test4@naver.com", ",hide"],
+            ["test5?@naver.com", ""]
+        ],
             "2011-03-04",
             "show"
         ],
@@ -28,18 +28,18 @@ $(document).ready(function () {
             "홍길순",
             "2154315",
             "etc2",
-            [
-                ["test2@daum.net", "2009-09-26"],
-                ["test2@naver.com", "2009-05-21,hide"],
-                ["lsb@naver.com", "2010-03-05"],
-                ["lsb3@naver.com", ",hide"],
-                ["sooboklee9@daum.net", "2010-03-05"]
-            ],
+        [
+            ["test2@daum.net", "2009-09-26"],
+            ["test2@naver.com", "2009-05-21,hide"],
+            ["lsb@naver.com", "2010-03-05"],
+            ["lsb3@naver.com", ",hide"],
+            ["sooboklee9@daum.net", "2010-03-05"]
+        ],
             "2010-03-05",
             "show"
-        ]
     ]
-
+    ]
+	
     var oTable = $('#example').dataTable({
         "aaData": aDataSet,
         "aoColumns": [

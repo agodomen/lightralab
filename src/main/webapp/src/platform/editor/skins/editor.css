@@ -3,25 +3,21 @@ p {
     background-position: right top;
     background-repeat: no-repeat;
 }
-
 div {
     background-image: url(./div.gif);
     background-position: right top;
     background-repeat: no-repeat;
 }
-
 ul {
     background-image: url(./ul.gif);
     background-position: right top;
     background-repeat: no-repeat;
 }
-
 ol {
     background-image: url(./ol.gif);
     background-position: right top;
     background-repeat: no-repeat;
 }
-
 dl {
     background-image: url(./dl.gif);
     background-position: right top;

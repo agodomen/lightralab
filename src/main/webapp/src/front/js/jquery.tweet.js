@@ -46,7 +46,7 @@
                 for (var key in info) {
                     var val = info[key];
                     result = result.replace(new RegExp('{' + key + '}', 'g'), val === null ? '' : val);
-                }
+        }
                 return result;
             } else return template(info);
         }
@@ -89,7 +89,7 @@
                         text = entity.display_url;
                         break;
                     }
-                }
+        }
                 return "<a href=\"" + escapeHTML(url) + "\">" + escapeHTML(text) + "</a>";
             });
         }
@@ -234,7 +234,7 @@
                             $(widget).trigger("tweet:load");
                         }, 1000 * s.refresh_interval);
                     }
-                });
+        });
             }).trigger("tweet:load");
         });
     };

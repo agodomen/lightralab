@@ -67,7 +67,6 @@
 #swipebox-action {
     bottom: -50px;
 }
-
 #swipebox-action.visible-bars {
     bottom: 0;
 }
@@ -80,7 +79,6 @@
     top: -50px;
     text-align: center;
 }
-
 #swipebox-caption.visible-bars {
     top: 0;
 }

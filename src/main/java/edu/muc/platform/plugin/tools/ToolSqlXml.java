@@ -2,6 +2,7 @@ package edu.muc.platform.plugin.tools;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -196,7 +197,12 @@ public class ToolSqlXml {
         try {
             for (File xmlfile : files) {
                 fileName = xmlfile.getName();
-                Document doc = reader.read(xmlfile);
+                Document doc = null;
+                try {
+                    doc = reader.read(xmlfile);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
                 Element root = doc.getRootElement();
                 String namespace = root.attributeValue("namespace");
                 if (null == namespace || namespace.trim().isEmpty()) {

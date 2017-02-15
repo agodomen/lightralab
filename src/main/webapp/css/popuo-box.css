@@ -7,7 +7,6 @@
     margin: 40px auto;
     position: relative;
 }
-
 /**
 
 /**
@@ -28,7 +27,6 @@
     -o-transform: scale(0.8);
     transform: scale(0.8);
 }
-
 /* animate in */
 .my-mfp-zoom-in.mfp-ready #small-dialog, .my-mfp-zoom-in.mfp-ready #small-dialog1, .my-mfp-zoom-in.mfp-ready #small-dialog2,
 .my-mfp-zoom-in.mfp-ready #small-dialog3, .my-mfp-zoom-in.mfp-ready #small-dialog4,
@@ -40,7 +38,6 @@
     -o-transform: scale(1);
     transform: scale(1);
 }
-
 /* animate out */
 .my-mfp-zoom-in.mfp-removing #small-dialog, .my-mfp-zoom-in.mfp-removing #small-dialog1, .my-mfp-zoom-in.mfp-removing #small-dialog2, .my-mfp-zoom-in.mfp-removing #small-dialog3, .my-mfp-zoom-in.mfp-removing #small-dialog4, .my-mfp-zoom-in.mfp-removing #small-dialog5, .my-mfp-zoom-in.mfp-removing #small-dialog6 {
     -webkit-transform: scale(0.8);
@@ -50,7 +47,6 @@
     transform: scale(0.8);
     opacity: 0;
 }
-
 /* Dark overlay, start state */
 .my-mfp-zoom-in.mfp-bg {
     opacity: 0;
@@ -59,17 +55,14 @@
     -o-transition: opacity 0.3s ease-out;
     transition: opacity 0.3s ease-out;
 }
-
 /* animate in */
 .my-mfp-zoom-in.mfp-ready.mfp-bg {
     opacity: 0.8;
 }
-
 /* animate out */
 .my-mfp-zoom-in.mfp-removing.mfp-bg {
     opacity: 0;
 }
-
 /**
 /* Magnific Popup CSS */
 .mfp-bg {
@@ -173,7 +166,6 @@
 .mfp-hide {
     display: none !important;
 }
-
 .mfp-preloader {
     color: #cccccc;
     position: absolute;
@@ -213,6 +205,7 @@ button.mfp-arrow {
     padding: 0;
     z-index: 1046;
 }
+ 
 
 button::-moz-focus-inner {
     padding: 0;
@@ -247,7 +240,6 @@ button::-moz-focus-inner {
 .mfp-close-btn-in:hover .mfp-close:hover {
     color: #FF0000;
 }
-
 .mfp-image-holder .mfp-close,
 .mfp-iframe-holder .mfp-close {
     color: white;
@@ -260,7 +252,7 @@ button::-moz-focus-inner {
 @media all and (max-width: 640px) {
     .innercontent h4 {
         font-size: 22px !important;
-    }
+}
 
     a.morebtn {
         padding: 0.6em 1.2em !important;
@@ -268,7 +260,7 @@ button::-moz-focus-inner {
 
     .innercontent p {
         font-size: 0.8em !important;
-    }
+}
 }
 
 @media all and (max-width: 480px) {
@@ -320,21 +312,19 @@ button::-moz-focus-inner {
         width: 100%;
         min-height: 250px;
     }
-}
-
+} 
 /*-- innercontent --*/
 div#small-dialog, div#small-dialog1, div#small-dialog2, div#small-dialog3,
 div#small-dialog4, div#small-dialog5, div#small-dialog6 {
     text-align: center;
 }
-
 img.cap {
     width: 50%;
     margin: 0 auto;
 }
 
 .innercontent {
-
+	
 }
 
 .innercontent h4 {
@@ -351,7 +341,6 @@ img.cap {
     font-size: 0.875em;
     padding: 0.5em 0;
 }
-
 a.morebtn {
     background: #14b9d5;
     padding: 0.8em 1.2em;

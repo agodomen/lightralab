@@ -1,3 +1,4 @@
+
 /* CORE STYLES*/
 
 /* noty bar */
@@ -80,7 +81,7 @@
 .noty_modal.noty_theme_default {
     opacity: 0.7;
 }
-
+	
 /* LAYOUTS */
 
 /* noty_layout_top */
@@ -164,7 +165,7 @@
     margin-left: 15px;
     margin-top: 0px
 }
-
+	
 /* NOTIFICATION TYPES */
 
 /* noty_notification */

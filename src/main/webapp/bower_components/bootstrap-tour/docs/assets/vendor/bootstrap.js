@@ -41,13 +41,13 @@ if (!jQuery) {
             , 'MozTransition': 'transitionend'
             , 'OTransition': 'oTransitionEnd otransitionend'
             , 'transition': 'transitionend'
-        }
+    }
 
         for (var name in transEndEventNames) {
             if (el.style[name] !== undefined) {
                 return {end: transEndEventNames[name]}
             }
-        }
+    }
     }
 
     // http://blog.alexmaccaw.com/css-transitions
@@ -125,7 +125,7 @@ if (!jQuery) {
 
         function removeElement() {
             $parent.trigger('closed.bs.alert').remove()
-        }
+    }
 
         $.support.transition && $parent.hasClass('fade') ?
             $parent
@@ -232,7 +232,7 @@ if (!jQuery) {
                 .prop('checked', !this.$element.hasClass('active'))
                 .trigger('change')
             if ($input.prop('type') === 'radio') $parent.find('.active').removeClass('active')
-        }
+    }
 
         this.$element.toggleClass('active')
     }
@@ -366,7 +366,7 @@ if (!jQuery) {
         if (this.$element.find('.next, .prev').length && $.support.transition.end) {
             this.$element.trigger($.support.transition.end)
             this.cycle(true)
-        }
+    }
 
         this.interval = clearInterval(this.interval)
 
@@ -394,7 +394,7 @@ if (!jQuery) {
         if (!$next.length) {
             if (!this.options.wrap) return
             $next = this.$element.find('.item')[fallback]()
-        }
+    }
 
         this.sliding = true
 
@@ -498,7 +498,7 @@ if (!jQuery) {
         $('[data-ride="carousel"]').each(function () {
             var $carousel = $(this)
             $carousel.carousel($carousel.data())
-        })
+    })
     })
 
 }(window.jQuery);
@@ -741,7 +741,7 @@ if (!jQuery) {
                 .trigger('shown.bs.dropdown')
 
             $this.focus()
-        }
+    }
 
         return false
     }
@@ -794,7 +794,7 @@ if (!jQuery) {
         if (!selector) {
             selector = $this.attr('href')
             selector = selector && /#/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
-        }
+    }
 
         var $parent = selector && $(selector)
 
@@ -965,7 +965,7 @@ if (!jQuery) {
             .on('focusin.bs.modal', $.proxy(function (e) {
                 if (this.$element[0] !== e.target && !this.$element.has(e.target).length) {
                     this.$element.focus()
-                }
+        }
             }, this))
     }
 
@@ -976,7 +976,7 @@ if (!jQuery) {
             }, this))
         } else if (!this.isShown) {
             this.$element.off('keyup.dismiss.bs.modal')
-        }
+    }
     }
 
     Modal.prototype.hideModal = function () {
@@ -1033,7 +1033,7 @@ if (!jQuery) {
 
         } else if (callback) {
             callback()
-        }
+    }
     }
 
 
@@ -1164,7 +1164,7 @@ if (!jQuery) {
                 this.$element.on(eventIn + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
                 this.$element.on(eventOut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
             }
-        }
+    }
 
         this.options.selector ?
             (this._options = $.extend({}, this.options, {trigger: 'manual', selector: ''})) :
@@ -1183,7 +1183,7 @@ if (!jQuery) {
                 show: options.delay
                 , hide: options.delay
             }
-        }
+    }
 
         return options
     }
@@ -1286,7 +1286,7 @@ if (!jQuery) {
 
             this.applyPlacement(calculatedOffset, placement)
             this.$element.trigger('shown.bs.' + this.type)
-        }
+    }
     }
 
     Tooltip.prototype.applyPlacement = function (offset, placement) {
@@ -1335,7 +1335,7 @@ if (!jQuery) {
             this.replaceArrow(delta - width + actualWidth, actualWidth, 'left')
         } else {
             this.replaceArrow(actualHeight - height, actualHeight, 'top')
-        }
+    }
 
         if (replace) $tip.offset(offset)
     }
@@ -1382,7 +1382,7 @@ if (!jQuery) {
         var $e = this.$element
         if ($e.attr('title') || typeof($e.attr('data-original-title')) != 'string') {
             $e.attr('data-original-title', $e.attr('title') || '').attr('title', '')
-        }
+    }
     }
 
     Tooltip.prototype.hasContent = function () {
@@ -1431,7 +1431,7 @@ if (!jQuery) {
             this.hide()
             this.$element = null
             this.options = null
-        }
+    }
     }
 
     Tooltip.prototype.enable = function () {
@@ -1701,7 +1701,7 @@ if (!jQuery) {
             && scrollTop >= offsets[i]
             && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
             && this.activate(targets[i])
-        }
+    }
     }
 
     ScrollSpy.prototype.activate = function (target) {
@@ -1723,7 +1723,7 @@ if (!jQuery) {
             active = active
                 .closest('li.dropdown')
                 .addClass('active')
-        }
+    }
 
         active.trigger('activate')
     }
@@ -1764,7 +1764,7 @@ if (!jQuery) {
         $('[data-spy="scroll"]').each(function () {
             var $spy = $(this)
             $spy.scrollspy($spy.data())
-        })
+    })
     })
 
 }(window.jQuery);
@@ -1983,7 +1983,7 @@ if (!jQuery) {
 
         if (affix == 'bottom') {
             this.$element.offset({top: document.body.offsetHeight - offsetBottom - this.$element.height()})
-        }
+    }
     }
 
 
@@ -2029,7 +2029,7 @@ if (!jQuery) {
             if (data.offsetTop)    data.offset.top = data.offsetTop
 
             $spy.affix(data)
-        })
+    })
     })
 
 }(window.jQuery);

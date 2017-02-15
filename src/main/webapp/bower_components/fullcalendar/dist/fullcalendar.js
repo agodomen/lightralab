@@ -242,7 +242,6 @@
         // and these will commonly be specified as plain objects, which we don't want to mess up.
         return /(Time|Duration)$/.test(name);
     }
-
 // FIX: find a different solution for view-option-hashes and have a whitelist
 // for options that can be recursively merged.
 
@@ -1951,6 +1950,7 @@
     ;
 
     fc.applyAll = applyAll;
+
 
 
 // Create an object that has the given prototype.
@@ -7048,6 +7048,7 @@
 
 
     }
+
 
 
 // this fix was only necessary for jQuery UI 1.8.16 (and jQuery 1.7 or 1.7.1)

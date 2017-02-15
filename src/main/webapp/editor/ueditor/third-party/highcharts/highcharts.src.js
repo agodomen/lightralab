@@ -6833,7 +6833,7 @@
 
         /**
          * Remove the axis from the chart
-         */
+     */
         remove: function (redraw) {
             var chart = this.chart,
                 key = this.xOrY + 'Axis'; // xAxis or yAxis
@@ -7712,7 +7712,7 @@
         /**
          * Set the scale based on data min and max, user set min and max or options
          *
-         */
+	 */
         setScale: function () {
             var axis = this,
                 stacks = axis.stacks,
