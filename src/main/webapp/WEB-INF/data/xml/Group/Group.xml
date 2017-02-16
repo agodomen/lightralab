@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types>
+    <Type>
+        <id>08319440404222015</id>
+        <name>student</name>
+        <value>53</value>
+        <description>学生</description>
+    </Type>
+    <Type>
+        <id>08317874103222015</id>
+        <name>teacher</name>
+        <value>108</value>
+        <description>教师</description>
+    </Type>
+    <Type>
+        <id>08316214602222015</id>
+        <name>user</name>
+        <value>0</value>
+        <description>标准</description>
+    </Type>
+    <Type>
+        <id>1</id>
+        <name>admin</name>
+        <value>1024</value>
+        <description>管理员</description>
+    </Type>
+    <Type>
+        <id>3</id>
+        <name>test</name>
+        <value>1255</value>
+        <description>测试</description>
+    </Type>
+	<Type>
+        <id>0</id>
+        <name>root</name>
+        <value>10240</value>
+        <description>超级管理员</description>
+    </Type>
+</Types>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Titles>
+    <title>
+        <id>07066832301142015</id>
+        <name>标题标题标题</name>
+        <outline>正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</outline>
+        <linkId>yjs</linkId>
+        <logo>/upload/logo/07066832301142015.jpg</logo>
+        <creatorId>2</creatorId>
+        <creatorName>admin</creatorName>
+        <creatDate>2015-07-06T00:00:00+08:00</creatDate>
+        <editDate>2015-07-06T14:01:23.683+08:00</editDate>
+        <clickCount>0</clickCount>
+        <description>滚动新闻</description>
+    </title>
+    <title>
+        <id>06161264744002015</id>
+        <name> 信息工程学院教学、科研系列活动之四  学术讲座——“智能技术与机器人”方向研究情况简介</name>
+        <linkId>yjs</linkId>
+        <logo>/img/default/4.jpg</logo>
+        <creatorId>2</creatorId>
+        <creatorName>admin</creatorName>
+        <creatDate>2015-06-16T00:00:00+08:00</creatDate>
+        <editDate>2015-06-16T00:44:47.127+08:00</editDate>
+        <clickCount>1</clickCount>
+        <description>无</description>
+    </title>
+</Titles>

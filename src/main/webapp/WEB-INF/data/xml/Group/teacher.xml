@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types>
+    <Type>
+        <id>09019974313152015</id>
+        <name>06022310834092015</name>
+        <value>1245</value>
+        <description>旅游</description>
+    </Type>
+    <Type>
+        <id>09017675133222015</id>
+        <name>09019010120202015</name>
+        <value>1024</value>
+        <description>老师</description>
+    </Type>
+</Types>

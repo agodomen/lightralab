@@ -1,0 +1,341 @@
+<link href="${contextPath!}/css/style.css" rel="stylesheet"
+	type="text/css" />
+<link href="${contextPath!}/css/superfish.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="${contextPath!}/js/jquery.mousewheel.js"></script>
+<!-- For progressively larger displays -->
+<link href="${contextPath!}/assets/css/screen.css" rel="stylesheet" media="screen" />
+<link href="${contextPath!}/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css"/>
+
+<link rel="stylesheet" media="only screen and (min-width: 768px)"
+	href="${contextPath!}/assets/css/screen_768.css" />
+<link rel="stylesheet" href="${contextPath!}/media/stylesheets/base.css" />
+<link rel="stylesheet"
+	href="${contextPath!}/media/scripts/gridslider/gridslider.css" />
+
+
+<!-- this is the script end -->
+<!--[if IE 7]>
+    <link href="${contextPath!}/media/stylesheets/ie7.css" rel="stylesheet"  />
+    <![endif]-->
+<!--[if IE 8]>
+    <link href="${contextPath!}/media/stylesheets/ie8.css" rel="stylesheet"  />
+    <![endif]-->
+<!--[if lte IE 8]>
+    <link href="${contextPath!}/media/stylesheets/lteie8.css" rel="stylesheet" />
+    <![endif]-->
+<!--[if lte IE 9]>
+    <link href="${contextPath!}/media/stylesheets/lteie9.css" rel="stylesheet"  />
+    <![endif]-->
+<!--[if lte IE 7]><link href="${contextPath!}/assets/css/screen_ie.css" rel="stylesheet" media="screen" />
+<![endif]-->
+<!--[if IE 6]><link href="${contextPath!}/assets/css/screen_ie6.css" rel="stylesheet" media="screen" />
+<![endif]-->
+<!--[if IE 7]>
+<style type="text/css">
+	.container_bottom {*padding:12px 0 35px 0;}
+    .contentBlock1 {*padding:0 0 15px 0;}
+    .getPad1 {*padding:0px;}
+    .full_width {*padding:40px 13px 0 28px;}
+    .full_block_top {*padding:0 0 25px 0;}
+    .content_main2 {*padding:12px 12px 0 12px;}
+    .small_PicBox {*margin:0 8px -3px 0;}
+    .getPad2 {*padding:12px 12px 0 12px;}
+    .cont_bottom {*padding:12px 12px 0 12px;}
+</style>
+<![endif]-->
+<style>
+<!--
+[if IE 7]> <style type ="text/css">.container_bottom {
+	*padding: 12px 0 20px 0;
+}
+
+.contentBlock1 {
+	*padding: 0 0 15px 0;
+}
+
+.getPad1 {
+	*padding: 0px;
+}
+
+.full_width {
+	*padding: 40px 13px 0 28px;
+}
+
+.full_block_top {
+	*padding: 0 0 25px 0;
+}
+
+.content_main2 {
+	*padding: 12px 12px 0 12px;
+}
+
+.small_PicBox {
+	*margin: 0 8px -3px 0;
+}
+
+.getPad2 {
+	*padding: 12px 12px 0 12px;
+}
+
+.cont_bottom {
+	*padding: 12px 12px 0 12px;
+}
+
+.get_mar2 {
+	*margin: 0 8px 0 0 !important;
+}
+</style>
+<!--[endif]-->
+
+<!-- this is the script start -->
+<script type="text/javascript"
+	src="${contextPath!}/js/jquery1.7.1.min.js"></script>
+	<script type="text/javascript"
+	src="${contextPath!}/js/main.js"></script>
+<script type="text/javascript"
+	src="${contextPath!}/js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="${contextPath!}/js/jquery.quicksand.js"></script>
+<script type="text/javascript" src="${contextPath!}/js/jquery.easing.1.3.js"></script>
+	<script src="${contextPath!}/assets/js/onload.js"></script>
+	<script type="text/javascript" src="${contextPath!}/js/loopedslider.js"></script>
+	<script type="text/javascript" src="${contextPath!}/js/slides.min.jquery.js"></script>
+<script
+	src="${contextPath!}/media/scripts/gridslider/gridslider.1.0.min.js"></script>
+<script src="${contextPath!}/media/scripts/main.js"></script>
+<script>
+	document.getElementsByTagName('html')[0].setAttribute('id', 'js-1')
+</script>
+<!-- this is the script end -->
+<!--[if lte IE 8]>
+    <script src="${contextPath!}/media/scripts/lteie8.js"></script>
+    <![endif]-->
+<!-- TYPEKIT 
+    <script type="text/javascript" src="http://use.typekit.com/moe8cac.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
+<!-- JAVASCRIPT -->
+<!-- <script src="${contextPath!}/media/scripts/libs/jquery.easing.js"></script> -->
+<!-- <script src="${contextPath!}/media/scripts/gridslider/gridslider.js"></script> -->
+ <!-- <script src="http://newadventuresconf.com/mint/?js"></script> -->
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","qzone","tsina","weixin","renren","tqq","bdxc","kaixin001","tqf","tieba","douban","tsohu","bdhome","bdysc","sqq","ibaidu","hi","fx","youdao","people","xinhua","mail","isohu","ty","fbook","twi","linkedin","copy","print"],"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.slider').cycle({
+			fx : 'scrollHorz',
+			timeout : 4000,
+			cleartype : false, // disable cleartype corrections
+			next : '.rightArrow2',
+			prev : '.arrowLeft2',
+			pager : '.pager2'
+		});
+		$('#slideText').cycle({
+			fx : 'fade',
+			timeout : 3999,
+			cleartype : false, // disable cleartype corrections
+			next : '.arrowLeft2',
+			prev : '.rightArrow2',
+			slideExpr : '.slide'
+		});
+		$('.small_PicBox').hover(function() {
+			$(this).find('.boxHover').fadeIn();
+			$(this).find('.boxHover span').animate({
+				bottom : '0px'
+			}, {
+				queue : false
+			});
+		}, function() {
+			$(this).find('.boxHover').fadeOut();
+			$(this).find('.boxHover span').animate({
+				bottom : '-36px'
+			}, {
+				queue : false
+			});
+		});
+	});
+</script>
+<section class="container_middle">
+		<!--container_top Start-->
+		<section class="container_top">
+			<!--container_bottom Start-->
+			<section class="container_bottom">
+				<!--container_middle Start-->
+				<section class="content_main2">
+					<!--content_main2 Start-->
+					<section class="contMain_left fltleft">
+ <div class="bannerArea"> <!--bannerArea Start-->
+            <div class="banner2"> <!--banner2 Start-->
+              <div class="slider" style="width:967px; height:387px;"> 
+              <img src="${contextPath!}/img/banner_pic1.jpg" alt="" /> 
+              <img src="${contextPath!}/img/banner_pic2.jpg" alt="" /> 
+              <img src="${contextPath!}/img/banner_pic3.jpg" alt="" /> 
+              <img src="${contextPath!}/img/banner_pic4.jpg" alt="" /> </div>
+              <div class="arrowLeft2"> <!--arrowLeft Start--> <a href="#"></a> </div>
+              <!--arrowLeft End-->
+              <div class="rightArrow2"> <!--arrowLeft Start--> <a href="#"></a> </div>
+              <!--arrowLeft End-->
+              <div class="pager2"> </div>
+            </div>
+            <!--banner2 End-->
+           <div class="titlehome">最新消息</div>
+           <hr>
+            <div class="banner_smallBox"> <!--banner_smallBox Start-->
+            
+              <div class="small_PicBox get_mar2"> <!--small_box Start--> 
+                <a href="#"><img src="${contextPath!}/img/portfolio/art_pic0.jpg" alt=""></a>
+                <div class="boxHover"><a href="../single_page_portfolio.html"><span>物联网方面</span></a></div>
+              </div>
+              <!--small_box End-->
+              
+              <div class="small_PicBox get_mar2"> <!--small_box Start--> 
+                <a href="#"><img src="${contextPath!}/img/portfolio/art_pic17.jpg" alt=""></a>
+                <div class="boxHover"><a href="../single_page_portfolio.html"><span>生态方面</span></a></div>
+              </div>
+              <!--small_box End-->
+              
+              <div class="small_PicBox get_mar2"> <!--small_box Start--> 
+                <a href="#"><img src="${contextPath!}/img/portfolio/art_pic3.jpg" alt=""></a>
+                <div class="boxHover"><a href="../single_page_portfolio.html"><span>互联网方面</span></a></div>
+              </div>
+              <!--small_box End-->
+
+              
+                     <div class="small_PicBox"> <!--small_box Start--> 
+                <a href="#"><img src="${contextPath!}/img/portfolio/art_pic4.jpg" alt=""></a>
+                <div class="boxHover"><a href="../single_page_portfolio.html"><span>物流关系与策略</span></a></div>
+              </div>
+              <!--small_box End-->
+               
+              
+              <div class="clear"></div>
+            </div>
+            <!--banner_smallBox End--> 
+          </div>
+          <!--bannerArea End--> 
+        </section>
+        <!--contMain_left End-->
+       
+    
+        <div class="clear"></div>
+     
+         <div class="titlehome1">最新公告</div><hr>
+
+<div class="comp-services-1  icon-left services-1">
+				<div class="comp-services-1-item">
+					<img src="${contextPath!}/img/it.png" width="50" height="50" alt="" />
+					<h2 class="title"><a href="../single_page_blog_1.html">现代物流环保</a></h2>
+					<div class="content">
+						<p>现代环保物流强调了全局和长远的利益，强调了全方位对环境的关注，体现了企业的绿色形象，是一种全新的物流形态。</p>
+					</div>
+				</div>
+				<div class="comp-services-1-item">
+					<img src="${contextPath!}/img/iv.png" width="50" height="50" alt="" />
+					<h2 class="title"><a href="../single_page_blog.html">产业生态位与绿色物流发展</a></h2>
+					<div class="content">
+						<p>随着经济的快速发展，环境问题日益凸显，物流业在运输、包装、回收、废弃物处理等诸多方面对环境造成巨大伤害，由物流业带来的环境恶化也越来越受到广泛关注。</p>
+					</div>
+				</div>
+				<div class="comp-services-1-item">
+					<img src="${contextPath!}/img/it.png" width="50" height="50" alt="" />
+					<h2 class="title"><a href="../single_page_blog_1.html">物联网在物流中的应用</a></h2>
+					<div class="content">
+						<p>物联网是继计算机、互联网与移动通信网之后的又一次信息产业浪潮。随着传感器、软件、网络等关键技术快速发展，物联网产业规模快速增长，应用领域广泛拓展，为现代物流发展奠定了基础。</p>
+					</div>
+				</div>
+				<div class="comp-services-1-item">
+					<img src="${contextPath!}/img/ip.png" width="50" height="50" alt="" />
+					<h2 class="title"><a href="../single_page_blog.html">互联网物流战略</a></h2>
+					<div class="content">
+						<p>现代信息技术特别是互联网的发展使利用互联网的物流管理具有成本低、实时动态和顾客推动的特征。   互联网物流战略是通过网上采购和配销，使企业更加准确和全面地把握消费者的需要，在实现基于顾客订货的生产方式的同时减少库存，降低沟通成本和顾客支持成 本，增强销售渠道开发能力的战略。</p>
+					</div>
+				</div>
+				<div class="comp-services-1-item">
+					<img src="${contextPath!}/img/it.png" width="50" height="50" alt="" />
+					<h2 class="title"><a href="../single_page_blog_1.html">中国物流行业物联网发展现状</a></h2>
+					<div class="content">
+						<p>物流关系着现代人生活的衣食住行，物流业的发展关系着社会经济的方方面面。物流业有着广泛的市场应用基础，涉及各个行业与领域，对于不断提升其工作效率、完善管理方法、解决实际应用中的现实问题、以及改善投资环境都有着迫切的需求。</p>
+					</div>
+				</div>
+				<div class="comp-services-1-item">
+					<img src="${contextPath!}/img/iv.png" width="50" height="50" alt="" />
+					<h2 class="title"><a href="../single_page_blog.html">浅议绿色物流与生态环境保护的关系与策略</a></h2>
+					<div class="content">
+						<p>党的十七大报告在部署经济建设的战略任务时提出“加强能源资源节约和生态环境保护，增强可持续发展能力”。</p>
+					</div>
+				</div>
+				<div class="comp-services-1-item">
+					<img src="${contextPath!}/img/ia.png" width="50" height="50" alt="" />
+					<h2 class="title"><a href="../single_page_blog.html">产业生态与绿色物流</a></h2>
+					<div class="content">
+						<p>目前环境问题日益突出，物流业在发展过程当中，诸多流程都会对环境造成影响。 </p>
+					</div>
+				</div>
+				<div class="comp-services-1-item">
+					<img src="${contextPath!}/img/iv.png" width="50" height="50" alt="" />
+					<h2 class="title"><a href="../single_page_blog-2.html">物流生态系统的地位</a></h2>
+					<div class="content">
+						<p>物流生态系统是物流现代化课题中最为重要的一课，也是企业商务活动中至关重要的环节，物流生态系统的作用也必将贯穿企业产品设计、生产、销售、售後服务甚 至人们对产品或服务的使用、废弃物流回收处理，以及中间所有的流通经历。</p>
+					</div>
+				</div>
+				<div class="comp-services-1-item">
+					<img src="${contextPath!}/img/ia.png" width="50" height="50" alt="" />
+					<h2 class="title"><a href="../single_page_blog.html">物流生态系统</a></h2>
+					<div class="content">
+						<p>物流生态系统（logistics ecosystem），是指由物流与社会活动构成的整体生态系统。物流生态系统是开放系统，和自然生态系统为了维系自身的稳定，需要不断输入能量一样，物 流生态系统也需要不断完善，通过不断地参入各种社会活动来发展和修正自己。</p>
+					</div>
+				</div>
+				
+				<div class="comp-services-1-item">
+					<img src="${contextPath!}/img/ia.png" width="50" height="50" alt="" />
+					<h2 class="title"><a href="../single_page_blog.html">基于RFID物流定位系统手持查询终端的设计</a></h2>
+					<div class="content">
+						<p>道路运输物流业是我国现代经济发展中的一个新型产业,已逐渐成为我国现代经济发展中的重要组成部分[1]。本文介绍了一种利用ARM 来实现物流定位系统的手持查询终端，该查询终端使用简便、实用、功能齐全, 可用于防止贵重物品在物流运输中发生丢包的意外，并且可以通过GPS 及GPRS 向物流管理中心提供查询物品当前位置信息的服务。</p>
+					</div>
+				</div>
+				<div class="comp-services-1-item">
+					<img src="${contextPath!}/img/ip.png" width="50" height="50" alt="" />
+					<h2 class="title"><a href="../single_page_blog_1.html">物流行业转型在即 移动互联网成重要助推器</a></h2>
+					<div class="content">
+						<p>在我国，物流作为劳动密集型行业，普遍存在竞争激烈、利润率低的特点。2011年以来，从央视报道的“物流顽疾”到接连出台的“国八条”、“国九条”行业法规政策，物流行业转型升级之势初见端倪。推进物流行业的转型升级，关键在于整合满足客户新需求的资源，为客户提供新的服务价值，归根结底，需要物流行业加强与客户之间的双向互动。</p>
+					</div>
+				</div>
+				<div class="comp-services-1-item">
+					<img src="${contextPath!}/img/iv.png" width="50" height="50" alt="" />
+					<h2 class="title"><a href="../single_page_blog.html">互联网开发物流类的APP</a></h2>
+					<div class="content">
+						<p>随着移动互联网技术的不断创新和发展，以及智能手机的广泛应用。随着科技的创新，及智能手机的广泛运用，移动客户端应运而生并随之蓬勃发展。</p>
+					</div>
+				</div>
+			</div>
+						</section>
+					<!--content_main2 End-->
+
+
+					<div class="clear"></div>
+					<!--banner_smallBox End-->
+
+					<!--bannerArea End-->
+				</section>
+				<!--contMain_left End-->
+
+
+
+
+			</section>
+			<!--content_main2 End-->
+			<div class="clear"></div>
+		</section>
+
+
+
+
+
+
+
+		<!--container_middle End-->
+
+		<!--container_bottom End-->
+
+		<!--container_top End-->
+
+		<!--dummy_textBox_top End-->

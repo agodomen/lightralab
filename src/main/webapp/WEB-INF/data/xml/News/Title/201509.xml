@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Titles>
+    <title>
+        <id>0901724517222015</id>
+        <name>实验室理念</name>
+        <outline>求实创新，求实创新，求实创新，求实创新，求实创新，求实创新，求实创新，求实创新，求实创新，求实创新，求实创新，求实创新，求实创新，求实创新，求实创新，求实创新</outline>
+        <linkId>201509</linkId>
+        <logo>/img/default/21.jpg</logo>
+        <creatorId>2</creatorId>
+        <creatorName>admin</creatorName>
+        <creatDate>2015-09-01T00:00:00+08:00</creatDate>
+        <editDate>2015-09-01T22:17:45.072+08:00</editDate>
+        <clickCount>0</clickCount>
+        <description>#1024#</description>
+    </title>
+    <title>
+        <id>09016995515222015</id>
+        <name>实验室简介</name>
+        <outline>908实验室是针对于分布式系统与服务计算的实验室，实验室的主要研究方向是：云计算，大数据……</outline>
+        <linkId>aboutUs</linkId>
+        <logo>/img/default/27.jpg</logo>
+        <creatorId>2</creatorId>
+        <creatorName>admin</creatorName>
+        <creatDate>2015-09-01T00:00:00+08:00</creatDate>
+        <editDate>2015-09-01T22:15:55.834+08:00</editDate>
+        <clickCount>0</clickCount>
+        <description>#1024#</description>
+    </title>
+</Titles>

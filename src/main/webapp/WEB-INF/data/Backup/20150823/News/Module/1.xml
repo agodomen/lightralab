@@ -1,0 +1,14 @@
+<Types>
+    <Type>
+        <id>07068513857132015</id>
+        <name>sliderNews</name>
+        <value>滚动新闻</value>
+        <description>主页滚动新闻</description>
+    </Type>
+    <Type>
+        <id>07055365619202015</id>
+        <name>cultrue</name>
+        <value>cultrue</value>
+        <description>文化交流</description>
+    </Type>
+</Types>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types>
+    <Type>
+        <id>08221002644192015</id>
+        <name>travel</name>
+        <value>旅游</value>
+        <description>旅游图片新闻</description>
+    </Type>
+</Types>

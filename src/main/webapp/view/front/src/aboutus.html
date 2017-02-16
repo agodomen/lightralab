@@ -1,0 +1,235 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.slider1').cycle({
+			fx : 'scrollHorz',
+			timeout : 1000,
+			cleartype : false, // disable cleartype corrections
+			next : '.rightArrow4',
+			prev : '.arrowLeft4',
+			pager : '.pager'
+		});
+		$('.small_PicBox').hover(function() {
+			$(this).find('.boxHover').fadeIn();
+			$(this).find('.boxHover span').animate({
+				bottom : '0px'
+			}, {
+				queue : false
+			});
+		}, function() {
+			$(this).find('.boxHover').fadeOut();
+			$(this).find('.boxHover span').animate({
+				bottom : '-36px'
+			}, {
+				queue : false
+			});
+		});
+
+		$("#favorites").tweet({
+			avatar_size : 28,
+			count : 3,
+			username : "VibeThemes",
+			favorites : true,
+			loading_text : "loading list..."
+		}).bind("loaded", function() {
+			$(this).find("a").attr("target", "_blank");
+		});
+
+	});
+</script>
+    
+    <section class="container_middle"> <!--container_top Start-->
+    	<section class="container_top"> <!--container_bottom Start-->
+    		<section class="container_bottom"> <!--container_middle Start-->
+         		<section class="content_main leftpad"> <!--content_main Start-->
+                    <section class="content_left0 fltleft"> <!--content_left Start-->
+                      <div class="contentBlockabout"> <!--contentBlock1 Start-->
+                            <div class="bannerBox"> <!--bannerBox Start-->
+                                <div class="banner"> <!--banner Start-->
+                                	<div class="slider1" style="width:967px; height:242px;">
+                                    	<img src="${contextPath!}/img/slider1.jpg" alt="" />
+                                        <img src="${contextPath!}/img/slider2.jpg" alt="" />
+                                        <img src="${contextPath!}/img/slider1.jpg" alt="" />
+                                        <img src="${contextPath!}/img/slider2.jpg" alt="" />
+                                    </div>
+                                    <div class="pager">
+                                    </div>
+                                    <div class="arrowLeft4"><a href="#"></a></div>
+                                	<div class="rightArrow4"><a href="#"></a></div>
+                                </div> <!--banner End-->
+                              <div class="clrflt"></div>
+                              <div class="bannerBox">
+                            
+                            
+                            
+                            
+                            
+                            
+<div id="content_wrapper">
+
+    <div class="content_top"><!--content_top-->
+    	<div class="top_info">
+        	<h2>WHAT WE DO</h2>
+            <p>Whatever it takes. We work in digital, print, retail, and marketing—as well as on their respective frontiers. We pride ourselves on our ability to 
+            start with nothing but a simple idea. As a full-service creative agency, we've got you covered front to back, head to toe, wildest dreams and all. 
+            We love to learn and are fearless in the face of new media. We can and do act quickly to take advantage of new face of new media. We can and do act 
+            quickly to take advantage of new opportunities—or create them.</p>
+        </div>
+        <div class="top_info2">
+        	<h2>OUR CHARACTER</h2>
+            <p>We've developed a reputation for being dependable, successful, and tireless. We recognize that the quality of our work means everything to our clients, 
+            and therefore it means everything to us. Our company is close-knit and each person is uniquely talented across multiple disciplines. Although diverse, 
+            the quality we all share in common is a willingness to roll up our sleeves and get it done right.uniquely talented across multiple disciplines. 
+            Although diverse, the quality we all share in common is a willingness to roll up our sleeves and get it done right.</p>
+        </div>
+    	<div class="clrflt"></div>
+    </div><!--content_top-->
+
+    <h2>Our SERVICES</h2>
+    <div class="service_area"><!--service_area-->
+    	<div class="service_box">
+        	<h3><a href="#">MARKETING</a></h3>
+            <div class="service_list">
+            	<ul>
+                	<li>Strategy</li>
+                    <li>Ideation</li>
+                    <li>Planning</li>
+                </ul>
+            </div>
+            <div class="service_list2">
+            	<ul>
+                	<li>Branding</li>
+                    <li>Research</li>
+                </ul>
+            </div>
+            <div class="clrflt"></div>
+        </div>
+        <div class="service_box2">
+        	<h3><a href="#">DIGITAL</a></h3>
+            <div class="service_list">
+            	<ul>
+                	<li>Tv Spots</li>
+                    <li>Animation</li>
+                    <li>Training</li>
+                </ul>
+            </div>
+            <div class="service_list2">
+            	<ul>
+                	<li>Web Design</li>
+                    <li>Web Dev</li>
+                </ul>
+            </div>
+            <div class="clrflt"></div>
+        </div>
+        <div class="service_box3">
+        	<h3><a href="#">PRINT</a></h3>
+            <div class="service_list3">
+            	<ul>
+                	<li>Graphic Design</li>
+                    <li>Storyboarding</li>
+                    
+                </ul>
+            </div>
+            <div class="service_list2">
+            	<ul>
+                	<li>Illustration</li>
+                    <li>Photography</li>
+                </ul>
+            </div>
+            <div class="clrflt"></div>
+        </div>
+        <div class="service_box4">
+        	<h3><a href="#">RETAIL</a></h3>
+            <div class="service_list">
+            	<ul>
+                	<li>Packaging</li>
+                </ul>
+            </div>
+            <div class="service_list2">
+            	<ul>
+                	<li>Signage</li>
+                </ul>
+            </div>
+            <div class="clrflt"></div>
+        </div>
+        <div class="clrflt"></div>
+    </div><!--service_area-->
+	<h2>Our Team</h2>
+    <div class="member_area"><!--member_area-->
+    	<div class="member_box">
+        	<img src="${contextPath!}/img/member_pic.jpg" alt="">
+            <h3>Pete<em>Work at Envato</em></h3>
+            <p>Lorem Ispum &amp; byth ka me shume qief arditat</p>
+        </div>
+        <div class="member_box">
+        	<img src="${contextPath!}/img/member_pic2.jpg" alt="">
+            <h3>Chendo<em>Work at Envato</em></h3>
+            <p>Lorem Ispum &amp; byth ka me shume qief arditat</p>
+        </div>
+        <div class="member_box">
+        	<img src="${contextPath!}/img/member_pic3.jpg" alt="">
+            <h3>Mark<em>Work at Envato</em></h3>
+            <p>Lorem Ispum &amp; byth ka me shume qief arditat</p>
+        </div>
+        <div class="member_box reduce">
+        	<img src="${contextPath!}/img/member_pic4.jpg" alt="">
+            <h3>Ben<em>Work at Envato</em></h3>
+            <p>Lorem Ispum &amp; byth ka me shume qief arditat</p>
+        </div>
+        <div class="clrflt"></div>
+    </div><!--member_area-->
+    <div class="quotes">
+
+        <blockquote>
+            <p>&ldquo;We absolutely loved it from start to finish. Everything about the day exceeded any expectations that we had, and we came away from this amazing event with heads full of exciting ideas and a heap of new industry friends.&rdquo;</p>
+            <p class="cite">
+                <cite>&mdash;<a href="http://twitter.com/fiximGFX">Genci Dashiri</a></cite>
+            </p>
+        </blockquote>
+
+        <blockquote>
+            <p>&ldquo;Attendees were very much treated as a hall full of fellow professionals, people on the same level as the speakers. There was an overwhelmingly gratifying feeling of assumed knowledge, and I absolutely loved that.&rdquo;</p>
+            <p class="cite">
+                <cite>&mdash;<a href="http://twitter.com/fiximGFX">Masmit Masmati</a></cite>
+            </p>
+        </blockquote>
+
+    </div>
+
+    <div class="finally">
+
+        <h2>Missed This Year?</h2>
+
+        <p>Lorem Ispum <a href="#">last year&rsquo;s event</a>, listen to <a href="#">video</a>, and get a feel for how we do what we do. You can also download <a href="#">last year&rsquo;s newspaper</a>, and check out the photos in the <a href="#">Flickr Envato</a>.</p>
+
+        <p><strong class="sponsor_highlight">Interested in sponsoring the event?</strong> Contact us<span> at</span> <a href="mailto:hello@move.com">hello@move.com</a> for more information.</p>
+        
+    </div>
+    
+</div>             
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+</div>
+<!--bannerBox End-->
+<div class="clear"></div>
+                            </div> <!--bannerBox End-->
+                            <div class="clear"></div>
+                        </div> <!--contentBlock1 End--><!--content_box1 End-->
+                      <div class="clear"></div>
+                        </div> <!--contentBlock1 End-->
+                        
+                     
+                      <div class="clear"></div>
+                    </section> <!--content_left End-->
+                    
+        			<div class="clrflt"></div>
+        		</section> <!--content_main End-->
+            </section> <!--container_middle End-->    	
+        </section> <!--container_bottom End-->
+
+    </section> <!--container_top End-->

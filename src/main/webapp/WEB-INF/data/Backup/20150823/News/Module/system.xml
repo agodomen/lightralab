@@ -1,0 +1,13 @@
+<Types>
+    <Type>
+        <id>07075965433122015</id>
+        <name>tjxw</name>
+        <value>推荐新闻</value>
+        <description>推荐新闻信息</description>
+    </Type>
+    <Type>
+        <id>06258663734162015</id>
+        <name>library</name>
+        <value>实验室信息</value>
+    </Type>
+</Types>

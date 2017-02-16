@@ -1,0 +1,22 @@
+<Types>
+    <Type>
+        <id>06126382920142015</id>
+        <name>gwd</name>
+        <value>无分类</value>
+    </Type>
+	<Type>
+        <id>06126282920142015</id>
+        <name>yjs</name>
+        <value>云计算</value>
+    </Type>
+	<Type>
+        <id>06126182920142015</id>
+        <name>dsj</name>
+        <value>大数据</value>
+    </Type>
+    <Type>
+        <id>ghd</id>
+        <name>ghd</name>
+        <value>新的编号</value>
+    </Type>
+</Types>

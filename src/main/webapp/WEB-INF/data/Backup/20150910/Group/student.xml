@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types>
+    <Type>
+        <id>0901051641222015</id>
+        <name>09019010120122015</name>
+        <value>1</value>
+        <description>学生</description>
+    </Type>
+    <Type>
+        <id>09014233641222015</id>
+        <name>09019010120222015</name>
+        <value>1</value>
+        <description>学生</description>
+    </Type>
+    <Type>
+        <id>09012605841222015</id>
+        <name>09019010120322015</name>
+        <value>1</value>
+        <description>学生</description>
+    </Type>
+    <Type>
+        <id>09015301842222015</id>
+        <name>09019010121222015</name>
+        <value>1</value>
+        <description>学生</description>
+    </Type>
+    <Type>
+        <id>09014893642222015</id>
+        <name>09019010130222015</name>
+        <value>1</value>
+        <description>学生</description>
+    </Type>
+    <Type>
+        <id>09013595542222015</id>
+        <name>09019010140222015</name>
+        <value>1</value>
+        <description>学生</description>
+    </Type>
+    <Type>
+        <id>09122660507162015</id>
+        <name>09127335305162015</name>
+        <value>21121</value>
+        <description>232332</description>
+    </Type>
+</Types>

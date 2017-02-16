@@ -1,0 +1,17 @@
+<Types>
+    <Type>
+        <id>06125255756222015</id>
+        <name>science</name>
+        <value>学术成果</value>
+    </Type>
+    <Type>
+        <id>06124791857222015</id>
+        <name>patent</name>
+        <value>专利成果</value>
+    </Type>
+    <Type>
+        <id>06123423957222015</id>
+        <name>tech</name>
+        <value>技术成果</value>
+    </Type>
+</Types>

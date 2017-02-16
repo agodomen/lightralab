@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types>
+    <Type>
+        <id>09019074704202015</id>
+        <name>message</name>
+        <value>消息</value>
+        <description>消息</description>
+    </Type>
+    <Type>
+        <id>09012795903202015</id>
+        <name>notice</name>
+        <value>公告</value>
+    </Type>
+    <Type>
+        <id>07248263851152015</id>
+        <name>activity</name>
+        <value>活动</value>
+        <description>活动新闻</description>
+    </Type>
+</Types>

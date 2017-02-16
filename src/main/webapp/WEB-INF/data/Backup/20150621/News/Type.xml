@@ -1,0 +1,32 @@
+<Types>
+    <Type>
+        <id>06126382920142015</id>
+        <name>gwd</name>
+        <value>无分类</value>
+    </Type>
+    <Type>
+        <id>ghd</id>
+        <name>ghd</name>
+        <value>新的编号</value>
+    </Type>
+    <Type>
+        <id>06125562556222015</id>
+        <name>fruit</name>
+        <value>实验室成果</value>
+    </Type>
+    <Type>
+        <id>06125255756222015</id>
+        <name>science</name>
+        <value>学术成果</value>
+    </Type>
+    <Type>
+        <id>06124791857222015</id>
+        <name>patent</name>
+        <value>专利成果</value>
+    </Type>
+    <Type>
+        <id>06123423957222015</id>
+        <name>tech</name>
+        <value>技术成果</value>
+    </Type>
+</Types>

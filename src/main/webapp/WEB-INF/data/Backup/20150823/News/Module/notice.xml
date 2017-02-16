@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types>
+    <Type>
+        <id>07248263851152015</id>
+        <name>activity</name>
+        <value>活动</value>
+        <description>活动新闻</description>
+    </Type>
+</Types>
